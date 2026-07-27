@@ -1,5 +1,21 @@
 const OUTFITS = [
   {
+    id: "red-floral-coquette-01",
+    title: "Denim & Cherry Coquette",
+    description:
+      "Darker denim bow blouse, white tiered maxi skirt, cherry red Mary Janes and bow bag, gold earrings, and Daisy perfume.",
+    categories: ["Fancy", "Summer"],
+    collage_image: "assets/products/red-floral-look/collage.png",
+    pieces: [
+      { slot: "Top", label: "Denim Tie-Front Babydoll Blouse", amazon_url: "https://link.amazon/B0ahpzR7z" },
+      { slot: "Skirt", label: "GORGLITTER White Tiered Maxi Skirt", amazon_url: "https://link.amazon/B0dF0T4jL" },
+      { slot: "Shoes", label: "TN TANGNEST Red Mary Jane Flats", amazon_url: "https://link.amazon/B0fO82l8Z" },
+      { slot: "Bag", label: "Amszke Cherry Red Bow Bag", amazon_url: "https://link.amazon/B03SLr3nF" },
+      { slot: "Earrings", label: "Gold Teardrop Earrings", amazon_url: "https://link.amazon/B0bWLrfPy" },
+      { slot: "Perfume", label: "Marc Jacobs Daisy", amazon_url: "https://link.amazon/B07xS1km3" },
+    ],
+  },
+  {
     id: "blue-yellow-summer-look-01",
     title: "Yellow & Navy Summer Coastal",
     description:
