@@ -12,6 +12,9 @@ SRC = ROOT / "assets" / "products" / "blue-yellow-look"
 CUTOUTS = SRC / "cutouts"
 OUT = SRC / "collage.png"
 PREVIEW = SRC / "collage-preview.jpg"
+CURSOR_ASSETS = Path(
+  r"C:\Users\hnsil\.cursor\projects\c-Users-hnsil-OneDrive-Middlesex-University-summer-26-projects-pinterest-wordpress\assets"
+)
 
 
 def rembg_file(src: Path, dst: Path, force: bool = False) -> Image.Image:
@@ -114,15 +117,27 @@ def procedural_corners(canvas: Image.Image) -> None:
 def prepare_cutouts() -> dict[str, Image.Image]:
   CUTOUTS.mkdir(parents=True, exist_ok=True)
   items: dict[str, Image.Image] = {}
+
+  garment_sources = {
+    "shirt": [SRC / "shirt-cutout.png", CURSOR_ASSETS / "yellow-shirt-cutout.png"],
+    "jeans": [SRC / "jeans-cutout.png", CURSOR_ASSETS / "navy-jeans-cutout.png"],
+  }
+
   for name in ("shirt", "jeans", "shoes", "bag", "glasses", "necklace", "earrings", "flower"):
-    src = SRC / f"{name}.jpg"
-    if not src.exists():
-      src = SRC / f"{name}.png"
+    src = None
+    if name in garment_sources:
+      for candidate in garment_sources[name]:
+        if candidate.exists():
+          src = candidate
+          break
+    if src is None:
+      src = SRC / f"{name}.jpg"
+      if not src.exists():
+        src = SRC / f"{name}.png"
     if not src.exists():
       continue
-    force = name in ("shirt", "jeans")
     try:
-      items[name] = rembg_file(src, CUTOUTS / f"{name}.png", force=force)
+      items[name] = rembg_file(src, CUTOUTS / f"{name}.png", force=True)
     except Exception as exc:  # noqa: BLE001
       print("skip", name, exc)
   return items
@@ -141,12 +156,12 @@ def main() -> None:
     if flower_src.exists() and flower_src.stat().st_size > 80000:
       paste_center(canvas, soft_shadow(scale(raw["flower"], 280, 280), blur=14, opacity=30), 560, 720)
 
-  paste_center(canvas, soft_shadow(scale(raw["necklace"], 180, 180)), 310, 280)
-  paste_center(canvas, soft_shadow(scale(raw["glasses"], 200, 120)), 330, 480)
-  paste_center(canvas, soft_shadow(scale(raw["bag"], 320, 320)), 360, 720)
-  paste_center(canvas, soft_shadow(scale(raw["shoes"], 340, 240)), 360, 1100)
-  paste_center(canvas, soft_shadow(scale(raw["shirt"], 520, 580)), 760, 340)
-  paste_center(canvas, soft_shadow(scale(raw["jeans"], 380, 760)), 760, 960)
+  paste_center(canvas, soft_shadow(scale(raw["necklace"], 210, 210)), 380, 270)
+  paste_center(canvas, soft_shadow(scale(raw["glasses"], 230, 140)), 395, 460)
+  paste_center(canvas, soft_shadow(scale(raw["bag"], 380, 380)), 400, 700)
+  paste_center(canvas, soft_shadow(scale(raw["shoes"], 400, 290)), 400, 1020)
+  paste_center(canvas, soft_shadow(scale(raw["shirt"], 620, 680)), 720, 330)
+  paste_center(canvas, soft_shadow(scale(raw["jeans"], 480, 900)), 720, 930)
 
   procedural_corners(canvas)
 
