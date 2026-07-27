@@ -144,7 +144,7 @@ def main() -> None:
     raise SystemExit("Missing shirt image")
 
   canvas = build_background()
-  add_left_flower_border(canvas)
+  # Use hibiscus linen bg only — do not layer left flower strip (double-background).
 
   shirt_img = darken_shirt(scale(raw["shirt"], 500, 560))
   skirt_img = scale(raw["skirt"], 360, 700)
