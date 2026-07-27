@@ -107,8 +107,8 @@ def add_bow(canvas: Image.Image) -> None:
   if not path.exists():
     return
   bow = trim_white(Image.open(path).convert("RGBA"))
-  bow = bow.resize((140, 140), Image.Resampling.LANCZOS)
-  paste_center(canvas, bow, 980, 180)
+  bow = bow.resize((120, 120), Image.Resampling.LANCZOS)
+  paste_center(canvas, bow, 920, 175)
 
 
 def prepare_cutouts() -> dict[str, Image.Image]:
@@ -146,19 +146,22 @@ def main() -> None:
   canvas = build_background()
   # Use hibiscus linen bg only — do not layer left flower strip (double-background).
 
-  shirt_img = darken_shirt(scale(raw["shirt"], 500, 560))
-  skirt_img = scale(raw["skirt"], 360, 700)
-  bag_img = scale(raw["bag"], 300, 300)
-  shoes_img = scale(raw["shoes"], 300, 220)
-  earrings_img = scale(raw["earrings"], 160, 160)
-  perfume_img = scale(raw["perfume"], 140, 220)
+  shirt_img = darken_shirt(scale(raw["shirt"], 500, 540))
+  skirt_img = scale(raw["skirt"], 500, 960)
+  bag_img = scale(raw["bag"], 270, 270)
+  shoes_img = scale(raw["shoes"], 320, 230)
+  earrings_img = scale(raw["earrings"], 150, 150)
+  perfume_img = scale(raw["perfume"], 115, 175)
 
-  paste_center(canvas, soft_shadow(earrings_img), 360, 260)
-  paste_center(canvas, soft_shadow(perfume_img), 360, 480)
-  paste_center(canvas, soft_shadow(bag_img), 380, 720)
-  paste_center(canvas, soft_shadow(shoes_img), 380, 1080)
-  paste_center(canvas, soft_shadow(shirt_img), 780, 360)
-  paste_center(canvas, soft_shadow(skirt_img), 780, 980)
+  # Left accessories column — balanced scale
+  paste_center(canvas, soft_shadow(earrings_img), 330, 250)
+  paste_center(canvas, soft_shadow(perfume_img), 330, 430)
+  paste_center(canvas, soft_shadow(bag_img), 340, 680)
+  paste_center(canvas, soft_shadow(shoes_img), 340, 1020)
+
+  # Right outfit column — shirt + bigger skirt, pulled toward center
+  paste_center(canvas, soft_shadow(shirt_img), 720, 330)
+  paste_center(canvas, soft_shadow(skirt_img), 720, 940)
 
   add_bow(canvas)
 
