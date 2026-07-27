@@ -107,8 +107,8 @@ def add_bow(canvas: Image.Image) -> None:
   if not path.exists():
     return
   bow = trim_white(Image.open(path).convert("RGBA"))
-  bow = bow.resize((120, 120), Image.Resampling.LANCZOS)
-  paste_center(canvas, bow, 920, 175)
+  bow = bow.resize((110, 110), Image.Resampling.LANCZOS)
+  paste_center(canvas, bow, 880, 165)
 
 
 def prepare_cutouts() -> dict[str, Image.Image]:
@@ -146,22 +146,21 @@ def main() -> None:
   canvas = build_background()
   # Use hibiscus linen bg only — do not layer left flower strip (double-background).
 
-  shirt_img = darken_shirt(scale(raw["shirt"], 470, 520))
-  skirt_img = scale(raw["skirt"], 560, 1020)
-  bag_img = scale(raw["bag"], 250, 250)
-  shoes_img = scale(raw["shoes"], 300, 210)
-  earrings_img = scale(raw["earrings"], 140, 140)
-  perfume_img = scale(raw["perfume"], 105, 165)
+  shirt_img = darken_shirt(scale(raw["shirt"], 560, 620))
+  skirt_img = scale(raw["skirt"], 680, 1280)
+  bag_img = scale(raw["bag"], 290, 290)
+  shoes_img = scale(raw["shoes"], 340, 240)
+  earrings_img = scale(raw["earrings"], 160, 160)
+  perfume_img = scale(raw["perfume"], 125, 190)
 
-  # Left accessories — slightly smaller so outfit reads as the hero
-  paste_center(canvas, soft_shadow(earrings_img), 300, 240)
-  paste_center(canvas, soft_shadow(perfume_img), 300, 410)
-  paste_center(canvas, soft_shadow(bag_img), 310, 650)
-  paste_center(canvas, soft_shadow(shoes_img), 310, 980)
+  paste_center(canvas, soft_shadow(earrings_img), 300, 250)
+  paste_center(canvas, soft_shadow(perfume_img), 300, 430)
+  paste_center(canvas, soft_shadow(bag_img), 310, 690)
+  paste_center(canvas, soft_shadow(shoes_img), 310, 1050)
 
-  # Outfit column — bigger skirt, tighter waist connection
-  paste_center(canvas, soft_shadow(shirt_img), 700, 300)
-  paste_center(canvas, soft_shadow(skirt_img), 700, 900)
+  # Bigger outfit pieces, pulled together at the waist
+  paste_center(canvas, soft_shadow(shirt_img), 700, 320)
+  paste_center(canvas, soft_shadow(skirt_img), 700, 820)
 
   add_bow(canvas)
 
