@@ -2,6 +2,24 @@
   "site_name": "Exquisite Silat",
   "outfits": [
     {
+      "id": "burgundy-casual-look-01",
+      "title": "Burgundy & Black Casual",
+      "slug": "burgundy-casual-look-01",
+      "description": "A polished everyday look — asymmetrical burgundy top, wide-leg black jeans, croc bag, and burgundy slingbacks with gold accents.",
+      "collage_image": "assets/products/burgundy-look/collage.png",
+      "categories": ["Casual", "Autumn"],
+      "pieces": [
+        { "slot": "Top", "label": "PRETTYGARDEN Burgundy Asymmetrical Top", "amazon_url": "https://link.amazon/B08TSRX9K" },
+        { "slot": "Bottom", "label": "KOTTY Black High-Rise Wide Jeans", "amazon_url": "https://link.amazon/B0hdpJOr3" },
+        { "slot": "Shoes", "label": "Mattiventon Burgundy Bow Slingbacks", "amazon_url": "https://link.amazon/B0drwncy3" },
+        { "slot": "Bag", "label": "JW PEI Harlee Brown Croc Bag", "amazon_url": "https://link.amazon/B0cvbClLk" },
+        { "slot": "Watch", "label": "FANMIS Brown & Gold Rectangle Watch", "amazon_url": "https://link.amazon/B0cYvoLpG" },
+        { "slot": "Jewelry", "label": "Gold Teardrop Hoop Earrings", "amazon_url": "https://link.amazon/B0104bp0b" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
       "id": "sample-summer-casual-01",
       "title": "Easy Summer Casual",
       "slug": "sample-summer-casual-01",

@@ -292,6 +292,20 @@ a:hover {
   font-size: 0.95rem;
 }
 
+.collage-frame--has-image {
+  padding: 0;
+  border-style: solid;
+  border-color: rgba(122, 31, 43, 0.15);
+  overflow: hidden;
+}
+
+.collage-frame--has-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .collage-frame strong {
   display: block;
   margin-bottom: 0.35rem;

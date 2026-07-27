@@ -62,23 +62,29 @@
   <script src="assets/js/outfits.js"></script>
   <script src="assets/js/main.js"></script>
   <script>
-    const id = new URLSearchParams(location.search).get("id") || "sample-summer-casual-01";
+    const id = new URLSearchParams(location.search).get("id") || "burgundy-casual-look-01";
     const outfit = getOutfitById(id) || OUTFITS[0];
     document.title = outfit.title + " — Exquisite Silat";
     document.getElementById("lookTitle").textContent = outfit.title;
     document.getElementById("lookDesc").textContent = outfit.description;
     document.getElementById("lookCats").textContent = outfit.categories.join(" · ");
+    const collageEl = document.getElementById("lookCollage");
+    if (outfit.collage_image) {
+      collageEl.classList.add("collage-frame--has-image");
+      collageEl.innerHTML = `<img src="${outfit.collage_image}" alt="${outfit.title} outfit collage" />`;
+    }
     document.getElementById("shopList").innerHTML = outfit.pieces
-      .map(
-        (p) => `
+      .map((p) => {
+        const hasLink = p.amazon_url && p.amazon_url.startsWith("http");
+        return `
       <li>
         <div>
           <span class="shop-slot">${p.slot}</span>
           <span class="shop-label">${p.label}</span>
         </div>
-        <a class="shop-link is-placeholder" href="#">${p.amazon_url && p.amazon_url.startsWith("http") ? "View on Amazon →" : "Add your Amazon link here"}</a>
-      </li>`
-      )
+        <a class="shop-link${hasLink ? "" : " is-placeholder"}" href="${hasLink ? p.amazon_url : "#"}"${hasLink ? ' target="_blank" rel="noopener sponsored"' : ""}>${hasLink ? "View on Amazon →" : "Add your Amazon link here"}</a>
+      </li>`;
+      })
       .join("");
   </script>
 </body>
