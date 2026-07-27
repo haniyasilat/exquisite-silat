@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Exquisite Silat — outfit collages and shoppable looks. Browse casual, fancy, modest, and seasonal outfits." />
+  <title>Exquisite Silat — Outfit Collages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html">Exquisite <em>Silat</em></a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="hub.html?cat=Casual">Casual</a>
+        <a href="hub.html?cat=Fancy">Fancy</a>
+        <a href="hub.html?cat=Modest">Modest</a>
+        <a href="hub.html?cat=Summer">Summer</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero__eyebrow">Outfit collages · shoppable looks</p>
+        <h1>One look. Every piece linked.</h1>
+        <p class="hero__lead">
+          Browse outfit collages by style or season — then shop each piece below the image when you’re ready.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section__label">Style</p>
+        <h2 class="section__title">Pick a vibe</h2>
+        <div class="hub-grid">
+          <a class="hub-card hub-card--accent" href="hub.html?cat=Casual">
+            <span class="hub-card__name">Casual</span>
+            <span class="hub-card__meta">Everyday mixes</span>
+          </a>
+          <a class="hub-card" href="hub.html?cat=Fancy">
+            <span class="hub-card__name">Fancy</span>
+            <span class="hub-card__meta">Dresses &amp; dressier</span>
+          </a>
+          <a class="hub-card" href="hub.html?cat=Modest">
+            <span class="hub-card__name">Modest</span>
+            <span class="hub-card__meta">Covered &amp; elegant</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section__label">Season</p>
+        <h2 class="section__title">Shop by weather</h2>
+        <div class="hub-grid">
+          <a class="hub-card" href="hub.html?cat=Spring">
+            <span class="hub-card__name">Spring</span>
+            <span class="hub-card__meta">Light layers</span>
+          </a>
+          <a class="hub-card hub-card--accent" href="hub.html?cat=Summer">
+            <span class="hub-card__name">Summer</span>
+            <span class="hub-card__meta">Warm-weather looks</span>
+          </a>
+          <a class="hub-card" href="hub.html?cat=Autumn">
+            <span class="hub-card__name">Autumn</span>
+            <span class="hub-card__meta">Cozy transitions</span>
+          </a>
+          <a class="hub-card" href="hub.html?cat=Winter">
+            <span class="hub-card__name">Winter</span>
+            <span class="hub-card__meta">Layered warmth</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="section__label">Latest</p>
+        <h2 class="section__title">Sample looks</h2>
+        <div class="outfit-row" id="latestOutfits"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Exquisite Silat. As an Amazon Associate we earn from qualifying purchases.</p>
+      <p>
+        <a href="about.html">About</a>
+        <a href="disclosure.html">Disclosure</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/outfits.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.getElementById("latestOutfits").innerHTML = OUTFITS.slice(0, 3)
+      .map((o) => outfitCardHTML(o))
+      .join("");
+  </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Look — Exquisite Silat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html">Exquisite <em>Silat</em></a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="hub.html?cat=Casual">Casual</a>
+        <a href="hub.html?cat=Fancy">Fancy</a>
+        <a href="hub.html?cat=Modest">Modest</a>
+        <a href="hub.html?cat=Summer">Summer</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="look-hero">
+      <p class="crumbs"><a href="index.html">Home</a> · <span id="lookCats"></span></p>
+      <h1 id="lookTitle">Outfit</h1>
+      <p id="lookDesc">Add a short outfit description here.</p>
+    </div>
+
+    <div class="look-layout">
+      <div class="collage-frame collage-frame--large" id="lookCollage">
+        <div>
+          <strong>Add your collage here</strong>
+          Top · Bottom · Bags / belts / jewelry · Shoes
+        </div>
+      </div>
+
+      <aside class="shop">
+        <h2>Shop the look</h2>
+        <p>Links for each piece shown in the collage.</p>
+        <ul class="shop-list" id="shopList"></ul>
+        <p class="disclosure">
+          Disclosure: As an Amazon Associate, Exquisite Silat earns from qualifying purchases.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Exquisite Silat</p>
+      <p><a href="disclosure.html">Affiliate Disclosure</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/outfits.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get("id") || "sample-summer-casual-01";
+    const outfit = getOutfitById(id) || OUTFITS[0];
+    document.title = outfit.title + " — Exquisite Silat";
+    document.getElementById("lookTitle").textContent = outfit.title;
+    document.getElementById("lookDesc").textContent = outfit.description;
+    document.getElementById("lookCats").textContent = outfit.categories.join(" · ");
+    document.getElementById("shopList").innerHTML = outfit.pieces
+      .map(
+        (p) => `
+      <li>
+        <div>
+          <span class="shop-slot">${p.slot}</span>
+          <span class="shop-label">${p.label}</span>
+        </div>
+        <a class="shop-link is-placeholder" href="#">${p.amazon_url && p.amazon_url.startsWith("http") ? "View on Amazon →" : "Add your Amazon link here"}</a>
+      </li>`
+      )
+      .join("");
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{
+  "site_name": "Exquisite Silat",
+  "outfits": [
+    {
+      "id": "sample-summer-casual-01",
+      "title": "Easy Summer Casual",
+      "slug": "sample-summer-casual-01",
+      "description": "Add a short outfit description here.",
+      "collage_image": "",
+      "categories": ["Casual", "Summer"],
+      "pieces": [
+        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "sample-fancy-dress-01",
+      "title": "Evening Dress Look",
+      "slug": "sample-fancy-dress-01",
+      "description": "Add a short outfit description here.",
+      "collage_image": "",
+      "categories": ["Fancy", "Autumn"],
+      "pieces": [
+        { "slot": "Dress", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "sample-modest-spring-01",
+      "title": "Modest Spring Layers",
+      "slug": "sample-modest-spring-01",
+      "description": "Add a short outfit description here.",
+      "collage_image": "",
+      "categories": ["Modest", "Spring"],
+      "pieces": [
+        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "sample-winter-cozy-01",
+      "title": "Winter Cozy Layers",
+      "slug": "sample-winter-cozy-01",
+      "description": "Add a short outfit description here.",
+      "collage_image": "",
+      "categories": ["Casual", "Winter"],
+      "pieces": [
+        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "sample-summer-fancy-01",
+      "title": "Sunny Fancy Brunch",
+      "slug": "sample-summer-fancy-01",
+      "description": "Add a short outfit description here.",
+      "collage_image": "",
+      "categories": ["Fancy", "Summer"],
+      "pieces": [
+        { "slot": "Dress", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "sample-modest-autumn-01",
+      "title": "Modest Autumn Neutrals",
+      "slug": "sample-modest-autumn-01",
+      "description": "Add a short outfit description here.",
+      "collage_image": "",
+      "categories": ["Modest", "Autumn"],
+      "pieces": [
+        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
+        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
+      ],
+      "publish": true,
+      "status": "publish"
+    }
+  ]
+}

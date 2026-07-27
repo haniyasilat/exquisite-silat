@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Browse — Exquisite Silat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html">Exquisite <em>Silat</em></a>
+      <nav class="nav__links" id="navLinks" aria-label="Primary">
+        <a href="hub.html?cat=Casual">Casual</a>
+        <a href="hub.html?cat=Fancy">Fancy</a>
+        <a href="hub.html?cat=Modest">Modest</a>
+        <a href="hub.html?cat=Summer">Summer</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container page-head">
+      <p class="hero__eyebrow" id="hubEyebrow">Hub</p>
+      <h1 id="hubTitle">Outfits</h1>
+      <p id="hubLead">A long row of looks for this category. Replace placeholders with your collages and Amazon links later.</p>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="outfit-row" id="hubOutfits"></div>
+        <p id="hubEmpty" class="hidden" style="color: var(--muted)">No placeholder outfits in this hub yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Exquisite Silat</p>
+      <p><a href="index.html">Home</a><a href="disclosure.html">Disclosure</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/js/outfits.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const cat = params.get("cat") || "Casual";
+    document.title = cat + " — Exquisite Silat";
+    document.getElementById("hubEyebrow").textContent = "Browse";
+    document.getElementById("hubTitle").textContent = cat;
+    document.getElementById("hubLead").textContent =
+      "Click any look to see the collage placeholder and shop-the-look slots.";
+
+    const list = outfitsForCategory(cat);
+    const row = document.getElementById("hubOutfits");
+    if (!list.length) {
+      document.getElementById("hubEmpty").classList.remove("hidden");
+    } else {
+      row.innerHTML = list.map((o) => outfitCardHTML(o)).join("");
+    }
+  </script>
+</body>
+</html>
