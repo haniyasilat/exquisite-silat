@@ -1,5 +1,50 @@
 const OUTFITS = [
   {
+    id: "blue-yellow-summer-look-01",
+    title: "Yellow & Navy Summer Coastal",
+    description:
+      "Butter-yellow wrap blouse, navy wide-leg jeans, tortoise sandals and sunnies, brown tote, and seashell gold jewelry.",
+    categories: ["Casual", "Summer"],
+    collage_image: "assets/products/blue-yellow-look/collage.png",
+    pieces: [
+      {
+        slot: "Top",
+        label: "GORGLITTER Yellow Asymmetrical Blouse",
+        amazon_url: "https://link.amazon/B0d72SrXR",
+      },
+      {
+        slot: "Bottom",
+        label: "Glossia Navy High-Rise Wide Jeans",
+        amazon_url: "https://link.amazon/B00JGpsVj",
+      },
+      {
+        slot: "Shoes",
+        label: "Steve Madden Hadyn Tortoise Sandals",
+        amazon_url: "https://link.amazon/B00jfHP4y",
+      },
+      {
+        slot: "Bag",
+        label: "JW PEI Hana Dark Brown Tote",
+        amazon_url: "https://link.amazon/B03vk2Ulu",
+      },
+      {
+        slot: "Glasses",
+        label: "SOJOS Tortoise Polarized Sunglasses",
+        amazon_url: "https://link.amazon/B0i13rp9X",
+      },
+      {
+        slot: "Necklace",
+        label: "Gold Seashell & Starfish Necklace",
+        amazon_url: "https://link.amazon/B0flGicUX",
+      },
+      {
+        slot: "Earrings",
+        label: "Gold Seashell Jewelry Set",
+        amazon_url: "https://link.amazon/B0flGicUX",
+      },
+    ],
+  },
+  {
     id: "burgundy-casual-look-01",
     title: "Burgundy & Black Casual",
     description:
