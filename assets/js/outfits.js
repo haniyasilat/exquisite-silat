@@ -1,5 +1,40 @@
 const OUTFITS = [
   {
+    id: "polka-dot-look-01",
+    title: "Polka Dot & Black Chic",
+    description:
+      "White polka-dot bell sleeve top, black wide-leg trousers, patent pumps, marble pearl clutch, and twisted pearl earrings.",
+    categories: ["Fancy", "Casual"],
+    collage_image: "assets/products/polka-dot-look/collage.png",
+    pieces: [
+      {
+        slot: "Top",
+        label: "Cicy Bell Polka Dot Bell Sleeve Top",
+        amazon_url: "https://link.amazon/B09AW8fJE",
+      },
+      {
+        slot: "Bottom",
+        label: "NIMIN Black Wide-Leg Trousers",
+        amazon_url: "https://link.amazon/B0jdFdrDa",
+      },
+      {
+        slot: "Shoes",
+        label: "Calvin Klein Gloria Patent Pump",
+        amazon_url: "https://link.amazon/B0gfFXWdx",
+      },
+      {
+        slot: "Bag",
+        label: "Marble Pearl Acrylic Clutch",
+        amazon_url: "https://link.amazon/B07D0E0Qs",
+      },
+      {
+        slot: "Earrings",
+        label: "Gold Twisted Pearl Drop Earrings",
+        amazon_url: "https://link.amazon/B02T3U6iL",
+      },
+    ],
+  },
+  {
     id: "red-floral-coquette-01",
     title: "Denim & Cherry Coquette",
     description:
