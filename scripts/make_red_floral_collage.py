@@ -146,22 +146,22 @@ def main() -> None:
   canvas = build_background()
   # Use hibiscus linen bg only — do not layer left flower strip (double-background).
 
-  shirt_img = darken_shirt(scale(raw["shirt"], 500, 540))
-  skirt_img = scale(raw["skirt"], 500, 960)
-  bag_img = scale(raw["bag"], 270, 270)
-  shoes_img = scale(raw["shoes"], 320, 230)
-  earrings_img = scale(raw["earrings"], 150, 150)
-  perfume_img = scale(raw["perfume"], 115, 175)
+  shirt_img = darken_shirt(scale(raw["shirt"], 470, 520))
+  skirt_img = scale(raw["skirt"], 560, 1020)
+  bag_img = scale(raw["bag"], 250, 250)
+  shoes_img = scale(raw["shoes"], 300, 210)
+  earrings_img = scale(raw["earrings"], 140, 140)
+  perfume_img = scale(raw["perfume"], 105, 165)
 
-  # Left accessories column — balanced scale
-  paste_center(canvas, soft_shadow(earrings_img), 330, 250)
-  paste_center(canvas, soft_shadow(perfume_img), 330, 430)
-  paste_center(canvas, soft_shadow(bag_img), 340, 680)
-  paste_center(canvas, soft_shadow(shoes_img), 340, 1020)
+  # Left accessories — slightly smaller so outfit reads as the hero
+  paste_center(canvas, soft_shadow(earrings_img), 300, 240)
+  paste_center(canvas, soft_shadow(perfume_img), 300, 410)
+  paste_center(canvas, soft_shadow(bag_img), 310, 650)
+  paste_center(canvas, soft_shadow(shoes_img), 310, 980)
 
-  # Right outfit column — shirt + bigger skirt, pulled toward center
-  paste_center(canvas, soft_shadow(shirt_img), 720, 330)
-  paste_center(canvas, soft_shadow(skirt_img), 720, 940)
+  # Outfit column — bigger skirt, tighter waist connection
+  paste_center(canvas, soft_shadow(shirt_img), 700, 300)
+  paste_center(canvas, soft_shadow(skirt_img), 700, 900)
 
   add_bow(canvas)
 
