@@ -5,7 +5,7 @@ const OUTFITS = [
     description:
       "Dark brown faux-leather bomber jacket, white ribbed boat-neck top, dark wide-leg jeans, brown leather belt, gold teardrop earrings, structured brown handbag, and square-toe ankle boots.",
     categories: ["Casual", "Autumn"],
-    collage_image: "assets/products/brown-leather-look/collage.png",
+    collage_image: "assets/products/brown-leather-look/collage.png?v=2",
     pieces: [
       { slot: "Earrings", label: "Gold Teardrop Earrings", amazon_url: "https://link.amazon/B06pH01dF" },
       { slot: "Belt", label: "Brown Leather Belt", amazon_url: "https://link.amazon/B0gD3bPRB" },
