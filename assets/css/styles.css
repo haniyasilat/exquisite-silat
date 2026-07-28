@@ -302,8 +302,17 @@ a:hover {
 .collage-frame--has-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+}
+
+.collage-frame--large.collage-frame--has-image {
+  aspect-ratio: auto;
+  min-height: 0;
+}
+
+.collage-frame--large.collage-frame--has-image img {
+  height: auto;
 }
 
 .collage-frame strong {
