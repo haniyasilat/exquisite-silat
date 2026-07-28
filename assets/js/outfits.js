@@ -1,5 +1,22 @@
 const OUTFITS = [
   {
+    id: "brown-leather-look-01",
+    title: "Brown Leather & Denim Chic",
+    description:
+      "Dark brown faux-leather bomber jacket, white ribbed boat-neck top, dark wide-leg jeans, brown leather belt, gold teardrop earrings, structured brown handbag, and square-toe ankle boots.",
+    categories: ["Casual", "Autumn"],
+    collage_image: "assets/products/brown-leather-look/collage.png",
+    pieces: [
+      { slot: "Earrings", label: "Gold Teardrop Earrings", amazon_url: "https://link.amazon/B06pH01dF" },
+      { slot: "Belt", label: "Brown Leather Belt", amazon_url: "https://link.amazon/B0gD3bPRB" },
+      { slot: "Jeans", label: "Dark Wide-Leg Jeans", amazon_url: "https://link.amazon/B0ia1Qpfq" },
+      { slot: "Top", label: "White Ribbed Boat-Neck Top", amazon_url: "https://link.amazon/B07zv37VP" },
+      { slot: "Jacket", label: "Dark Brown Faux-Leather Bomber Jacket", amazon_url: "https://link.amazon/B07hqp4v9" },
+      { slot: "Shoes", label: "Square-Toe Ankle Boots", amazon_url: "https://link.amazon/B03VLdF5a" },
+      { slot: "Bag", label: "Structured Brown Handbag", amazon_url: "https://link.amazon/B0jlQuyKO" },
+    ],
+  },
+  {
     id: "plaid-autumn-look-01",
     title: "Plaid & Burgundy Autumn",
     description:
