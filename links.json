@@ -2,6 +2,26 @@
   "site_name": "Exquisite Silat",
   "outfits": [
     {
+      "id": "plaid-autumn-look-01",
+      "title": "Plaid & Burgundy Autumn",
+      "slug": "plaid-autumn-look-01",
+      "description": "Burgundy ruched top, plaid belted maxi skirt, cream chunky cardigan, gold heart locket necklace, hoop earrings, retro sunglasses, black shoulder bag, and burgundy Converse high-tops.",
+      "collage_image": "assets/products/plaid-autumn-look/collage.png",
+      "categories": ["Casual", "Autumn", "Modest"],
+      "pieces": [
+        { "slot": "Top", "label": "CIDER Burgundy Boat Neck Ruched Top", "amazon_url": "https://link.amazon/B0bQwE0Wp" },
+        { "slot": "Skirt", "label": "GORGLITTER Plaid Belted Maxi Skirt", "amazon_url": "https://link.amazon/B0bk2glQ1" },
+        { "slot": "Cardigan", "label": "Arssm Chunky Cropped Cardigan", "amazon_url": "https://link.amazon/B01ejqyHj" },
+        { "slot": "Necklace", "label": "Heart Sunflower Locket Necklace", "amazon_url": "https://link.amazon/B01I95woS" },
+        { "slot": "Earrings", "label": "Gold Chunky Hoop Earrings", "amazon_url": "https://link.amazon/B0h2yihG9" },
+        { "slot": "Sunglasses", "label": "KENBO Retro Y2K Sunglasses", "amazon_url": "https://link.amazon/B03xq88cj" },
+        { "slot": "Bag", "label": "Black PU Leather Shoulder Bag", "amazon_url": "https://link.amazon/B036SFQ5I" },
+        { "slot": "Shoes", "label": "Converse Chuck Taylor Hi Red", "amazon_url": "https://link.amazon/B05eIJuvq" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
       "id": "polka-dot-look-01",
       "title": "Polka Dot & Black Chic",
       "slug": "polka-dot-look-01",
