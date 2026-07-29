@@ -1,11 +1,11 @@
 const OUTFITS = [
   {
     id: "navy-cream-lace-look-01",
-    title: "Navy Lace & Cream Elegance",
+    title: "Cream Lace & Denim Elegance",
     description:
       "Cream satin lace-trim blouse, light-wash wide-leg jeans, cream lace slingback heels, gold Casio watch, monogram crescent bag, sculptural gold earrings, and two gold rings.",
     categories: ["Fancy", "Casual"],
-    collage_image: "assets/products/navy-cream-lace-look/collage.png",
+    collage_image: "assets/products/navy-cream-lace-look/collage.png?v=3",
     pieces: [
       { slot: "Shirt", label: "Ivory Satin Blouse with Lace Trim", amazon_url: "https://link.amazon/B06TdBEC9" },
       { slot: "Jeans", label: "High-Rise Wide-Leg Denim Jeans", amazon_url: "https://link.amazon/B0flegnpy" },
