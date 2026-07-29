@@ -2,6 +2,25 @@
   "site_name": "Exquisite Silat",
   "outfits": [
     {
+      "id": "blush-pearl-look-01",
+      "title": "Blush Pink & Pearl Elegance",
+      "slug": "blush-pearl-look-01",
+      "description": "Dusty rose cropped cardigan, white ribbed boat-neck top, white tiered maxi skirt, pearl swirl stud earrings, iridescent pearl clutch, Delina perfume, and silver block-heel sandals.",
+      "collage_image": "assets/products/blush-pearl-look/collage.png",
+      "categories": ["Fancy", "Spring", "Summer"],
+      "pieces": [
+        { "slot": "Cardigan", "label": "Dusty Rose Cropped Knit Cardigan", "amazon_url": "https://link.amazon/B0eTIlIZ3" },
+        { "slot": "Top", "label": "White Ribbed Boat-Neck Top", "amazon_url": "https://link.amazon/B05dzB2tX" },
+        { "slot": "Skirt", "label": "White Tiered Maxi Skirt", "amazon_url": "https://link.amazon/B05vXeHy2" },
+        { "slot": "Earrings", "label": "Pearl & Gold Swirl Stud Earrings", "amazon_url": "https://link.amazon/B05pJbaR5" },
+        { "slot": "Bag", "label": "Iridescent Pearl Clutch", "amazon_url": "https://link.amazon/B01b5DU1u" },
+        { "slot": "Perfume", "label": "Parfums de Marly Delina", "amazon_url": "https://link.amazon/B0cQRsonl" },
+        { "slot": "Shoes", "label": "Silver Block-Heel Sandals", "amazon_url": "https://link.amazon/B0ivktgsn" }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
       "id": "navy-cream-lace-look-01",
       "title": "Cream Lace & Denim Elegance",
       "slug": "navy-cream-lace-look-01",
