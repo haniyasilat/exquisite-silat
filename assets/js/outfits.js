@@ -1,5 +1,23 @@
 const OUTFITS = [
   {
+    id: "navy-cream-lace-look-01",
+    title: "Navy Lace & Cream Elegance",
+    description:
+      "Cream satin lace-trim blouse, light-wash wide-leg jeans, cream lace slingback heels, gold Casio watch, monogram crescent bag, sculptural gold earrings, and two gold rings.",
+    categories: ["Fancy", "Casual"],
+    collage_image: "assets/products/navy-cream-lace-look/collage.png",
+    pieces: [
+      { slot: "Shirt", label: "Cream Satin Lace-Trim Blouse", amazon_url: "https://link.amazon/B06TdBEC9" },
+      { slot: "Jeans", label: "Light-Wash Wide-Leg Jeans", amazon_url: "https://link.amazon/B0flegnpy" },
+      { slot: "Heels", label: "Cream Lace Slingback Kitten Heels", amazon_url: "https://link.amazon/B0ftkt2K0" },
+      { slot: "Watch", label: "Gold Casio Roman Numeral Watch", amazon_url: "https://link.amazon/B06zbNtAC" },
+      { slot: "Bag", label: "Cream Monogram Crescent Bag", amazon_url: "https://link.amazon/B09bdGyS0" },
+      { slot: "Earrings", label: "Sculptural Gold Earrings", amazon_url: "https://link.amazon/B04c6iMF4" },
+      { slot: "Ring", label: "Gold Swirl Knot Ring", amazon_url: "https://link.amazon/B09bdGyS0" },
+      { slot: "Ring", label: "Chunky Gold Band Ring", amazon_url: "https://link.amazon/B0diMh7cS" },
+    ],
+  },
+  {
     id: "brown-leather-look-01",
     title: "Brown Leather & Denim Chic",
     description:
