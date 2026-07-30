@@ -1,5 +1,21 @@
 const OUTFITS = [
   {
+    id: "navy-gingham-look-01",
+    title: "Navy Stripe & Gingham Casual",
+    description:
+      "Navy and cream striped knit sweater, white wide-leg jeans, light blue crescent shoulder bag, turquoise dial silver watch, navy polka-dot phone case, and white New Balance sneakers.",
+    categories: ["Casual", "Summer"],
+    collage_image: "assets/products/navy-gingham-look/collage.png",
+    pieces: [
+      { slot: "Sweater", label: "Navy & Cream Striped Knit Sweater", amazon_url: "https://link.amazon/B03PPwYwt" },
+      { slot: "Jeans", label: "High-Rise White Wide-Leg Jeans", amazon_url: "https://link.amazon/B01Fu3dFj" },
+      { slot: "Bag", label: "Light Blue Crescent Shoulder Bag", amazon_url: "https://link.amazon/B04DsHUts" },
+      { slot: "Watch", label: "Silver Link Watch with Turquoise Dial", amazon_url: "https://link.amazon/B02Wszqib" },
+      { slot: "Phone Case", label: "Navy Polka-Dot Phone Case", amazon_url: "https://link.amazon/B0gt0tzFN" },
+      { slot: "Shoes", label: "White & Navy New Balance Sneakers", amazon_url: "https://link.amazon/B0czdKvRi" },
+    ],
+  },
+  {
     id: "blush-pearl-look-01",
     title: "Blush Pink & Pearl Elegance",
     description:
