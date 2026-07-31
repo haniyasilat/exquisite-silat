@@ -1,5 +1,23 @@
 const OUTFITS = [
   {
+    id: "teal-elevate-look-01",
+    title: "Elevate the Basics with Teal",
+    description:
+      "Start with a white ribbed top and white maxi skirt, then layer in teal — satin shirt, turquoise tote, gold jewellery, braided belt, and brown kitten heels for Summer 2026.",
+    categories: ["Casual", "Summer"],
+    collage_image: "assets/products/teal-elevate-look/collage.png",
+    pieces: [
+      { slot: "Top", label: "White Ribbed Boat-Neck Top", amazon_url: "https://link.amazon/B0jlViWJq" },
+      { slot: "Skirt", label: "White Boho Elastic Waist Maxi Skirt", amazon_url: "https://link.amazon/B0h2sv9CT" },
+      { slot: "Shirt", label: "Teal Satin Button-Down Shirt", amazon_url: "https://link.amazon/B07tPuDs1" },
+      { slot: "Bag", label: "Turquoise Shoulder Tote Bag", amazon_url: "https://link.amazon/B0j4P8T2Q" },
+      { slot: "Belt", label: "Brown Braided Leather Belt", amazon_url: "https://link.amazon/B0gvpdUeN" },
+      { slot: "Earrings", label: "Chunky Gold Knot Earrings", amazon_url: "https://link.amazon/B0b8nLrrj" },
+      { slot: "Bangle", label: "Wide Gold Bangle Bracelet Set", amazon_url: "https://link.amazon/B0ejFsCDh" },
+      { slot: "Heels", label: "Brown Strappy Kitten Heel Sandals", amazon_url: "https://link.amazon/B0dW22S1Q" },
+    ],
+  },
+  {
     id: "navy-gingham-look-01",
     title: "Navy Stripe & Gingham Casual",
     description:
