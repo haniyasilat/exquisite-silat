@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Legacy query-string pages — canonical versions live at /looks/ and /<category>/
+Disallow: /look.html
+Disallow: /hub.html
+
+Sitemap: https://exquisite.silat.ae/sitemap.xml

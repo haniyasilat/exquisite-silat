@@ -272,7 +272,7 @@ a:hover {
 }
 
 .collage-frame {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 2 / 3;
   background:
     linear-gradient(135deg, rgba(122, 31, 43, 0.06), transparent 40%),
     repeating-linear-gradient(
@@ -296,17 +296,22 @@ a:hover {
   padding: 0;
   border-style: solid;
   border-color: rgba(122, 31, 43, 0.15);
-  aspect-ratio: auto;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .collage-frame--has-image img {
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  transition: transform 0.45s ease;
 }
 
+.outfit-card__link:hover .collage-frame--has-image img {
+  transform: scale(1.03);
+}
+
+/* The look page shows the collage whole — no crop. */
 .collage-frame--large.collage-frame--has-image {
   aspect-ratio: auto;
   min-height: 0;
@@ -314,6 +319,8 @@ a:hover {
 
 .collage-frame--large.collage-frame--has-image img {
   height: auto;
+  object-fit: contain;
+  transform: none;
 }
 
 .collage-frame strong {
@@ -514,4 +521,324 @@ a:hover {
 
 .hidden {
   display: none !important;
+}
+
+/* ==========================================================================
+   Split hero — copy on the left, collages carrying the visual weight
+   ========================================================================== */
+
+.hero--split {
+  padding: 3.5rem 0 4rem;
+  overflow: hidden;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero__copy h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.75rem 0 0;
+}
+
+.hero__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.hero__tile {
+  display: block;
+  border: 1px solid rgba(122, 31, 43, 0.15);
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow: 0 14px 34px rgba(42, 36, 34, 0.09);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Stagger the outer two so the row reads as an arrangement, not a strip. */
+.hero__tile:nth-child(1) {
+  margin-top: 2.25rem;
+}
+
+.hero__tile:nth-child(3) {
+  margin-top: 1.25rem;
+}
+
+.hero__tile img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(42, 36, 34, 0.14);
+}
+
+@media (max-width: 900px) {
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .hero__tile:nth-child(1),
+  .hero__tile:nth-child(3) {
+    margin-top: 0;
+  }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  background: var(--ruby);
+  color: #fff8f6;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid var(--ruby);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--ruby-dark);
+  border-color: var(--ruby-dark);
+  color: #fff8f6;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ruby);
+}
+
+.btn--ghost:hover {
+  background: var(--ruby);
+  color: #fff8f6;
+}
+
+.btn--pin {
+  display: block;
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Category tiles backed by a representative collage
+   ========================================================================== */
+
+.hub-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.hub-card--has-image {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 4 / 5;
+  min-height: 0;
+  padding: 1.25rem;
+  border-color: rgba(122, 31, 43, 0.2);
+  overflow: hidden;
+}
+
+.hub-grid--3 .hub-card--has-image {
+  aspect-ratio: 1 / 1;
+}
+
+.hub-card--has-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: var(--tile-image);
+  background-size: cover;
+  background-position: center 28%;
+  transition: transform 0.5s ease;
+}
+
+/* Scrim: keeps the label readable over any collage. */
+.hub-card--has-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to top,
+    rgba(30, 12, 16, 0.82) 0%,
+    rgba(30, 12, 16, 0.45) 38%,
+    rgba(30, 12, 16, 0.12) 70%,
+    rgba(30, 12, 16, 0.05) 100%
+  );
+  transition: opacity 0.3s ease;
+}
+
+.hub-card--has-image:hover::before {
+  transform: scale(1.05);
+}
+
+.hub-card--has-image .hub-card__name,
+.hub-card--has-image .hub-card__meta {
+  color: var(--cream);
+}
+
+.hub-card--has-image .hub-card__meta {
+  opacity: 0.85;
+}
+
+.hub-card__body {
+  display: block;
+  margin-top: auto;
+}
+
+/* The spans used to stack as flex children of .hub-card; inside the
+   body wrapper they need to be blocks to keep stacking. */
+.hub-card__name,
+.hub-card__meta {
+  display: block;
+}
+
+.hub-card--has-image:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(122, 31, 43, 0.18);
+}
+
+@media (max-width: 900px) {
+  .hub-grid--3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .hub-grid,
+  .hub-grid--3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==========================================================================
+   Outfit card additions
+   ========================================================================== */
+
+.outfit-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.outfit-card__link:hover .outfit-card__title {
+  color: var(--ruby);
+}
+
+.outfit-card__tags {
+  margin: 0.5rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.outfit-card__tags a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-right: 0.6rem;
+}
+
+.outfit-card__tags a:hover {
+  color: var(--ruby);
+}
+
+.collage-frame__empty strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--ruby);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.empty-note {
+  margin: 0 0 2rem;
+  color: var(--muted);
+}
+
+/* ==========================================================================
+   Look page + footer detail
+   ========================================================================== */
+
+.page-head__lead {
+  font-size: 1.05rem;
+}
+
+.shop__intro {
+  margin-bottom: 0.75rem !important;
+}
+
+.disclosure--top {
+  margin: 0 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.78rem;
+}
+
+.prose {
+  padding: 3rem 0 4rem;
+  max-width: 42rem;
+}
+
+.prose h1 {
+  margin: 0.4rem 0 1.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.footer__cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.25rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
+  .hub-card--has-image:hover::before,
+  .outfit-card__link:hover .collage-frame--has-image img,
+  .hero__tile:hover,
+  .hub-card--has-image:hover {
+    transform: none;
+  }
 }
