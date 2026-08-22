@@ -6,6 +6,7 @@
       "title": "Elevate the Basics with Teal",
       "slug": "teal-elevate-look-01",
       "description": "Start with a white ribbed top and white maxi skirt, then layer in teal — satin shirt, turquoise tote, gold jewellery, braided belt, and brown kitten heels for Summer 2026.",
+      "styling_note": "This is a one-basic-outfit-many-ways look: start with the white top and skirt, then layer in the teal shirt and turquoise tote to turn a plain base into a color-blocked summer outfit. The braided belt and gold jewelry keep the palette grounded, and the kitten heels dress it up just enough for a summer dinner out.",
       "collage_image": "assets/products/teal-elevate-look/collage.png?v=3",
       "categories": ["Casual", "Summer"],
       "pieces": [
@@ -27,6 +28,7 @@
       "title": "Navy Stripe & Gingham Casual",
       "slug": "navy-gingham-look-01",
       "description": "Navy and cream striped knit sweater, white wide-leg jeans, light blue crescent shoulder bag, turquoise dial silver watch, navy polka-dot phone case, and white New Balance sneakers.",
+      "styling_note": "Stripes and wide-leg denim keep this look easy without trying too hard. The light blue bag and turquoise watch dial pick up the navy in the sweater, and white sneakers keep the whole outfit feeling like an effortless weekend errand run rather than a styled photo.",
       "collage_image": "assets/products/navy-gingham-look/collage.png",
       "categories": ["Casual", "Summer"],
       "pieces": [
@@ -45,6 +47,7 @@
       "title": "Blush Pink & Pearl Elegance",
       "slug": "blush-pearl-look-01",
       "description": "Dusty rose cropped cardigan, white ribbed boat-neck top, white tiered maxi skirt, pearl swirl stud earrings, iridescent pearl clutch, Delina perfume, and silver block-heel sandals.",
+      "styling_note": "Soft pink and pearl accents make this a go-to for daytime events — bridal showers, brunches, garden parties. The tiered maxi skirt adds movement without tipping into formal, and the pearl clutch and earrings tie the whole look together.",
       "collage_image": "assets/products/blush-pearl-look/collage.png",
       "categories": ["Fancy", "Spring", "Summer"],
       "pieces": [
@@ -64,6 +67,7 @@
       "title": "Cream Lace & Denim Elegance",
       "slug": "navy-cream-lace-look-01",
       "description": "Cream satin lace-trim blouse, light-wash wide-leg jeans, cream lace slingback heels, gold Casio watch, monogram crescent bag, sculptural gold earrings, and two gold rings.",
+      "styling_note": "Lace detailing on the blouse and heels elevates a simple wide-leg jean into something dressier, while the gold watch and stacked rings add polish without overdoing it. Good for a daytime-to-evening transition — swap in flats earlier in the day, then the heels once the occasion calls for it.",
       "collage_image": "assets/products/navy-cream-lace-look/collage.png?v=3",
       "categories": ["Fancy", "Casual"],
       "pieces": [
@@ -84,6 +88,7 @@
       "title": "Brown Leather & Denim Chic",
       "slug": "brown-leather-look-01",
       "description": "Dark brown faux-leather bomber jacket, white ribbed boat-neck top, dark wide-leg jeans, brown leather belt, gold teardrop earrings, structured brown handbag, and square-toe ankle boots.",
+      "styling_note": "The faux-leather bomber is the anchor piece here — it turns a plain white top and dark denim into a lived-in, transitional-weather outfit. Ankle boots and a structured brown bag keep the palette tonal, so it's easy to repeat with pieces you likely already own.",
       "collage_image": "assets/products/brown-leather-look/collage.png?v=3",
       "categories": ["Casual", "Autumn"],
       "pieces": [
@@ -103,6 +108,7 @@
       "title": "Plaid & Burgundy Autumn",
       "slug": "plaid-autumn-look-01",
       "description": "Burgundy ruched top, plaid belted maxi skirt, cream chunky cardigan, gold heart locket necklace, hoop earrings, retro sunglasses, black shoulder bag, and burgundy Converse high-tops.",
+      "styling_note": "Plaid and burgundy are a natural autumn pairing, and the maxi skirt length keeps the whole look modest-friendly. The cream cardigan softens the darker palette, and burgundy Converse make it wearable for an actual day out rather than just a photo.",
       "collage_image": "assets/products/plaid-autumn-look/collage.png",
       "categories": ["Casual", "Autumn", "Modest"],
       "pieces": [
@@ -123,6 +129,7 @@
       "title": "Polka Dot & Black Chic",
       "slug": "polka-dot-look-01",
       "description": "White polka-dot bell sleeve top, black wide-leg trousers, patent pumps, marble pearl clutch, and twisted pearl earrings.",
+      "styling_note": "Black trousers keep this outfit grounded so the polka-dot top can be the statement piece. Patent pumps and a marble clutch push it toward smart-casual — office-appropriate, but polished enough for drinks straight after work.",
       "collage_image": "assets/products/polka-dot-look/collage.png",
       "categories": ["Fancy", "Casual"],
       "pieces": [
@@ -140,6 +147,7 @@
       "title": "Denim & Cherry Coquette",
       "slug": "red-floral-coquette-01",
       "description": "Darker denim bow blouse, white tiered maxi skirt, cherry red Mary Janes and bow bag, gold earrings, and Daisy perfume.",
+      "styling_note": "The cherry red Mary Janes and bow bag give this outfit its coquette feel, while the denim blouse keeps it from tipping into costume territory. Pair with the white tiered skirt for a summer look that reads playful rather than overly sweet.",
       "collage_image": "assets/products/red-floral-look/collage.png",
       "categories": ["Fancy", "Summer"],
       "pieces": [
@@ -158,6 +166,7 @@
       "title": "Yellow & Navy Summer Coastal",
       "slug": "blue-yellow-summer-look-01",
       "description": "Butter-yellow wrap blouse, navy wide-leg jeans, tortoise sandals and sunnies, brown tote, and seashell gold jewelry.",
+      "styling_note": "Butter yellow and navy is a classic coastal pairing, and the seashell jewelry and tortoise sandals lean into the theme without feeling costume-y. An easy one to recreate for a beach day or a warm-weather trip.",
       "collage_image": "assets/products/blue-yellow-look/collage.png",
       "categories": ["Casual", "Summer"],
       "pieces": [
@@ -177,6 +186,7 @@
       "title": "Burgundy & Black Casual",
       "slug": "burgundy-casual-look-01",
       "description": "A polished everyday look — asymmetrical burgundy top, wide-leg black jeans, croc bag, and burgundy slingbacks with gold accents.",
+      "styling_note": "An asymmetrical hem on the top adds interest to an otherwise simple black-and-burgundy pairing. The croc-effect bag and gold watch bring in texture and warmth, making this an easy, repeatable outfit for everyday autumn wear.",
       "collage_image": "assets/products/burgundy-look/collage.png",
       "categories": ["Casual", "Autumn"],
       "pieces": [

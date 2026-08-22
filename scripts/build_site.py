@@ -46,6 +46,24 @@ CATEGORY_COPY = {
       "Easy, repeatable casual outfits — the kind you can actually put on a Tuesday. "
       "Every collage below breaks down into individual pieces you can shop."
     ),
+    "faq": [
+      (
+        "What's a good casual outfit idea for everyday wear?",
+        "Start with a neutral base — jeans or a maxi skirt with a fitted top — then layer "
+        "in one statement piece like a bold cardigan or jacket. Keep jewelry simple and let "
+        "one accent color do the work.",
+      ),
+      (
+        "How do I make a casual outfit look put-together?",
+        "Stick to two or three colors, add one structured piece — a jacket, a belt, or a bag "
+        "with clean lines — and repeat a metal tone across your jewelry and hardware.",
+      ),
+      (
+        "What shoes work best with casual looks?",
+        "Sneakers keep it relaxed; kitten heels or ankle boots dress it up slightly without "
+        "losing the everyday feel.",
+      ),
+    ],
   },
   "Fancy": {
     "blurb": "Dresses & dressier",
@@ -58,6 +76,23 @@ CATEGORY_COPY = {
       "Occasion dressing without the guesswork — evening looks, brunch outfits and "
       "wedding-guest options, each one built piece by piece."
     ),
+    "faq": [
+      (
+        "What's a good outfit idea for a dressy occasion?",
+        "Lean on one elevated fabric — satin, lace, or a tiered maxi skirt — paired with "
+        "polished accessories like pearl jewelry or a structured clutch.",
+      ),
+      (
+        "How do I dress up a casual piece for an evening look?",
+        "Swap sneakers for heels, trade a tote for a clutch, and add one metallic or pearl "
+        "accent to lift the whole outfit.",
+      ),
+      (
+        "What accessories complete a fancy outfit?",
+        "A clutch, delicate jewelry, and a signature perfume finish an occasion look without "
+        "overpowering it.",
+      ),
+    ],
   },
   "Modest": {
     "blurb": "Covered & elegant",
@@ -70,6 +105,23 @@ CATEGORY_COPY = {
       "Modest outfits built around longer hems, fuller sleeves and thoughtful layering — "
       "elegant first, covered by design."
     ),
+    "faq": [
+      (
+        "What makes an outfit modest but still stylish?",
+        "Longer hemlines, fuller sleeves, and layering — a cardigan over a top, or a maxi "
+        "skirt instead of a mini — while still following current color and silhouette trends.",
+      ),
+      (
+        "How do I layer a modest outfit without looking bulky?",
+        "Choose one fitted layer and one looser layer, and keep the palette tonal so the "
+        "silhouette reads as intentional, not accidental.",
+      ),
+      (
+        "What are good modest outfit pieces to start with?",
+        "A maxi skirt, a long cardigan, and a boat-neck top are an easy modest base you can "
+        "restyle with different accessories each season.",
+      ),
+    ],
   },
   "Spring": {
     "blurb": "Light layers",
@@ -79,6 +131,18 @@ CATEGORY_COPY = {
       "for transitional weather. Every piece in the collage is linked."
     ),
     "intro": "Light layers for the in-between weather, when one jacket decides the whole outfit.",
+    "faq": [
+      (
+        "What's a good spring outfit idea?",
+        "Light layers you can add or remove — a cropped cardigan over a fitted top — in "
+        "soft colors like blush, cream, or pastel accents.",
+      ),
+      (
+        "How do I transition my wardrobe into spring?",
+        "Swap heavy knits for lighter cardigans, bring in pastel accessories, and add one "
+        "warm-weather shoe like a block heel or a flat.",
+      ),
+    ],
   },
   "Summer": {
     "blurb": "Warm-weather looks",
@@ -88,6 +152,18 @@ CATEGORY_COPY = {
       "layers styled into complete looks you can shop piece by piece."
     ),
     "intro": "Warm-weather outfits that survive real heat — breathable fabrics, easy shapes, no fuss.",
+    "faq": [
+      (
+        "What's a good summer outfit for hot weather?",
+        "Breathable fabrics like linen or satin, a maxi skirt or wide-leg jeans, and sandals "
+        "— keep layers minimal and let one accessory, like a tote or sunglasses, do the styling.",
+      ),
+      (
+        "What shoes work best for summer outfits?",
+        "Sandals, espadrilles, or kitten heels — anything open and breathable that still "
+        "pairs with a dressier top if the day calls for it.",
+      ),
+    ],
   },
   "Autumn": {
     "blurb": "Cozy transitions",
@@ -97,6 +173,18 @@ CATEGORY_COPY = {
       "complete fall looks. Shop each piece directly from the collage."
     ),
     "intro": "Layering season — plaid, knitwear and boots, in the warmer end of the palette.",
+    "faq": [
+      (
+        "What's a good autumn outfit idea?",
+        "Knitwear, plaid, and warm neutrals — layer a cardigan or bomber jacket over a "
+        "simple top, and bring in boots and a structured bag.",
+      ),
+      (
+        "How do I layer for autumn without overheating?",
+        "Choose one heavier piece — a jacket or a chunky cardigan — and keep everything "
+        "underneath lightweight, so you can remove a layer indoors.",
+      ),
+    ],
   },
   "Winter": {
     "blurb": "Layered warmth",
@@ -106,6 +194,18 @@ CATEGORY_COPY = {
       "complete looks with every piece linked."
     ),
     "intro": "Cold-weather outfits that layer properly, so warmth isn't the thing you compromise on.",
+    "faq": [
+      (
+        "What's a good winter outfit that stays warm?",
+        "Proper layering — a base top, a mid layer like a sweater, and an outer coat — plus "
+        "boots and accessories in rich, warm tones.",
+      ),
+      (
+        "How do I keep a winter outfit from looking bulky?",
+        "Stick to one silhouette per layer, fitted under looser or vice versa, and keep the "
+        "palette tonal so the layers read as one look rather than several.",
+      ),
+    ],
   },
 }
 
@@ -465,6 +565,29 @@ def build_category(cat: str, outfits: list[dict]) -> str:
     else '<p class="empty-note">New looks are being added to this hub — check back soon.</p>'
   )
 
+  faq = copy.get("faq", [])
+  faq_items = "\n".join(
+    f"""          <details class="faq-item">
+            <summary>{esc(q)}</summary>
+            <p>{esc(a)}</p>
+          </details>"""
+    for q, a in faq
+  )
+  faq_block = (
+    f"""
+    <section class="section">
+      <div class="container container--narrow">
+        <p class="section__label">FAQ</p>
+        <h2 class="section__title">{esc(cat)} outfit questions</h2>
+        <div class="faq-list">
+{faq_items}
+        </div>
+      </div>
+    </section>"""
+    if faq
+    else ""
+  )
+
   body = f"""  <main>
     <div class="container page-head">
       <nav class="crumbs" aria-label="Breadcrumb">
@@ -482,6 +605,7 @@ def build_category(cat: str, outfits: list[dict]) -> str:
         </div>
       </div>
     </section>
+{faq_block}
   </main>"""
 
   data = [
@@ -521,6 +645,22 @@ def build_category(cat: str, outfits: list[dict]) -> str:
       ],
     },
   ]
+
+  if faq:
+    data.append(
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": q,
+            "acceptedAnswer": {"@type": "Answer", "text": a},
+          }
+          for q, a in faq
+        ],
+      }
+    )
 
   return render_shell(
     title=copy["title"],
@@ -573,6 +713,17 @@ def build_look(outfit: dict, related: list[dict]) -> str:
     else ""
   )
 
+  styling_note = outfit.get("styling_note", "")
+  styling_block = (
+    f"""
+      <div class="look-styling">
+        <p class="section__label">Styling notes</p>
+        <p>{esc(styling_note)}</p>
+      </div>"""
+    if styling_note
+    else ""
+  )
+
   body = f"""  <main class="container">
     <div class="look-hero">
       <nav class="crumbs" aria-label="Breadcrumb">
@@ -595,7 +746,7 @@ def build_look(outfit: dict, related: list[dict]) -> str:
 {shop_list(outfit)}
         </ul>{pin_btn}
       </aside>
-    </div>
+    </div>{styling_block}
   </main>
 {related_block}"""
 
