@@ -3,6 +3,150 @@
 
 const OUTFITS = [
   {
+    "id": "cozy-autumn-coffee-look-01",
+    "slug": "cozy-autumn-coffee-run",
+    "title": "Cozy Autumn Coffee Run",
+    "description": "Chunky oatmeal cable-knit sweater paired with tailored cream wide-leg trousers, chocolate suede tote, chestnut platform clogs, and vintage gold accents.",
+    "categories": [
+      "Casual",
+      "Autumn"
+    ],
+    "collage_image": "assets/products/cozy-autumn-coffee-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Sweater",
+        "label": "Oversized Cable Knit Crewneck Sweater",
+        "amazon_url": "https://www.amazon.com/dp/B0CKZ5P3W4?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Trousers",
+        "label": "High-Waisted Pleated Wide-Leg Trousers",
+        "amazon_url": "https://www.amazon.com/dp/B0B68X19F2?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Bag",
+        "label": "Slouchy Suede Shoulder Tote Bag",
+        "amazon_url": "https://www.amazon.com/dp/B0CBR8V3K9?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Shoes",
+        "label": "Chestnut Suede Platform Clogs",
+        "amazon_url": "https://www.amazon.com/dp/B0C8V2YMQ6?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Watch",
+        "label": "Vintage Gold Rectangular Leather Watch",
+        "amazon_url": "https://www.amazon.com/dp/B09VPH7K9S?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Earrings",
+        "label": "Chunky Twisted Gold Hoop Earrings",
+        "amazon_url": "https://www.amazon.com/dp/B09CY7K2G3?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Sunglasses",
+        "label": "Retro Tortoiseshell Oval Sunglasses",
+        "amazon_url": "https://www.amazon.com/dp/B07R3GLL5D?tag=exquisitesila-21"
+      }
+    ]
+  },
+  {
+    "id": "quiet-luxury-summer-look-01",
+    "slug": "quiet-luxury-summer-dinner",
+    "title": "Quiet Luxury Summer Dinner",
+    "description": "Tailored black linen vest and fluid champagne satin maxi slip skirt styled with minimalist kitten heels, woven clutch, and sculptural gold jewelry.",
+    "categories": [
+      "Fancy",
+      "Summer"
+    ],
+    "collage_image": "assets/products/quiet-luxury-summer-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Vest",
+        "label": "Tailored Button-Down Linen Vest Top",
+        "amazon_url": "https://www.amazon.com/dp/B0BZ859R6L?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Skirt",
+        "label": "Bias-Cut Champagne Satin Silk Maxi Skirt",
+        "amazon_url": "https://www.amazon.com/dp/B0BWJLM74D?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Heels",
+        "label": "Strappy Square-Toe Kitten Heel Sandals",
+        "amazon_url": "https://www.amazon.com/dp/B08V5L9S6R?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Clutch",
+        "label": "Woven Dumpling Clutch with Gold Chain",
+        "amazon_url": "https://www.amazon.com/dp/B08QCM9B93?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Earrings",
+        "label": "Sculptural Melted Gold Drop Earrings",
+        "amazon_url": "https://www.amazon.com/dp/B09C34812L?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Cuff",
+        "label": "Chunky Ribbed Gold Statement Cuff",
+        "amazon_url": "https://www.amazon.com/dp/B0B5B1X9C4?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Necklace",
+        "label": "Layered Snake Herringbone Gold Necklace",
+        "amazon_url": "https://www.amazon.com/dp/B08XMB8FLL?tag=exquisitesila-21"
+      }
+    ]
+  },
+  {
+    "id": "modest-pastel-spring-look-01",
+    "slug": "modest-pastel-spring-elegance",
+    "title": "Modest Pastel Spring Elegance",
+    "description": "Sage green tie-neck chiffon blouse paired with an off-white tiered pleated maxi skirt, trapeze handbag, pearl drop huggies, and matching silk hijab.",
+    "categories": [
+      "Modest",
+      "Spring"
+    ],
+    "collage_image": "assets/products/modest-pastel-spring-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Blouse",
+        "label": "Sage Green Tie-Neck Chiffon Blouse",
+        "amazon_url": "https://www.amazon.com/dp/B09F3M7T89?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Skirt",
+        "label": "Tiered Pleated A-Line Maxi Skirt",
+        "amazon_url": "https://www.amazon.com/dp/B08YJ5MN8X?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Shoes",
+        "label": "Slingback Pointed Bow Block Heels",
+        "amazon_url": "https://www.amazon.com/dp/B0BP8R146D?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Handbag",
+        "label": "Structured Top-Handle Trapeze Handbag",
+        "amazon_url": "https://www.amazon.com/dp/B08NW6JFX8?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Earrings",
+        "label": "Baroque Pearl Drop Huggie Earrings",
+        "amazon_url": "https://www.amazon.com/dp/B09H4YJ39T?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Bangles",
+        "label": "Textured Gold Stackable Bangles Set",
+        "amazon_url": "https://www.amazon.com/dp/B09GLV6V4T?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Scarf",
+        "label": "Premium Chiffon Silk Hijab in Sage",
+        "amazon_url": "https://www.amazon.com/dp/B08DCRTXW8?tag=exquisitesila-21"
+      }
+    ]
+  },
+  {
     "id": "teal-elevate-look-01",
     "slug": "elevate-the-basics-with-teal",
     "title": "Elevate the Basics with Teal",
@@ -476,244 +620,6 @@ const OUTFITS = [
         "slot": "Jewelry",
         "label": "Gold Teardrop Hoop Earrings",
         "amazon_url": "https://link.amazon/B0104bp0b"
-      }
-    ]
-  },
-  {
-    "id": "sample-summer-casual-01",
-    "slug": "easy-summer-casual",
-    "title": "Easy Summer Casual",
-    "description": "Add a short outfit description here.",
-    "categories": [
-      "Casual",
-      "Summer"
-    ],
-    "collage_image": "",
-    "pieces": [
-      {
-        "slot": "Top",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bottom",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Shoes",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bag",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Jewelry",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Belt",
-        "label": "Add item name",
-        "amazon_url": ""
-      }
-    ]
-  },
-  {
-    "id": "sample-fancy-dress-01",
-    "slug": "evening-dress-look",
-    "title": "Evening Dress Look",
-    "description": "Add a short outfit description here.",
-    "categories": [
-      "Fancy",
-      "Autumn"
-    ],
-    "collage_image": "",
-    "pieces": [
-      {
-        "slot": "Dress",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Shoes",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bag",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Jewelry",
-        "label": "Add item name",
-        "amazon_url": ""
-      }
-    ]
-  },
-  {
-    "id": "sample-modest-spring-01",
-    "slug": "modest-spring-layers",
-    "title": "Modest Spring Layers",
-    "description": "Add a short outfit description here.",
-    "categories": [
-      "Modest",
-      "Spring"
-    ],
-    "collage_image": "",
-    "pieces": [
-      {
-        "slot": "Top",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bottom",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Shoes",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bag",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Jewelry",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Belt",
-        "label": "Add item name",
-        "amazon_url": ""
-      }
-    ]
-  },
-  {
-    "id": "sample-winter-cozy-01",
-    "slug": "winter-cozy-layers",
-    "title": "Winter Cozy Layers",
-    "description": "Add a short outfit description here.",
-    "categories": [
-      "Casual",
-      "Winter"
-    ],
-    "collage_image": "",
-    "pieces": [
-      {
-        "slot": "Top",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bottom",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Shoes",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bag",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Jewelry",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Belt",
-        "label": "Add item name",
-        "amazon_url": ""
-      }
-    ]
-  },
-  {
-    "id": "sample-summer-fancy-01",
-    "slug": "sunny-fancy-brunch",
-    "title": "Sunny Fancy Brunch",
-    "description": "Add a short outfit description here.",
-    "categories": [
-      "Fancy",
-      "Summer"
-    ],
-    "collage_image": "",
-    "pieces": [
-      {
-        "slot": "Dress",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Shoes",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bag",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Jewelry",
-        "label": "Add item name",
-        "amazon_url": ""
-      }
-    ]
-  },
-  {
-    "id": "sample-modest-autumn-01",
-    "slug": "modest-autumn-neutrals",
-    "title": "Modest Autumn Neutrals",
-    "description": "Add a short outfit description here.",
-    "categories": [
-      "Modest",
-      "Autumn"
-    ],
-    "collage_image": "",
-    "pieces": [
-      {
-        "slot": "Top",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bottom",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Shoes",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Bag",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Jewelry",
-        "label": "Add item name",
-        "amazon_url": ""
-      },
-      {
-        "slot": "Belt",
-        "label": "Add item name",
-        "amazon_url": ""
       }
     ]
   }

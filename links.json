@@ -2,23 +2,215 @@
   "site_name": "Exquisite Silat",
   "outfits": [
     {
+      "id": "cozy-autumn-coffee-look-01",
+      "title": "Cozy Autumn Coffee Run",
+      "slug": "cozy-autumn-coffee-look-01",
+      "description": "Chunky oatmeal cable-knit sweater paired with tailored cream wide-leg trousers, chocolate suede tote, chestnut platform clogs, and vintage gold accents.",
+      "styling_note": "Tonal cream and warm oatmeal give this outfit a cozy, elevated feel without being fussy. The deep chocolate suede tote and chestnut clogs ground the neutral palette, while retro tortoiseshell sunglasses and a vintage gold watch add polish for weekend coffee runs and casual strolls.",
+      "collage_image": "assets/products/cozy-autumn-coffee-look/collage.png",
+      "categories": [
+        "Casual",
+        "Autumn"
+      ],
+      "pieces": [
+        {
+          "slot": "Sweater",
+          "label": "Oversized Cable Knit Crewneck Sweater",
+          "amazon_url": "https://www.amazon.com/dp/B0CKZ5P3W4?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Trousers",
+          "label": "High-Waisted Pleated Wide-Leg Trousers",
+          "amazon_url": "https://www.amazon.com/dp/B0B68X19F2?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Bag",
+          "label": "Slouchy Suede Shoulder Tote Bag",
+          "amazon_url": "https://www.amazon.com/dp/B0CBR8V3K9?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Chestnut Suede Platform Clogs",
+          "amazon_url": "https://www.amazon.com/dp/B0C8V2YMQ6?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Watch",
+          "label": "Vintage Gold Rectangular Leather Watch",
+          "amazon_url": "https://www.amazon.com/dp/B09VPH7K9S?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Chunky Twisted Gold Hoop Earrings",
+          "amazon_url": "https://www.amazon.com/dp/B09CY7K2G3?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Sunglasses",
+          "label": "Retro Tortoiseshell Oval Sunglasses",
+          "amazon_url": "https://www.amazon.com/dp/B07R3GLL5D?tag=exquisitesila-21"
+        }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "quiet-luxury-summer-look-01",
+      "title": "Quiet Luxury Summer Dinner",
+      "slug": "quiet-luxury-summer-look-01",
+      "description": "Tailored black linen vest and fluid champagne satin maxi slip skirt styled with minimalist kitten heels, woven clutch, and sculptural gold jewelry.",
+      "styling_note": "High-contrast monochrome that feels modern and expensive. The crisp structure of the tailored black waistcoat balances the fluid drape of the oyster-champagne silk skirt. Finish with sculptural gold earrings and a woven dumpling clutch for an effortless dinner look.",
+      "collage_image": "assets/products/quiet-luxury-summer-look/collage.png",
+      "categories": [
+        "Fancy",
+        "Summer"
+      ],
+      "pieces": [
+        {
+          "slot": "Vest",
+          "label": "Tailored Button-Down Linen Vest Top",
+          "amazon_url": "https://www.amazon.com/dp/B0BZ859R6L?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Skirt",
+          "label": "Bias-Cut Champagne Satin Silk Maxi Skirt",
+          "amazon_url": "https://www.amazon.com/dp/B0BWJLM74D?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Heels",
+          "label": "Strappy Square-Toe Kitten Heel Sandals",
+          "amazon_url": "https://www.amazon.com/dp/B08V5L9S6R?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Clutch",
+          "label": "Woven Dumpling Clutch with Gold Chain",
+          "amazon_url": "https://www.amazon.com/dp/B08QCM9B93?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Sculptural Melted Gold Drop Earrings",
+          "amazon_url": "https://www.amazon.com/dp/B09C34812L?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Cuff",
+          "label": "Chunky Ribbed Gold Statement Cuff",
+          "amazon_url": "https://www.amazon.com/dp/B0B5B1X9C4?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Necklace",
+          "label": "Layered Snake Herringbone Gold Necklace",
+          "amazon_url": "https://www.amazon.com/dp/B08XMB8FLL?tag=exquisitesila-21"
+        }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
+      "id": "modest-pastel-spring-look-01",
+      "title": "Modest Pastel Spring Elegance",
+      "slug": "modest-pastel-spring-look-01",
+      "description": "Sage green tie-neck chiffon blouse paired with an off-white tiered pleated maxi skirt, trapeze handbag, pearl drop huggies, and matching silk hijab.",
+      "styling_note": "Soft sage and warm ivory create a serene, romantic spring aesthetic. The pleated tiered skirt offers graceful movement with full modest coverage, while the pearl drop earrings and structured bag lend an elevated, ladylike finish for festive occasions or brunch.",
+      "collage_image": "assets/products/modest-pastel-spring-look/collage.png",
+      "categories": [
+        "Modest",
+        "Spring"
+      ],
+      "pieces": [
+        {
+          "slot": "Blouse",
+          "label": "Sage Green Tie-Neck Chiffon Blouse",
+          "amazon_url": "https://www.amazon.com/dp/B09F3M7T89?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Skirt",
+          "label": "Tiered Pleated A-Line Maxi Skirt",
+          "amazon_url": "https://www.amazon.com/dp/B08YJ5MN8X?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Slingback Pointed Bow Block Heels",
+          "amazon_url": "https://www.amazon.com/dp/B0BP8R146D?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Handbag",
+          "label": "Structured Top-Handle Trapeze Handbag",
+          "amazon_url": "https://www.amazon.com/dp/B08NW6JFX8?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Baroque Pearl Drop Huggie Earrings",
+          "amazon_url": "https://www.amazon.com/dp/B09H4YJ39T?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Bangles",
+          "label": "Textured Gold Stackable Bangles Set",
+          "amazon_url": "https://www.amazon.com/dp/B09GLV6V4T?tag=exquisitesila-21"
+        },
+        {
+          "slot": "Scarf",
+          "label": "Premium Chiffon Silk Hijab in Sage",
+          "amazon_url": "https://www.amazon.com/dp/B08DCRTXW8?tag=exquisitesila-21"
+        }
+      ],
+      "publish": true,
+      "status": "publish"
+    },
+    {
       "id": "teal-elevate-look-01",
       "title": "Elevate the Basics with Teal",
       "slug": "teal-elevate-look-01",
-      "description": "Start with a white ribbed top and white maxi skirt, then layer in teal — satin shirt, turquoise tote, gold jewellery, braided belt, and brown kitten heels for Summer 2026.",
+      "description": "Start with a white ribbed top and white maxi skirt, then layer in teal \u2014 satin shirt, turquoise tote, gold jewellery, braided belt, and brown kitten heels for Summer 2026.",
       "styling_note": "This is a one-basic-outfit-many-ways look: start with the white top and skirt, then layer in the teal shirt and turquoise tote to turn a plain base into a color-blocked summer outfit. The braided belt and gold jewelry keep the palette grounded, and the kitten heels dress it up just enough for a summer dinner out.",
       "collage_image": "assets/products/teal-elevate-look/collage.png?v=3",
-      "categories": ["Casual", "Summer"],
+      "categories": [
+        "Casual",
+        "Summer"
+      ],
       "pieces": [
-        { "slot": "Top", "label": "White Ribbed Boat-Neck Top", "amazon_url": "https://link.amazon/B0jlViWJq" },
-        { "slot": "Skirt", "label": "White Boho Elastic Waist Maxi Skirt", "amazon_url": "https://link.amazon/B0h2sv9CT" },
-        { "slot": "Shirt", "label": "Teal Satin Button-Down Shirt", "amazon_url": "https://link.amazon/B07tPuDs1" },
-        { "slot": "Bag", "label": "Turquoise Shoulder Tote Bag", "amazon_url": "https://link.amazon/B0j4P8T2Q" },
-        { "slot": "Belt", "label": "Brown Braided Leather Belt", "amazon_url": "https://amzn.to/4hOJaCC" },
-        { "slot": "Earrings", "label": "Chunky Gold Knot Earrings", "amazon_url": "https://link.amazon/B0b8nLrrj" },
-        { "slot": "Bangle", "label": "Gold Chunky Bangle", "amazon_url": "https://amzn.to/4fAwRbW" },
-        { "slot": "Bangle", "label": "Gold Ridged Bangle", "amazon_url": "https://amzn.to/4hOJaCC" },
-        { "slot": "Heels", "label": "Brown Strappy Kitten Heel Sandals", "amazon_url": "https://link.amazon/B0dW22S1Q" }
+        {
+          "slot": "Top",
+          "label": "White Ribbed Boat-Neck Top",
+          "amazon_url": "https://link.amazon/B0jlViWJq"
+        },
+        {
+          "slot": "Skirt",
+          "label": "White Boho Elastic Waist Maxi Skirt",
+          "amazon_url": "https://link.amazon/B0h2sv9CT"
+        },
+        {
+          "slot": "Shirt",
+          "label": "Teal Satin Button-Down Shirt",
+          "amazon_url": "https://link.amazon/B07tPuDs1"
+        },
+        {
+          "slot": "Bag",
+          "label": "Turquoise Shoulder Tote Bag",
+          "amazon_url": "https://link.amazon/B0j4P8T2Q"
+        },
+        {
+          "slot": "Belt",
+          "label": "Brown Braided Leather Belt",
+          "amazon_url": "https://amzn.to/4hOJaCC"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Chunky Gold Knot Earrings",
+          "amazon_url": "https://link.amazon/B0b8nLrrj"
+        },
+        {
+          "slot": "Bangle",
+          "label": "Gold Chunky Bangle",
+          "amazon_url": "https://amzn.to/4fAwRbW"
+        },
+        {
+          "slot": "Bangle",
+          "label": "Gold Ridged Bangle",
+          "amazon_url": "https://amzn.to/4hOJaCC"
+        },
+        {
+          "slot": "Heels",
+          "label": "Brown Strappy Kitten Heel Sandals",
+          "amazon_url": "https://link.amazon/B0dW22S1Q"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -30,14 +222,41 @@
       "description": "Navy and cream striped knit sweater, white wide-leg jeans, light blue crescent shoulder bag, turquoise dial silver watch, navy polka-dot phone case, and white New Balance sneakers.",
       "styling_note": "Stripes and wide-leg denim keep this look easy without trying too hard. The light blue bag and turquoise watch dial pick up the navy in the sweater, and white sneakers keep the whole outfit feeling like an effortless weekend errand run rather than a styled photo.",
       "collage_image": "assets/products/navy-gingham-look/collage.png",
-      "categories": ["Casual", "Summer"],
+      "categories": [
+        "Casual",
+        "Summer"
+      ],
       "pieces": [
-        { "slot": "Sweater", "label": "Navy & Cream Striped Knit Sweater", "amazon_url": "https://link.amazon/B03PPwYwt" },
-        { "slot": "Jeans", "label": "High-Rise White Wide-Leg Jeans", "amazon_url": "https://link.amazon/B01Fu3dFj" },
-        { "slot": "Bag", "label": "Light Blue Crescent Shoulder Bag", "amazon_url": "https://link.amazon/B04DsHUts" },
-        { "slot": "Watch", "label": "Silver Link Watch with Turquoise Dial", "amazon_url": "https://link.amazon/B02Wszqib" },
-        { "slot": "Phone Case", "label": "Navy Polka-Dot Phone Case", "amazon_url": "https://link.amazon/B0gt0tzFN" },
-        { "slot": "Shoes", "label": "White & Navy New Balance Sneakers", "amazon_url": "https://link.amazon/B0czdKvRi" }
+        {
+          "slot": "Sweater",
+          "label": "Navy & Cream Striped Knit Sweater",
+          "amazon_url": "https://link.amazon/B03PPwYwt"
+        },
+        {
+          "slot": "Jeans",
+          "label": "High-Rise White Wide-Leg Jeans",
+          "amazon_url": "https://link.amazon/B01Fu3dFj"
+        },
+        {
+          "slot": "Bag",
+          "label": "Light Blue Crescent Shoulder Bag",
+          "amazon_url": "https://link.amazon/B04DsHUts"
+        },
+        {
+          "slot": "Watch",
+          "label": "Silver Link Watch with Turquoise Dial",
+          "amazon_url": "https://link.amazon/B02Wszqib"
+        },
+        {
+          "slot": "Phone Case",
+          "label": "Navy Polka-Dot Phone Case",
+          "amazon_url": "https://link.amazon/B0gt0tzFN"
+        },
+        {
+          "slot": "Shoes",
+          "label": "White & Navy New Balance Sneakers",
+          "amazon_url": "https://link.amazon/B0czdKvRi"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -47,17 +266,49 @@
       "title": "Blush Pink & Pearl Elegance",
       "slug": "blush-pearl-look-01",
       "description": "Dusty rose cropped cardigan, white ribbed boat-neck top, white tiered maxi skirt, pearl swirl stud earrings, iridescent pearl clutch, Delina perfume, and silver block-heel sandals.",
-      "styling_note": "Soft pink and pearl accents make this a go-to for daytime events — bridal showers, brunches, garden parties. The tiered maxi skirt adds movement without tipping into formal, and the pearl clutch and earrings tie the whole look together.",
+      "styling_note": "Soft pink and pearl accents make this a go-to for daytime events \u2014 bridal showers, brunches, garden parties. The tiered maxi skirt adds movement without tipping into formal, and the pearl clutch and earrings tie the whole look together.",
       "collage_image": "assets/products/blush-pearl-look/collage.png",
-      "categories": ["Fancy", "Spring", "Summer"],
+      "categories": [
+        "Fancy",
+        "Spring",
+        "Summer"
+      ],
       "pieces": [
-        { "slot": "Cardigan", "label": "Dusty Rose Cropped Knit Cardigan", "amazon_url": "https://link.amazon/B0eTIlIZ3" },
-        { "slot": "Top", "label": "White Ribbed Boat-Neck Top", "amazon_url": "https://link.amazon/B05dzB2tX" },
-        { "slot": "Skirt", "label": "White Tiered Maxi Skirt", "amazon_url": "https://link.amazon/B05vXeHy2" },
-        { "slot": "Earrings", "label": "Pearl & Gold Swirl Stud Earrings", "amazon_url": "https://link.amazon/B05pJbaR5" },
-        { "slot": "Bag", "label": "Iridescent Pearl Clutch", "amazon_url": "https://link.amazon/B01b5DU1u" },
-        { "slot": "Perfume", "label": "Parfums de Marly Delina", "amazon_url": "https://link.amazon/B0cQRsonl" },
-        { "slot": "Shoes", "label": "Silver Block-Heel Sandals", "amazon_url": "https://link.amazon/B0ivktgsn" }
+        {
+          "slot": "Cardigan",
+          "label": "Dusty Rose Cropped Knit Cardigan",
+          "amazon_url": "https://link.amazon/B0eTIlIZ3"
+        },
+        {
+          "slot": "Top",
+          "label": "White Ribbed Boat-Neck Top",
+          "amazon_url": "https://link.amazon/B05dzB2tX"
+        },
+        {
+          "slot": "Skirt",
+          "label": "White Tiered Maxi Skirt",
+          "amazon_url": "https://link.amazon/B05vXeHy2"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Pearl & Gold Swirl Stud Earrings",
+          "amazon_url": "https://link.amazon/B05pJbaR5"
+        },
+        {
+          "slot": "Bag",
+          "label": "Iridescent Pearl Clutch",
+          "amazon_url": "https://link.amazon/B01b5DU1u"
+        },
+        {
+          "slot": "Perfume",
+          "label": "Parfums de Marly Delina",
+          "amazon_url": "https://link.amazon/B0cQRsonl"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Silver Block-Heel Sandals",
+          "amazon_url": "https://link.amazon/B0ivktgsn"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -67,18 +318,53 @@
       "title": "Cream Lace & Denim Elegance",
       "slug": "navy-cream-lace-look-01",
       "description": "Cream satin lace-trim blouse, light-wash wide-leg jeans, cream lace slingback heels, gold Casio watch, monogram crescent bag, sculptural gold earrings, and two gold rings.",
-      "styling_note": "Lace detailing on the blouse and heels elevates a simple wide-leg jean into something dressier, while the gold watch and stacked rings add polish without overdoing it. Good for a daytime-to-evening transition — swap in flats earlier in the day, then the heels once the occasion calls for it.",
+      "styling_note": "Lace detailing on the blouse and heels elevates a simple wide-leg jean into something dressier, while the gold watch and stacked rings add polish without overdoing it. Good for a daytime-to-evening transition \u2014 swap in flats earlier in the day, then the heels once the occasion calls for it.",
       "collage_image": "assets/products/navy-cream-lace-look/collage.png?v=3",
-      "categories": ["Fancy", "Casual"],
+      "categories": [
+        "Fancy",
+        "Casual"
+      ],
       "pieces": [
-        { "slot": "Shirt", "label": "Ivory Satin Blouse with Lace Trim", "amazon_url": "https://link.amazon/B06TdBEC9" },
-        { "slot": "Jeans", "label": "High-Rise Wide-Leg Denim Jeans", "amazon_url": "https://link.amazon/B0flegnpy" },
-        { "slot": "Heels", "label": "Ivory Lace Slingback Kitten Heels", "amazon_url": "https://link.amazon/B0ftkt2K0" },
-        { "slot": "Watch", "label": "Gold Square Dial Classic Watch", "amazon_url": "https://link.amazon/B06zbNtAC" },
-        { "slot": "Bag", "label": "Monogram Crescent Shoulder Bag", "amazon_url": "https://link.amazon/B09bdGyS0" },
-        { "slot": "Earrings", "label": "Polished Gold Statement Earrings", "amazon_url": "https://link.amazon/B04c6iMF4" },
-        { "slot": "Ring", "label": "Gold Swirl Knot Ring", "amazon_url": "https://link.amazon/B0c0r4ks1" },
-        { "slot": "Ring", "label": "Wide Ridged Gold Band Ring", "amazon_url": "https://link.amazon/B0diMh7cS" }
+        {
+          "slot": "Shirt",
+          "label": "Ivory Satin Blouse with Lace Trim",
+          "amazon_url": "https://link.amazon/B06TdBEC9"
+        },
+        {
+          "slot": "Jeans",
+          "label": "High-Rise Wide-Leg Denim Jeans",
+          "amazon_url": "https://link.amazon/B0flegnpy"
+        },
+        {
+          "slot": "Heels",
+          "label": "Ivory Lace Slingback Kitten Heels",
+          "amazon_url": "https://link.amazon/B0ftkt2K0"
+        },
+        {
+          "slot": "Watch",
+          "label": "Gold Square Dial Classic Watch",
+          "amazon_url": "https://link.amazon/B06zbNtAC"
+        },
+        {
+          "slot": "Bag",
+          "label": "Monogram Crescent Shoulder Bag",
+          "amazon_url": "https://link.amazon/B09bdGyS0"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Polished Gold Statement Earrings",
+          "amazon_url": "https://link.amazon/B04c6iMF4"
+        },
+        {
+          "slot": "Ring",
+          "label": "Gold Swirl Knot Ring",
+          "amazon_url": "https://link.amazon/B0c0r4ks1"
+        },
+        {
+          "slot": "Ring",
+          "label": "Wide Ridged Gold Band Ring",
+          "amazon_url": "https://link.amazon/B0diMh7cS"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -88,17 +374,48 @@
       "title": "Brown Leather & Denim Chic",
       "slug": "brown-leather-look-01",
       "description": "Dark brown faux-leather bomber jacket, white ribbed boat-neck top, dark wide-leg jeans, brown leather belt, gold teardrop earrings, structured brown handbag, and square-toe ankle boots.",
-      "styling_note": "The faux-leather bomber is the anchor piece here — it turns a plain white top and dark denim into a lived-in, transitional-weather outfit. Ankle boots and a structured brown bag keep the palette tonal, so it's easy to repeat with pieces you likely already own.",
+      "styling_note": "The faux-leather bomber is the anchor piece here \u2014 it turns a plain white top and dark denim into a lived-in, transitional-weather outfit. Ankle boots and a structured brown bag keep the palette tonal, so it's easy to repeat with pieces you likely already own.",
       "collage_image": "assets/products/brown-leather-look/collage.png?v=3",
-      "categories": ["Casual", "Autumn"],
+      "categories": [
+        "Casual",
+        "Autumn"
+      ],
       "pieces": [
-        { "slot": "Earrings", "label": "Gold Teardrop Earrings", "amazon_url": "https://link.amazon/B06pH01dF" },
-        { "slot": "Belt", "label": "Brown Leather Belt", "amazon_url": "https://link.amazon/B0gD3bPRB" },
-        { "slot": "Jeans", "label": "Dark Wide-Leg Jeans", "amazon_url": "https://link.amazon/B0ia1Qpfq" },
-        { "slot": "Top", "label": "White Ribbed Boat-Neck Top", "amazon_url": "https://link.amazon/B07zv37VP" },
-        { "slot": "Jacket", "label": "Dark Brown Faux-Leather Bomber Jacket", "amazon_url": "https://link.amazon/B07hqp4v9" },
-        { "slot": "Shoes", "label": "Square-Toe Ankle Boots", "amazon_url": "https://link.amazon/B03VLdF5a" },
-        { "slot": "Bag", "label": "Structured Brown Handbag", "amazon_url": "https://link.amazon/B0jlQuyKO" }
+        {
+          "slot": "Earrings",
+          "label": "Gold Teardrop Earrings",
+          "amazon_url": "https://link.amazon/B06pH01dF"
+        },
+        {
+          "slot": "Belt",
+          "label": "Brown Leather Belt",
+          "amazon_url": "https://link.amazon/B0gD3bPRB"
+        },
+        {
+          "slot": "Jeans",
+          "label": "Dark Wide-Leg Jeans",
+          "amazon_url": "https://link.amazon/B0ia1Qpfq"
+        },
+        {
+          "slot": "Top",
+          "label": "White Ribbed Boat-Neck Top",
+          "amazon_url": "https://link.amazon/B07zv37VP"
+        },
+        {
+          "slot": "Jacket",
+          "label": "Dark Brown Faux-Leather Bomber Jacket",
+          "amazon_url": "https://link.amazon/B07hqp4v9"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Square-Toe Ankle Boots",
+          "amazon_url": "https://link.amazon/B03VLdF5a"
+        },
+        {
+          "slot": "Bag",
+          "label": "Structured Brown Handbag",
+          "amazon_url": "https://link.amazon/B0jlQuyKO"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -110,16 +427,52 @@
       "description": "Burgundy ruched top, plaid belted maxi skirt, cream chunky cardigan, gold heart locket necklace, hoop earrings, retro sunglasses, black shoulder bag, and burgundy Converse high-tops.",
       "styling_note": "Plaid and burgundy are a natural autumn pairing, and the maxi skirt length keeps the whole look modest-friendly. The cream cardigan softens the darker palette, and burgundy Converse make it wearable for an actual day out rather than just a photo.",
       "collage_image": "assets/products/plaid-autumn-look/collage.png",
-      "categories": ["Casual", "Autumn", "Modest"],
+      "categories": [
+        "Casual",
+        "Autumn",
+        "Modest"
+      ],
       "pieces": [
-        { "slot": "Top", "label": "CIDER Burgundy Boat Neck Ruched Top", "amazon_url": "https://link.amazon/B0bQwE0Wp" },
-        { "slot": "Skirt", "label": "GORGLITTER Plaid Belted Maxi Skirt", "amazon_url": "https://link.amazon/B0bk2glQ1" },
-        { "slot": "Cardigan", "label": "Arssm Chunky Cropped Cardigan", "amazon_url": "https://link.amazon/B01ejqyHj" },
-        { "slot": "Necklace", "label": "Heart Sunflower Locket Necklace", "amazon_url": "https://link.amazon/B01I95woS" },
-        { "slot": "Earrings", "label": "Gold Chunky Hoop Earrings", "amazon_url": "https://link.amazon/B0h2yihG9" },
-        { "slot": "Sunglasses", "label": "KENBO Retro Y2K Sunglasses", "amazon_url": "https://link.amazon/B03xq88cj" },
-        { "slot": "Bag", "label": "Black PU Leather Shoulder Bag", "amazon_url": "https://link.amazon/B036SFQ5I" },
-        { "slot": "Shoes", "label": "Converse Chuck Taylor Hi Red", "amazon_url": "https://link.amazon/B05eIJuvq" }
+        {
+          "slot": "Top",
+          "label": "CIDER Burgundy Boat Neck Ruched Top",
+          "amazon_url": "https://link.amazon/B0bQwE0Wp"
+        },
+        {
+          "slot": "Skirt",
+          "label": "GORGLITTER Plaid Belted Maxi Skirt",
+          "amazon_url": "https://link.amazon/B0bk2glQ1"
+        },
+        {
+          "slot": "Cardigan",
+          "label": "Arssm Chunky Cropped Cardigan",
+          "amazon_url": "https://link.amazon/B01ejqyHj"
+        },
+        {
+          "slot": "Necklace",
+          "label": "Heart Sunflower Locket Necklace",
+          "amazon_url": "https://link.amazon/B01I95woS"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Gold Chunky Hoop Earrings",
+          "amazon_url": "https://link.amazon/B0h2yihG9"
+        },
+        {
+          "slot": "Sunglasses",
+          "label": "KENBO Retro Y2K Sunglasses",
+          "amazon_url": "https://link.amazon/B03xq88cj"
+        },
+        {
+          "slot": "Bag",
+          "label": "Black PU Leather Shoulder Bag",
+          "amazon_url": "https://link.amazon/B036SFQ5I"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Converse Chuck Taylor Hi Red",
+          "amazon_url": "https://link.amazon/B05eIJuvq"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -129,15 +482,38 @@
       "title": "Polka Dot & Black Chic",
       "slug": "polka-dot-look-01",
       "description": "White polka-dot bell sleeve top, black wide-leg trousers, patent pumps, marble pearl clutch, and twisted pearl earrings.",
-      "styling_note": "Black trousers keep this outfit grounded so the polka-dot top can be the statement piece. Patent pumps and a marble clutch push it toward smart-casual — office-appropriate, but polished enough for drinks straight after work.",
+      "styling_note": "Black trousers keep this outfit grounded so the polka-dot top can be the statement piece. Patent pumps and a marble clutch push it toward smart-casual \u2014 office-appropriate, but polished enough for drinks straight after work.",
       "collage_image": "assets/products/polka-dot-look/collage.png",
-      "categories": ["Fancy", "Casual"],
+      "categories": [
+        "Fancy",
+        "Casual"
+      ],
       "pieces": [
-        { "slot": "Top", "label": "Cicy Bell Polka Dot Bell Sleeve Top", "amazon_url": "https://link.amazon/B09AW8fJE" },
-        { "slot": "Bottom", "label": "NIMIN Black Wide-Leg Trousers", "amazon_url": "https://link.amazon/B0jdFdrDa" },
-        { "slot": "Shoes", "label": "Calvin Klein Gloria Patent Pump", "amazon_url": "https://link.amazon/B0gfFXWdx" },
-        { "slot": "Bag", "label": "Marble Pearl Acrylic Clutch", "amazon_url": "https://link.amazon/B07D0E0Qs" },
-        { "slot": "Earrings", "label": "Gold Twisted Pearl Drop Earrings", "amazon_url": "https://link.amazon/B02T3U6iL" }
+        {
+          "slot": "Top",
+          "label": "Cicy Bell Polka Dot Bell Sleeve Top",
+          "amazon_url": "https://link.amazon/B09AW8fJE"
+        },
+        {
+          "slot": "Bottom",
+          "label": "NIMIN Black Wide-Leg Trousers",
+          "amazon_url": "https://link.amazon/B0jdFdrDa"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Calvin Klein Gloria Patent Pump",
+          "amazon_url": "https://link.amazon/B0gfFXWdx"
+        },
+        {
+          "slot": "Bag",
+          "label": "Marble Pearl Acrylic Clutch",
+          "amazon_url": "https://link.amazon/B07D0E0Qs"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Gold Twisted Pearl Drop Earrings",
+          "amazon_url": "https://link.amazon/B02T3U6iL"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -149,14 +525,41 @@
       "description": "Darker denim bow blouse, white tiered maxi skirt, cherry red Mary Janes and bow bag, gold earrings, and Daisy perfume.",
       "styling_note": "The cherry red Mary Janes and bow bag give this outfit its coquette feel, while the denim blouse keeps it from tipping into costume territory. Pair with the white tiered skirt for a summer look that reads playful rather than overly sweet.",
       "collage_image": "assets/products/red-floral-look/collage.png",
-      "categories": ["Fancy", "Summer"],
+      "categories": [
+        "Fancy",
+        "Summer"
+      ],
       "pieces": [
-        { "slot": "Top", "label": "Denim Tie-Front Babydoll Blouse", "amazon_url": "https://link.amazon/B0ahpzR7z" },
-        { "slot": "Skirt", "label": "GORGLITTER White Tiered Maxi Skirt", "amazon_url": "https://link.amazon/B0dF0T4jL" },
-        { "slot": "Shoes", "label": "TN TANGNEST Red Mary Jane Flats", "amazon_url": "https://link.amazon/B0fO82l8Z" },
-        { "slot": "Bag", "label": "Amszke Cherry Red Bow Bag", "amazon_url": "https://link.amazon/B03SLr3nF" },
-        { "slot": "Earrings", "label": "Gold Teardrop Earrings", "amazon_url": "https://link.amazon/B0bWLrfPy" },
-        { "slot": "Perfume", "label": "Marc Jacobs Daisy", "amazon_url": "https://link.amazon/B07xS1km3" }
+        {
+          "slot": "Top",
+          "label": "Denim Tie-Front Babydoll Blouse",
+          "amazon_url": "https://link.amazon/B0ahpzR7z"
+        },
+        {
+          "slot": "Skirt",
+          "label": "GORGLITTER White Tiered Maxi Skirt",
+          "amazon_url": "https://link.amazon/B0dF0T4jL"
+        },
+        {
+          "slot": "Shoes",
+          "label": "TN TANGNEST Red Mary Jane Flats",
+          "amazon_url": "https://link.amazon/B0fO82l8Z"
+        },
+        {
+          "slot": "Bag",
+          "label": "Amszke Cherry Red Bow Bag",
+          "amazon_url": "https://link.amazon/B03SLr3nF"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Gold Teardrop Earrings",
+          "amazon_url": "https://link.amazon/B0bWLrfPy"
+        },
+        {
+          "slot": "Perfume",
+          "label": "Marc Jacobs Daisy",
+          "amazon_url": "https://link.amazon/B07xS1km3"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -168,15 +571,46 @@
       "description": "Butter-yellow wrap blouse, navy wide-leg jeans, tortoise sandals and sunnies, brown tote, and seashell gold jewelry.",
       "styling_note": "Butter yellow and navy is a classic coastal pairing, and the seashell jewelry and tortoise sandals lean into the theme without feeling costume-y. An easy one to recreate for a beach day or a warm-weather trip.",
       "collage_image": "assets/products/blue-yellow-look/collage.png",
-      "categories": ["Casual", "Summer"],
+      "categories": [
+        "Casual",
+        "Summer"
+      ],
       "pieces": [
-        { "slot": "Top", "label": "GORGLITTER Yellow Asymmetrical Blouse", "amazon_url": "https://link.amazon/B0d72SrXR" },
-        { "slot": "Bottom", "label": "Glossia Navy High-Rise Wide Jeans", "amazon_url": "https://link.amazon/B00JGpsVj" },
-        { "slot": "Shoes", "label": "Steve Madden Hadyn Tortoise Sandals", "amazon_url": "https://link.amazon/B00jfHP4y" },
-        { "slot": "Bag", "label": "JW PEI Hana Dark Brown Tote", "amazon_url": "https://link.amazon/B03vk2Ulu" },
-        { "slot": "Glasses", "label": "SOJOS Tortoise Polarized Sunglasses", "amazon_url": "https://link.amazon/B0i13rp9X" },
-        { "slot": "Necklace", "label": "Gold Seashell & Starfish Necklace", "amazon_url": "https://link.amazon/B0flGicUX" },
-        { "slot": "Earrings", "label": "Gold Seashell Jewelry Set", "amazon_url": "https://link.amazon/B0flGicUX" }
+        {
+          "slot": "Top",
+          "label": "GORGLITTER Yellow Asymmetrical Blouse",
+          "amazon_url": "https://link.amazon/B0d72SrXR"
+        },
+        {
+          "slot": "Bottom",
+          "label": "Glossia Navy High-Rise Wide Jeans",
+          "amazon_url": "https://link.amazon/B00JGpsVj"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Steve Madden Hadyn Tortoise Sandals",
+          "amazon_url": "https://link.amazon/B00jfHP4y"
+        },
+        {
+          "slot": "Bag",
+          "label": "JW PEI Hana Dark Brown Tote",
+          "amazon_url": "https://link.amazon/B03vk2Ulu"
+        },
+        {
+          "slot": "Glasses",
+          "label": "SOJOS Tortoise Polarized Sunglasses",
+          "amazon_url": "https://link.amazon/B0i13rp9X"
+        },
+        {
+          "slot": "Necklace",
+          "label": "Gold Seashell & Starfish Necklace",
+          "amazon_url": "https://link.amazon/B0flGicUX"
+        },
+        {
+          "slot": "Earrings",
+          "label": "Gold Seashell Jewelry Set",
+          "amazon_url": "https://link.amazon/B0flGicUX"
+        }
       ],
       "publish": true,
       "status": "publish"
@@ -185,121 +619,44 @@
       "id": "burgundy-casual-look-01",
       "title": "Burgundy & Black Casual",
       "slug": "burgundy-casual-look-01",
-      "description": "A polished everyday look — asymmetrical burgundy top, wide-leg black jeans, croc bag, and burgundy slingbacks with gold accents.",
+      "description": "A polished everyday look \u2014 asymmetrical burgundy top, wide-leg black jeans, croc bag, and burgundy slingbacks with gold accents.",
       "styling_note": "An asymmetrical hem on the top adds interest to an otherwise simple black-and-burgundy pairing. The croc-effect bag and gold watch bring in texture and warmth, making this an easy, repeatable outfit for everyday autumn wear.",
       "collage_image": "assets/products/burgundy-look/collage.png",
-      "categories": ["Casual", "Autumn"],
-      "pieces": [
-        { "slot": "Top", "label": "PRETTYGARDEN Burgundy Asymmetrical Top", "amazon_url": "https://link.amazon/B08TSRX9K" },
-        { "slot": "Bottom", "label": "KOTTY Black High-Rise Wide Jeans", "amazon_url": "https://link.amazon/B0hdpJOr3" },
-        { "slot": "Shoes", "label": "Mattiventon Burgundy Bow Slingbacks", "amazon_url": "https://link.amazon/B0drwncy3" },
-        { "slot": "Bag", "label": "JW PEI Harlee Brown Croc Bag", "amazon_url": "https://link.amazon/B0cvbClLk" },
-        { "slot": "Watch", "label": "FANMIS Brown & Gold Rectangle Watch", "amazon_url": "https://link.amazon/B0cYvoLpG" },
-        { "slot": "Jewelry", "label": "Gold Teardrop Hoop Earrings", "amazon_url": "https://link.amazon/B0104bp0b" }
+      "categories": [
+        "Casual",
+        "Autumn"
       ],
-      "publish": true,
-      "status": "publish"
-    },
-    {
-      "id": "sample-summer-casual-01",
-      "title": "Easy Summer Casual",
-      "slug": "sample-summer-casual-01",
-      "description": "Add a short outfit description here.",
-      "collage_image": "",
-      "categories": ["Casual", "Summer"],
       "pieces": [
-        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
-      ],
-      "publish": true,
-      "status": "publish"
-    },
-    {
-      "id": "sample-fancy-dress-01",
-      "title": "Evening Dress Look",
-      "slug": "sample-fancy-dress-01",
-      "description": "Add a short outfit description here.",
-      "collage_image": "",
-      "categories": ["Fancy", "Autumn"],
-      "pieces": [
-        { "slot": "Dress", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" }
-      ],
-      "publish": true,
-      "status": "publish"
-    },
-    {
-      "id": "sample-modest-spring-01",
-      "title": "Modest Spring Layers",
-      "slug": "sample-modest-spring-01",
-      "description": "Add a short outfit description here.",
-      "collage_image": "",
-      "categories": ["Modest", "Spring"],
-      "pieces": [
-        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
-      ],
-      "publish": true,
-      "status": "publish"
-    },
-    {
-      "id": "sample-winter-cozy-01",
-      "title": "Winter Cozy Layers",
-      "slug": "sample-winter-cozy-01",
-      "description": "Add a short outfit description here.",
-      "collage_image": "",
-      "categories": ["Casual", "Winter"],
-      "pieces": [
-        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
-      ],
-      "publish": true,
-      "status": "publish"
-    },
-    {
-      "id": "sample-summer-fancy-01",
-      "title": "Sunny Fancy Brunch",
-      "slug": "sample-summer-fancy-01",
-      "description": "Add a short outfit description here.",
-      "collage_image": "",
-      "categories": ["Fancy", "Summer"],
-      "pieces": [
-        { "slot": "Dress", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" }
-      ],
-      "publish": true,
-      "status": "publish"
-    },
-    {
-      "id": "sample-modest-autumn-01",
-      "title": "Modest Autumn Neutrals",
-      "slug": "sample-modest-autumn-01",
-      "description": "Add a short outfit description here.",
-      "collage_image": "",
-      "categories": ["Modest", "Autumn"],
-      "pieces": [
-        { "slot": "Top", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bottom", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Shoes", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Bag", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Jewelry", "label": "Add item name", "amazon_url": "" },
-        { "slot": "Belt", "label": "Add item name", "amazon_url": "" }
+        {
+          "slot": "Top",
+          "label": "PRETTYGARDEN Burgundy Asymmetrical Top",
+          "amazon_url": "https://link.amazon/B08TSRX9K"
+        },
+        {
+          "slot": "Bottom",
+          "label": "KOTTY Black High-Rise Wide Jeans",
+          "amazon_url": "https://link.amazon/B0hdpJOr3"
+        },
+        {
+          "slot": "Shoes",
+          "label": "Mattiventon Burgundy Bow Slingbacks",
+          "amazon_url": "https://link.amazon/B0drwncy3"
+        },
+        {
+          "slot": "Bag",
+          "label": "JW PEI Harlee Brown Croc Bag",
+          "amazon_url": "https://link.amazon/B0cvbClLk"
+        },
+        {
+          "slot": "Watch",
+          "label": "FANMIS Brown & Gold Rectangle Watch",
+          "amazon_url": "https://link.amazon/B0cYvoLpG"
+        },
+        {
+          "slot": "Jewelry",
+          "label": "Gold Teardrop Hoop Earrings",
+          "amazon_url": "https://link.amazon/B0104bp0b"
+        }
       ],
       "publish": true,
       "status": "publish"
