@@ -51,7 +51,22 @@ SLUG_STYLE = {
 }
 
 # (slot index) -> (center_x_frac, center_y_frac, max_w, max_h)
-LAYOUT = {
+# Cutout style: tuned to sit close together (some natural overlap with the
+# center garments, like the original hand-composited collages) since a
+# transparent-background cutout can overlap cleanly.
+LAYOUT_CUTOUT = {
+    0: (0.50, 0.36, 460, 480),  # top garment
+    1: (0.50, 0.66, 300, 520),  # bottom garment
+    2: (0.27, 0.60, 320, 420),  # mid-left accessory
+    3: (0.79, 0.70, 320, 280),  # bottom-right accessory
+    4: (0.83, 0.38, 200, 260),  # mid-right accessory
+    5: (0.76, 0.17, 240, 220),  # top-right accessory
+    6: (0.20, 0.175, 280, 140),  # top-left accessory
+}
+
+# Card style: kept looser since overlapping opaque white cards would clip
+# into each other awkwardly.
+LAYOUT_CARD = {
     0: (0.50, 0.34, 380, 400),  # top garment
     1: (0.50, 0.70, 340, 460),  # bottom garment
     2: (0.16, 0.54, 220, 220),  # mid-left accessory
@@ -184,6 +199,7 @@ def build_outfit_collage(outfit: dict) -> None:
     asset_dir = ASSET_ROOT / folder
     style = SLUG_STYLE.get(slug, "card")
     frame = cutout if style == "cutout" else card
+    layout = LAYOUT_CUTOUT if style == "cutout" else LAYOUT_CARD
 
     canvas = Image.new("RGBA", (W, H), (*BEIGE, 255))
 
@@ -193,7 +209,7 @@ def build_outfit_collage(outfit: dict) -> None:
         if not src.is_file():
             continue
         raw = load_rgba(src)
-        cx_f, cy_f, max_w, max_h = LAYOUT[i]
+        cx_f, cy_f, max_w, max_h = layout[i]
         img = soft_shadow(frame(raw, max_w, max_h))
         paste_center(canvas, img, int(W * cx_f), int(H * cy_f))
 
