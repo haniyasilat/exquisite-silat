@@ -16,6 +16,7 @@ piece order taken from links.json):
 import json
 import pathlib
 
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -39,6 +40,16 @@ SLUG_TO_FOLDER = {
     "modest-pastel-spring-look-01": "modest-pastel-spring-look",
 }
 
+# "cutout": background-free, floats on the canvas (matches the original AI-art
+# collages) - use only where every piece photo is on a plain white/light studio
+# background. "card": photo placed on a white rounded card (safe fallback for
+# on-model photos with a real background, which a cutout would not clean up).
+SLUG_STYLE = {
+    "cozy-autumn-coffee-look-01": "cutout",
+    "quiet-luxury-summer-look-01": "card",
+    "modest-pastel-spring-look-01": "card",
+}
+
 # (slot index) -> (center_x_frac, center_y_frac, max_w, max_h)
 LAYOUT = {
     0: (0.50, 0.34, 380, 400),  # top garment
@@ -60,6 +71,36 @@ def rounded_mask(size, radius):
     d = ImageDraw.Draw(mask)
     d.rounded_rectangle((0, 0, size[0] - 1, size[1] - 1), radius=radius, fill=255)
     return mask
+
+
+def cutout_white_bg(img: Image.Image, white: int = 240, colored: int = 205) -> Image.Image:
+    """Turn a near-white studio background transparent (no ML model needed).
+
+    Pixels brighter than *white* on every channel become fully transparent;
+    pixels darker than *colored* stay fully opaque; the band between the two
+    fades linearly so cutout edges stay soft instead of jagged.
+    """
+    arr = np.array(img.convert("RGBA")).astype(np.float32)
+    min_channel = arr[..., :3].min(axis=2)
+    fade_range = max(white - colored, 1)
+    alpha = np.clip((white - min_channel) / fade_range, 0.0, 1.0) * 255.0
+    alpha = np.where(min_channel >= white, 0.0, alpha)
+    alpha = np.where(min_channel < colored, 255.0, alpha)
+    arr[..., 3] = np.minimum(arr[..., 3], alpha)
+    return Image.fromarray(arr.astype(np.uint8), "RGBA")
+
+
+def trim_alpha(img: Image.Image) -> Image.Image:
+    bbox = img.getbbox()
+    return img.crop(bbox) if bbox else img
+
+
+def cutout(img: Image.Image, max_w: int, max_h: int) -> Image.Image:
+    """Fit *img* as a background-free cutout (garment floats directly on the canvas)."""
+    photo = cutout_white_bg(img)
+    photo = trim_alpha(photo)
+    photo.thumbnail((max_w, max_h), Image.Resampling.LANCZOS)
+    return photo
 
 
 def card(img: Image.Image, max_w: int, max_h: int, pad: int = 14, radius: int = 18) -> Image.Image:
@@ -141,6 +182,8 @@ def build_outfit_collage(outfit: dict) -> None:
     slug = outfit["slug"]
     folder = SLUG_TO_FOLDER[slug]
     asset_dir = ASSET_ROOT / folder
+    style = SLUG_STYLE.get(slug, "card")
+    frame = cutout if style == "cutout" else card
 
     canvas = Image.new("RGBA", (W, H), (*BEIGE, 255))
 
@@ -151,7 +194,7 @@ def build_outfit_collage(outfit: dict) -> None:
             continue
         raw = load_rgba(src)
         cx_f, cy_f, max_w, max_h = LAYOUT[i]
-        img = soft_shadow(card(raw, max_w, max_h))
+        img = soft_shadow(frame(raw, max_w, max_h))
         paste_center(canvas, img, int(W * cx_f), int(H * cy_f))
 
     draw_top_banner(canvas)
