@@ -13,8 +13,8 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
 # (outfit slug, piece slot, asin, image_url)
 PICKS = [
-    ("cozy-autumn-coffee-look-01", "Sweater", "B0FQBMQBW8", "https://m.media-amazon.com/images/I/81voSrWrOHL._AC_SY445_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Trousers", "B0FQJPB4FP", "https://m.media-amazon.com/images/I/61UpAQ-QTcL._AC_SY445_.jpg"),
+    ("cozy-autumn-coffee-look-01", "Sweater", "B0CNLPV5TP", "https://m.media-amazon.com/images/I/81Mnz9MlHBL._AC_SX385_.jpg"),
+    ("cozy-autumn-coffee-look-01", "Trousers", "B0GCDPC93M", "https://m.media-amazon.com/images/I/71GablDqxHL._AC_SY445_.jpg"),
     ("cozy-autumn-coffee-look-01", "Bag", "B0FZ7K9G9Y", "https://m.media-amazon.com/images/I/61KeYdGiZBL._AC_SX385_.jpg"),
     ("cozy-autumn-coffee-look-01", "Shoes", "B08Z7KMD2F", "https://m.media-amazon.com/images/I/71bkxmdcZSL._AC_SY500_.jpg"),
     ("cozy-autumn-coffee-look-01", "Watch", "B008UVVL9K", "https://m.media-amazon.com/images/I/61VqwetbFcL._AC_SX522_.jpg"),
