@@ -16,37 +16,37 @@ const OUTFITS = [
       {
         "slot": "Sweater",
         "label": "Oversized Cable Knit Crewneck Sweater",
-        "amazon_url": "https://www.amazon.com/dp/B0CKZ5P3W4?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0CKZ5P3W4?tag=exquisitesila-21"
       },
       {
         "slot": "Trousers",
         "label": "High-Waisted Pleated Wide-Leg Trousers",
-        "amazon_url": "https://www.amazon.com/dp/B0B68X19F2?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0B68X19F2?tag=exquisitesila-21"
       },
       {
         "slot": "Bag",
         "label": "Slouchy Suede Shoulder Tote Bag",
-        "amazon_url": "https://www.amazon.com/dp/B0CBR8V3K9?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0CBR8V3K9?tag=exquisitesila-21"
       },
       {
         "slot": "Shoes",
         "label": "Chestnut Suede Platform Clogs",
-        "amazon_url": "https://www.amazon.com/dp/B0C8V2YMQ6?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/s?k=women%20platform%20suede%20clogs%20brown&tag=exquisitesila-21"
       },
       {
         "slot": "Watch",
         "label": "Vintage Gold Rectangular Leather Watch",
-        "amazon_url": "https://www.amazon.com/dp/B09VPH7K9S?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09VPH7K9S?tag=exquisitesila-21"
       },
       {
         "slot": "Earrings",
         "label": "Chunky Twisted Gold Hoop Earrings",
-        "amazon_url": "https://www.amazon.com/dp/B09CY7K2G3?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09CY7K2G3?tag=exquisitesila-21"
       },
       {
         "slot": "Sunglasses",
         "label": "Retro Tortoiseshell Oval Sunglasses",
-        "amazon_url": "https://www.amazon.com/dp/B07R3GLL5D?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B07R3GLL5D?tag=exquisitesila-21"
       }
     ]
   },
@@ -64,37 +64,37 @@ const OUTFITS = [
       {
         "slot": "Vest",
         "label": "Tailored Button-Down Linen Vest Top",
-        "amazon_url": "https://www.amazon.com/dp/B0BZ859R6L?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0BZ859R6L?tag=exquisitesila-21"
       },
       {
         "slot": "Skirt",
         "label": "Bias-Cut Champagne Satin Silk Maxi Skirt",
-        "amazon_url": "https://www.amazon.com/dp/B0BWJLM74D?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0BWJLM74D?tag=exquisitesila-21"
       },
       {
         "slot": "Heels",
         "label": "Strappy Square-Toe Kitten Heel Sandals",
-        "amazon_url": "https://www.amazon.com/dp/B08V5L9S6R?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B08V5L9S6R?tag=exquisitesila-21"
       },
       {
         "slot": "Clutch",
         "label": "Woven Dumpling Clutch with Gold Chain",
-        "amazon_url": "https://www.amazon.com/dp/B08QCM9B93?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B08QCM9B93?tag=exquisitesila-21"
       },
       {
         "slot": "Earrings",
         "label": "Sculptural Melted Gold Drop Earrings",
-        "amazon_url": "https://www.amazon.com/dp/B09C34812L?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09C34812L?tag=exquisitesila-21"
       },
       {
         "slot": "Cuff",
         "label": "Chunky Ribbed Gold Statement Cuff",
-        "amazon_url": "https://www.amazon.com/dp/B0B5B1X9C4?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0B5B1X9C4?tag=exquisitesila-21"
       },
       {
         "slot": "Necklace",
         "label": "Layered Snake Herringbone Gold Necklace",
-        "amazon_url": "https://www.amazon.com/dp/B08XMB8FLL?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B08XMB8FLL?tag=exquisitesila-21"
       }
     ]
   },
@@ -112,37 +112,37 @@ const OUTFITS = [
       {
         "slot": "Blouse",
         "label": "Sage Green Tie-Neck Chiffon Blouse",
-        "amazon_url": "https://www.amazon.com/dp/B09F3M7T89?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09F3M7T89?tag=exquisitesila-21"
       },
       {
         "slot": "Skirt",
         "label": "Tiered Pleated A-Line Maxi Skirt",
-        "amazon_url": "https://www.amazon.com/dp/B08YJ5MN8X?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B08YJ5MN8X?tag=exquisitesila-21"
       },
       {
         "slot": "Shoes",
         "label": "Slingback Pointed Bow Block Heels",
-        "amazon_url": "https://www.amazon.com/dp/B0BP8R146D?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0BP8R146D?tag=exquisitesila-21"
       },
       {
         "slot": "Handbag",
         "label": "Structured Top-Handle Trapeze Handbag",
-        "amazon_url": "https://www.amazon.com/dp/B08NW6JFX8?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B08NW6JFX8?tag=exquisitesila-21"
       },
       {
         "slot": "Earrings",
         "label": "Baroque Pearl Drop Huggie Earrings",
-        "amazon_url": "https://www.amazon.com/dp/B09H4YJ39T?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09H4YJ39T?tag=exquisitesila-21"
       },
       {
         "slot": "Bangles",
         "label": "Textured Gold Stackable Bangles Set",
-        "amazon_url": "https://www.amazon.com/dp/B09GLV6V4T?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09GLV6V4T?tag=exquisitesila-21"
       },
       {
         "slot": "Scarf",
         "label": "Premium Chiffon Silk Hijab in Sage",
-        "amazon_url": "https://www.amazon.com/dp/B08DCRTXW8?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B08DCRTXW8?tag=exquisitesila-21"
       }
     ]
   },
