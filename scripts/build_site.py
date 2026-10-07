@@ -4,9 +4,13 @@ links.json is the single source of truth. This script generates:
 
   index.html                     home page
   <category>/index.html          one page per category (7)
-  looks/<slug>/index.html        one page per outfit (16)
+  looks/<slug>/index.html        one page per outfit
+  feeds/all.xml, feeds/<cat>.xml RSS for Pinterest auto-publish (looks with a "published" date)
   assets/js/outfits.js           data for the legacy ?id= / ?cat= pages
   sitemap.xml, robots.txt
+
+A look's URL slug is its "url_slug" when set (so editing the title later can't break
+pins that point at it), otherwise it is derived from the title.
 
 Run:  python scripts/build_site.py
 """
@@ -17,7 +21,8 @@ import html
 import json
 import re
 import shutil
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
+from email.utils import format_datetime
 from pathlib import Path
 from string import Template
 
@@ -27,6 +32,13 @@ LINKS_FILE = ROOT / "links.json"
 SITE_URL = "https://exquisite.silat.ae"
 SITE_NAME = "Exquisite Silat"
 TAGLINE = "Outfit collages with every piece linked"
+
+# Feed links carry these so Pinterest visits are measurable (and can get their own Amazon tag).
+PIN_UTM = "utm_source=pinterest&utm_medium=social&utm_campaign=rss"
+UAE = timezone(timedelta(hours=4))
+
+# links.json "settings"; filled in by main()
+SETTINGS: dict = {}
 
 # Order matters: this is the order hubs appear on the home page.
 STYLE_CATEGORIES = ["Casual", "Fancy", "Modest"]
@@ -278,7 +290,8 @@ SHELL = Template(
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=5" />
+  <link rel="alternate" type="application/rss+xml" title="$site_name — new looks" href="/feeds/all.xml" />
 
   <link rel="icon" href="/assets/img/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon32x32.png" />
@@ -318,7 +331,7 @@ $footer_cats
     </div>
   </footer>
 
-  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>$extra_scripts
 </body>
 </html>
 """
@@ -343,8 +356,10 @@ def render_shell(
   og_type: str = "website",
   og_title: str | None = None,
   structured_data: str = "",
+  extra_scripts: str = "",
 ) -> str:
   return SHELL.substitute(
+    extra_scripts=extra_scripts,
     title=esc(title),
     description=esc(clamp(description)),
     canonical=canonical,
@@ -419,6 +434,18 @@ def hub_tile(cat: str, outfits: list[dict], *, count: int) -> str:
           </a>"""
 
 
+def asset_folder(outfit: dict) -> str:
+  """Site-relative folder of a look's assets (where its collage lives)."""
+  return str(outfit.get("collage_image") or "").split("?")[0].lstrip("/").rsplit("/", 1)[0]
+
+
+def piece_thumb(outfit: dict, piece: dict) -> str | None:
+  """Site path of a piece's shop-list thumbnail, if apply_real_products.py made one."""
+  folder = asset_folder(outfit)
+  rel = f"{folder}/thumbs/{piece.get('slot', '').lower()}.jpg"
+  return f"/{rel}" if folder and (ROOT / rel).is_file() else None
+
+
 def shop_list(outfit: dict) -> str:
   rows = []
   for piece in outfit.get("pieces", []):
@@ -431,9 +458,22 @@ def shop_list(outfit: dict) -> str:
       )
     else:
       link = '<span class="shop-link is-placeholder">Link coming soon</span>'
+    thumb = piece_thumb(outfit, piece)
+    thumb_html = ""
+    if thumb:
+      img = (
+        f'<img class="shop-thumb" src="{esc(thumb)}" alt="{esc(piece.get("label", ""))}" '
+        f'width="64" height="64" loading="lazy" decoding="async" />'
+      )
+      thumb_html = (
+        f'<a class="shop-thumb-link" href="{esc(url)}" target="_blank" rel="sponsored nofollow noopener" '
+        f'tabindex="-1" aria-hidden="true">{img}</a>'
+        if has_link
+        else img
+      )
     rows.append(
-      f"""          <li>
-            <div>
+      f"""          <li{' class="has-thumb"' if thumb else ''}>
+            {thumb_html}<div class="shop-text">
               <span class="shop-slot">{esc(piece.get('slot', 'Item'))}</span>
               <span class="shop-label">{esc(piece.get('label', ''))}</span>
             </div>
@@ -441,6 +481,32 @@ def shop_list(outfit: dict) -> str:
           </li>"""
     )
   return "\n".join(rows)
+
+
+def pinterest_tag_script() -> str:
+  """Swap the Amazon tag for visitors who arrived from Pinterest (if a Pinterest tag is set).
+
+  Pinterest feed links carry utm_source=pinterest; the flag is kept for the browser session
+  so the visitor's later clicks on other looks are attributed to Pinterest too.
+  """
+  tag = (SETTINGS.get("pinterest_amazon_tag") or "").strip()
+  if not tag:
+    return ""
+  return f"""
+  <script>
+    (function () {{
+      var tag = {json.dumps(tag)};
+      try {{
+        if (new URLSearchParams(location.search).get("utm_source") === "pinterest") {{
+          sessionStorage.setItem("es_src", "pinterest");
+        }}
+        if (sessionStorage.getItem("es_src") !== "pinterest") return;
+      }} catch (e) {{ return; }}
+      document.querySelectorAll('a[href*="amazon."]').forEach(function (a) {{
+        a.href = a.href.replace(/([?&]tag=)[^&#]*/, "$1" + tag);
+      }});
+    }})();
+  </script>"""
 
 
 # --------------------------------------------------------------------------
@@ -812,6 +878,7 @@ def build_look(outfit: dict, related: list[dict]) -> str:
     body=body,
     og_type="article",
     structured_data="\n".join(jsonld(d) for d in data),
+    extra_scripts=pinterest_tag_script(),
   )
 
 
@@ -884,23 +951,65 @@ function outfitsForCategory(cat) {{
 
 def build_sitemap(outfits: list[dict], cats: list[str]) -> str:
   today = date.today().isoformat()
-  urls = [(f"{SITE_URL}/", "1.0")]
-  urls += [(f"{SITE_URL}/{slugify(c)}/", "0.8") for c in cats]
-  urls += [(f"{SITE_URL}/looks/{o['slug']}/", "0.7") for o in outfits]
-  urls += [(f"{SITE_URL}/about.html", "0.3")]
+  urls = [(f"{SITE_URL}/", "1.0", today)]
+  urls += [(f"{SITE_URL}/{slugify(c)}/", "0.8", today) for c in cats]
+  urls += [(f"{SITE_URL}/looks/{o['slug']}/", "0.7", o.get("published") or today) for o in outfits]
+  urls += [(f"{SITE_URL}/about.html", "0.3", today)]
 
   entries = "\n".join(
     f"""  <url>
     <loc>{loc}</loc>
-    <lastmod>{today}</lastmod>
+    <lastmod>{mod}</lastmod>
     <priority>{pri}</priority>
   </url>"""
-    for loc, pri in urls
+    for loc, pri, mod in urls
   )
   return f"""<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {entries}
 </urlset>
+"""
+
+
+def build_feed(outfits: list[dict], *, title: str, feed_path: str, page: str) -> str:
+  """RSS 2.0 feed for Pinterest auto-publish.
+
+  Pinterest pins each new <item> (image from <enclosure>/<media:content>) to the board the
+  feed is connected to, oldest first. Only looks with a "published" date are included, so
+  connecting a feed doesn't re-pin the older catalogue.
+  """
+  dated = sorted((o for o in outfits if o.get("published") and o.get("collage_image")),
+                 key=lambda o: o["published"], reverse=True)
+  items = []
+  for o in dated:
+    pin = o.get("pin") or {}
+    img_rel = o["collage_image"].split("?")[0].lstrip("/")
+    img_path = ROOT / img_rel
+    length = img_path.stat().st_size if img_path.is_file() else 0
+    published = datetime.fromisoformat(o["published"]).replace(hour=12, tzinfo=UAE)
+    link = f"{SITE_URL}/looks/{o['slug']}/?{PIN_UTM}"
+    items.append(f"""    <item>
+      <title>{esc(pin.get('title') or o['title'])}</title>
+      <link>{esc(link)}</link>
+      <guid isPermaLink="false">{esc(o['id'])}</guid>
+      <pubDate>{format_datetime(published)}</pubDate>
+      <description>{esc(pin.get('description') or o.get('description', ''))}</description>
+      <enclosure url="{esc(abs_url(img_rel))}" length="{length}" type="image/png" />
+      <media:content url="{esc(abs_url(img_rel))}" medium="image" type="image/png" />
+    </item>""")
+  last = format_datetime(datetime.fromisoformat(dated[0]["published"]).replace(hour=12, tzinfo=UAE)) if dated else ""
+  return f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>{esc(title)}</title>
+    <link>{esc(page)}</link>
+    <description>{esc(TAGLINE)}. As an Amazon Associate we earn from qualifying purchases.</description>
+    <language>en</language>
+    <lastBuildDate>{last}</lastBuildDate>
+    <atom:link href="{SITE_URL}/{feed_path}" rel="self" type="application/rss+xml" />
+{chr(10).join(items)}
+  </channel>
+</rss>
 """
 
 
@@ -960,11 +1069,12 @@ def build_redirect(kind: str) -> str:
 
 def main() -> None:
   data = json.loads(LINKS_FILE.read_text(encoding="utf-8"))
+  SETTINGS.update(data.get("settings") or {})
   outfits = [o for o in data.get("outfits", []) if o.get("publish", True)]
 
   seen: set[str] = set()
   for o in outfits:
-    slug = slugify(o["title"])
+    slug = o.get("url_slug") or slugify(o["title"])
     while slug in seen:
       slug = f"{slug}-2"
     seen.add(slug)
@@ -1028,6 +1138,13 @@ def main() -> None:
 
   write("assets/js/outfits.js", build_outfits_js(outfits))
   write("sitemap.xml", build_sitemap(outfits, all_cats))
+  # Pinterest auto-publish: connect each feed to a board (one board per feed).
+  write("feeds/all.xml", build_feed(outfits, title=f"{SITE_NAME} — new looks",
+                                    feed_path="feeds/all.xml", page=f"{SITE_URL}/"))
+  for cat in all_cats:
+    write(f"feeds/{slugify(cat)}.xml",
+          build_feed(by_cat[cat], title=f"{SITE_NAME} — {cat} looks",
+                     feed_path=f"feeds/{slugify(cat)}.xml", page=f"{SITE_URL}/{slugify(cat)}/"))
   write("robots.txt", build_robots())
   write("look.html", build_redirect("look"))
   write("hub.html", build_redirect("hub"))

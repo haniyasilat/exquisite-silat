@@ -16,37 +16,51 @@ const OUTFITS = [
       {
         "slot": "Sweater",
         "label": "Forest Green Cable Knit Quarter-Zip Sweater",
-        "amazon_url": "https://www.amazon.ae/dp/B0HC2L47KW?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0HC2L47KW?tag=exquisitesila-21",
+        "asin": "B0HC2L47KW",
+        "image_url": "https://m.media-amazon.com/images/I/71iXKjSoTIL._AC_SL1500_.jpg"
       },
       {
         "slot": "Jeans",
         "label": "Light Wash High-Waisted Straight Leg Jeans",
-        "amazon_url": "https://www.amazon.ae/dp/B0F4N668QT?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0F4N668QT?tag=exquisitesila-21",
+        "asin": "B0F4N668QT",
+        "image_url": "https://m.media-amazon.com/images/I/61Uqzn-1OML._AC_SL1500_.jpg"
       },
       {
         "slot": "Loafers",
         "label": "Tan Suede Lug-Sole Penny Loafers",
-        "amazon_url": "https://www.amazon.ae/dp/B0CRDQ853T?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0CRDQ853T?tag=exquisitesila-21",
+        "asin": "B0CRDQ853T",
+        "image_url": "https://m.media-amazon.com/images/I/716uWlCsR5L._AC_SL1500_.jpg"
       },
       {
         "slot": "Bag",
         "label": "Cognac Leather Minimalist Shoulder Bag",
-        "amazon_url": "https://www.amazon.ae/dp/B0GGH8F9BX?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0GGH8F9BX?tag=exquisitesila-21",
+        "asin": "B0GGH8F9BX",
+        "image_url": "https://m.media-amazon.com/images/I/61qkbE+2UtL._AC_SL1500_.jpg"
       },
       {
         "slot": "Earrings",
         "label": "Chunky Gold Hoop Earrings",
-        "amazon_url": "https://www.amazon.ae/dp/B09QPPLRHP?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09QPPLRHP?tag=exquisitesila-21",
+        "asin": "B09QPPLRHP",
+        "image_url": "https://m.media-amazon.com/images/I/61oXJg5YpAL._AC_SL1500_.jpg"
       },
       {
         "slot": "Clip",
         "label": "Tortoiseshell Claw Hair Clips (2 pcs)",
-        "amazon_url": "https://www.amazon.ae/dp/B088FFHGTP?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B088FFHGTP?tag=exquisitesila-21",
+        "asin": "B088FFHGTP",
+        "image_url": "https://m.media-amazon.com/images/I/7138eN-kWEL._AC_SL1500_.jpg"
       },
       {
         "slot": "Belt",
         "label": "Tan Leather Belt with Gold Buckle",
-        "amazon_url": "https://www.amazon.ae/dp/B0F4C6DB3Y?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0F4C6DB3Y?tag=exquisitesila-21",
+        "asin": "B0F4C6DB3Y",
+        "image_url": "https://m.media-amazon.com/images/I/61B7GpqIxfL._AC_SL1500_.jpg"
       }
     ]
   },
@@ -64,37 +78,51 @@ const OUTFITS = [
       {
         "slot": "Cardigan",
         "label": "Chocolate Bow Tie-Front Knit Cardigan",
-        "amazon_url": "https://www.amazon.ae/dp/B0DNMVH6HF?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0DNMVH6HF?tag=exquisitesila-21",
+        "asin": "B0DNMVH6HF",
+        "image_url": "https://m.media-amazon.com/images/I/7121QUVGlcL._AC_SL1500_.jpg"
       },
       {
         "slot": "Skirt",
         "label": "Cream Satin High-Waist Maxi Skirt",
-        "amazon_url": "https://www.amazon.ae/dp/B0CQRN8YLF?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0CQRN8YLF?tag=exquisitesila-21",
+        "asin": "B0CQRN8YLF",
+        "image_url": "https://m.media-amazon.com/images/I/51z40nSjNKL._AC_SL1500_.jpg"
       },
       {
         "slot": "Flats",
         "label": "Brown Woven Mary Jane Ballet Flats",
-        "amazon_url": "https://www.amazon.ae/dp/B0GX7T8MXZ?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0GX7T8MXZ?tag=exquisitesila-21",
+        "asin": "B0GX7T8MXZ",
+        "image_url": "https://m.media-amazon.com/images/I/81i5xRVNknL._AC_SL1500_.jpg"
       },
       {
         "slot": "Bag",
         "label": "Glossy Brown Mini Shoulder Bag",
-        "amazon_url": "https://www.amazon.ae/dp/B0D2WDZ6K5?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0D2WDZ6K5?tag=exquisitesila-21",
+        "asin": "B0D2WDZ6K5",
+        "image_url": "https://m.media-amazon.com/images/I/51IQps4xLLL._AC_SL1500_.jpg"
       },
       {
         "slot": "Earrings",
         "label": "Gold Baroque Pearl Drop Earrings",
-        "amazon_url": "https://www.amazon.ae/dp/B0DGSGSXYX?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0DGSGSXYX?tag=exquisitesila-21",
+        "asin": "B0DGSGSXYX",
+        "image_url": "https://m.media-amazon.com/images/I/51eQXXrmezL._AC_SL1500_.jpg"
       },
       {
         "slot": "Bows",
         "label": "Satin Hair Bow Clips (Cream, Black, Brown, Coffee)",
-        "amazon_url": "https://www.amazon.ae/dp/B0H4GRS2CB?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0H4GRS2CB?tag=exquisitesila-21",
+        "asin": "B0H4GRS2CB",
+        "image_url": "https://m.media-amazon.com/images/I/71GTTYjASRL._AC_SL1500_.jpg"
       },
       {
         "slot": "Perfume",
         "label": "Maison Asrar Vanilla Voyage Eau de Parfum",
-        "amazon_url": "https://www.amazon.ae/dp/B0DSLDVF85?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0DSLDVF85?tag=exquisitesila-21",
+        "asin": "B0DSLDVF85",
+        "image_url": "https://m.media-amazon.com/images/I/61-5GcYgwoL._AC_SL1500_.jpg"
       }
     ]
   },
@@ -112,37 +140,51 @@ const OUTFITS = [
       {
         "slot": "Top",
         "label": "Black Boat-Neck Bell-Sleeve Top",
-        "amazon_url": "https://www.amazon.ae/dp/B0GF1RGDGX?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0GF1RGDGX?tag=exquisitesila-21",
+        "asin": "B0GF1RGDGX",
+        "image_url": "https://m.media-amazon.com/images/I/61EKGhvPiUL._AC_SL1500_.jpg"
       },
       {
         "slot": "Skirt",
         "label": "Leopard Print Satin Midi Skirt",
-        "amazon_url": "https://www.amazon.ae/dp/B0FRSPR49T?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0FRSPR49T?tag=exquisitesila-21",
+        "asin": "B0FRSPR49T",
+        "image_url": "https://m.media-amazon.com/images/I/71uHAdbKGlL._AC_SL1500_.jpg"
       },
       {
         "slot": "Heels",
         "label": "Black Bow Mary Jane Kitten Heels",
-        "amazon_url": "https://www.amazon.ae/dp/B09L4SV6T1?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B09L4SV6T1?tag=exquisitesila-21",
+        "asin": "B09L4SV6T1",
+        "image_url": "https://m.media-amazon.com/images/I/51f2elFTWjL._AC_SL1500_.jpg"
       },
       {
         "slot": "Bag",
         "label": "Black Quilted Chain Shoulder Bag",
-        "amazon_url": "https://www.amazon.ae/dp/B0BNZ9MNKG?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0BNZ9MNKG?tag=exquisitesila-21",
+        "asin": "B0BNZ9MNKG",
+        "image_url": "https://m.media-amazon.com/images/I/61JyY8q93hL._AC_SL1000_.jpg"
       },
       {
         "slot": "Sunglasses",
         "label": "Black Narrow Cat-Eye Sunglasses",
-        "amazon_url": "https://www.amazon.ae/dp/B0GHDKFP69?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0GHDKFP69?tag=exquisitesila-21",
+        "asin": "B0GHDKFP69",
+        "image_url": "https://m.media-amazon.com/images/I/41fdnDZ3TfL._AC_SL1248_.jpg"
       },
       {
         "slot": "Earrings",
         "label": "Chunky Gold Dome Earrings",
-        "amazon_url": "https://www.amazon.ae/dp/B0CGV9ZNLX?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0CGV9ZNLX?tag=exquisitesila-21",
+        "asin": "B0CGV9ZNLX",
+        "image_url": "https://m.media-amazon.com/images/I/61RY1Zv+TjL._AC_SL1500_.jpg"
       },
       {
         "slot": "Watch",
         "label": "Vintage Gold Square Bracelet Watch",
-        "amazon_url": "https://www.amazon.ae/dp/B0DBHG7DBP?tag=exquisitesila-21"
+        "amazon_url": "https://www.amazon.ae/dp/B0DBHG7DBP?tag=exquisitesila-21",
+        "asin": "B0DBHG7DBP",
+        "image_url": "https://m.media-amazon.com/images/I/61EU0vMqbFL._AC_SL1500_.jpg"
       }
     ]
   },

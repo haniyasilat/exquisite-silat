@@ -1,6 +1,10 @@
 """Build flat-lay outfit collages from the real linked product photos.
 
-Each look gets its own composition and its own hand-made backdrop (see LOOKS),
+    python scripts/build_real_collages.py                 # every look with a "collage" config
+    python scripts/build_real_collages.py <outfit-id> ... # just those looks
+
+Each look gets its own composition and its own hand-made backdrop (layout in
+links.json under "collage", backdrops in BACKGROUNDS),
 in the spirit of the site's earlier collages: background-free product cutouts
 on a decorative backdrop, the outfit's top and bottom stacked large in one
 column at true-to-life proportions (the bottom is sized relative to the top,
@@ -15,6 +19,7 @@ Each piece image comes from assets/products/<folder>/:
 import json
 import math
 import pathlib
+import sys
 
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
@@ -245,65 +250,26 @@ def bg_vintage_parchment(seed=21) -> Image.Image:
 
 
 # ---------- looks ----------
-# stack: the outfit's top + bottom, stacked in one column at real proportions:
-#   cx       column centre (canvas fraction)
-#   y0, y1   vertical span the pair is fitted into
-#   max_w    widest the top may be
-#   ratio    bottom width relative to top width (top width includes its sleeves)
-#   overlap  how far the top's hem sits over the bottom's waistband (fraction of top height)
-# boxes: accessory slot -> (x0, y0, x1, y1); each piece is fitted inside its box
-# and centred, so non-overlapping boxes mean non-overlapping pieces.
-# cutout: per-slot (white, colored, pockets) args for cutout_white_bg.
-LOOKS = {
-    "forest-knit-denim-look-01": {
-        "folder": "forest-knit-denim-look",
-        "background": bg_autumn_leaves,
-        "ink": (150, 74, 44),
-        "wordmark": (0.27, 0.935),
-        "stack": {"top": "Sweater", "bottom": "Jeans", "cx": 0.70, "y0": 0.05, "y1": 0.95,
-                  "max_w": 0.48, "ratio": 0.58, "overlap": 0.10},
-        "boxes": {  # clothes in the right column, accessories down the left
-            "Bag": (0.07, 0.07, 0.42, 0.28),
-            "Earrings": (0.08, 0.33, 0.21, 0.45),
-            "Clip": (0.23, 0.32, 0.43, 0.49),
-            "Belt": (0.07, 0.53, 0.44, 0.66),
-            "Loafers": (0.07, 0.70, 0.45, 0.90),
-        },
-    },
-    "chocolate-bow-satin-look-01": {
-        "folder": "chocolate-bow-satin-look",
-        "background": bg_coquette_lace,
-        "ink": (92, 56, 42),
-        "wordmark": (0.28, 0.945),
-        "stack": {"top": "Cardigan", "bottom": "Skirt", "cx": 0.645, "y0": 0.04, "y1": 0.96,
-                  "max_w": 0.44, "ratio": 0.80, "overlap": 0.13},
-        "boxes": {  # lace down both edges; accessories in the left column
-            "Bows": (0.13, 0.05, 0.41, 0.21),
-            "Earrings": (0.14, 0.25, 0.25, 0.40),
-            "Perfume": (0.27, 0.24, 0.41, 0.42),
-            "Bag": (0.13, 0.46, 0.41, 0.64),
-            "Flats": (0.13, 0.70, 0.42, 0.91),
-        },
-        "cutout": {"Skirt": (250, 236, False), "Earrings": (250, 236, True), "Bows": (250, 236, False),
-                   "Perfume": (250, 236, False)},
-    },
-    "leopard-black-look-01": {
-        "folder": "leopard-black-look",
-        "background": bg_vintage_parchment,
-        "ink": (40, 30, 24),
-        "wordmark": (0.76, 0.905),
-        "stack": {"top": "Top", "bottom": "Skirt", "cx": 0.36, "y0": 0.07, "y1": 0.93,
-                  "max_w": 0.48, "ratio": 0.70, "overlap": 0.05},
-        "boxes": {  # mirrored: clothes on the left, accessories down the right
-            "Sunglasses": (0.62, 0.08, 0.89, 0.17),
-            "Earrings": (0.63, 0.21, 0.76, 0.34),
-            "Watch": (0.79, 0.19, 0.89, 0.38),
-            "Bag": (0.62, 0.42, 0.90, 0.62),
-            "Heels": (0.61, 0.67, 0.90, 0.86),
-        },
-        # the watch's white dial is part of the product, not a see-through gap
-        "cutout": {"Watch": (242, 205, False)},
-    },
+# Each look's layout lives in links.json under the outfit's "collage" key:
+#   background  name from BACKGROUNDS below
+#   ink         [r, g, b] for the wordmark
+#   wordmark    [x, y] canvas fractions (centre-x, top-y)
+#   stack       the outfit's top + bottom, stacked in one column at real proportions:
+#     top, bottom  piece slots
+#     cx           column centre (canvas fraction)
+#     y0, y1       vertical span the pair is fitted into
+#     max_w        widest the top may be
+#     ratio        bottom width relative to top width (top width includes its sleeves)
+#     overlap      how far the top's hem sits over the bottom's waistband (fraction of top height)
+#   boxes       accessory slot -> [x0, y0, x1, y1]; each piece is fitted inside its box and
+#               centred, so non-overlapping boxes mean non-overlapping pieces
+#   cutout      optional slot -> [white, colored, pockets] args for cutout_white_bg
+#               (pale/pearly products: [250, 236, false]; white watch dials: [242, 205, false])
+# The look's asset folder is the folder of its collage_image.
+BACKGROUNDS = {
+    "autumn_leaves": bg_autumn_leaves,
+    "coquette_lace": bg_coquette_lace,
+    "vintage_parchment": bg_vintage_parchment,
 }
 
 
@@ -402,15 +368,19 @@ def draw_wordmark(canvas: Image.Image, colour, at) -> None:
 
 # ---------- build ----------
 
+def asset_dir_for(outfit: dict) -> pathlib.Path:
+    return ROOT / pathlib.Path(outfit["collage_image"].split("?")[0]).parent
+
+
 def build_outfit_collage(outfit: dict) -> None:
-    look = LOOKS[outfit["slug"]]
-    asset_dir = ASSET_ROOT / look["folder"]
+    look = outfit["collage"]
+    asset_dir = asset_dir_for(outfit)
     cut = look.get("cutout", {})
 
     def image(slot):
-        return piece_image(asset_dir, slot, cut.get(slot, ()))
+        return piece_image(asset_dir, slot, tuple(cut.get(slot, ())))
 
-    canvas = look["background"]()
+    canvas = BACKGROUNDS[look["background"]]()
     st = look["stack"]
     place_stack(canvas, image(st["top"]), image(st["bottom"]), st)
     for piece in outfit["pieces"]:
@@ -423,16 +393,18 @@ def build_outfit_collage(outfit: dict) -> None:
             continue
         place(canvas, image(slot), box)
 
-    draw_wordmark(canvas, look["ink"], look["wordmark"])
+    draw_wordmark(canvas, tuple(look["ink"]), look["wordmark"])
     out_path = asset_dir / "collage.png"
     canvas.convert("RGB").save(out_path, "PNG", optimize=True)
     print(f"[OK] wrote {out_path.relative_to(ROOT)}")
 
 
 def main() -> None:
+    """Build collages for every look with a "collage" config, or only the ids given."""
+    only = set(sys.argv[1:])
     data = json.loads(LINKS_JSON.read_text(encoding="utf-8"))
     for outfit in data["outfits"]:
-        if outfit["slug"] in LOOKS:
+        if "collage" in outfit and (not only or outfit["id"] in only):
             build_outfit_collage(outfit)
 
 

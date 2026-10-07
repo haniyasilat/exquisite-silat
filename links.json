@@ -1,5 +1,8 @@
 {
   "site_name": "Exquisite Silat",
+  "settings": {
+    "pinterest_amazon_tag": ""
+  },
   "outfits": [
     {
       "id": "forest-knit-denim-look-01",
@@ -16,41 +19,115 @@
         {
           "slot": "Sweater",
           "label": "Forest Green Cable Knit Quarter-Zip Sweater",
-          "amazon_url": "https://www.amazon.ae/dp/B0HC2L47KW?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0HC2L47KW?tag=exquisitesila-21",
+          "asin": "B0HC2L47KW",
+          "image_url": "https://m.media-amazon.com/images/I/71iXKjSoTIL._AC_SL1500_.jpg"
         },
         {
           "slot": "Jeans",
           "label": "Light Wash High-Waisted Straight Leg Jeans",
-          "amazon_url": "https://www.amazon.ae/dp/B0F4N668QT?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0F4N668QT?tag=exquisitesila-21",
+          "asin": "B0F4N668QT",
+          "image_url": "https://m.media-amazon.com/images/I/61Uqzn-1OML._AC_SL1500_.jpg"
         },
         {
           "slot": "Loafers",
           "label": "Tan Suede Lug-Sole Penny Loafers",
-          "amazon_url": "https://www.amazon.ae/dp/B0CRDQ853T?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0CRDQ853T?tag=exquisitesila-21",
+          "asin": "B0CRDQ853T",
+          "image_url": "https://m.media-amazon.com/images/I/716uWlCsR5L._AC_SL1500_.jpg"
         },
         {
           "slot": "Bag",
           "label": "Cognac Leather Minimalist Shoulder Bag",
-          "amazon_url": "https://www.amazon.ae/dp/B0GGH8F9BX?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0GGH8F9BX?tag=exquisitesila-21",
+          "asin": "B0GGH8F9BX",
+          "image_url": "https://m.media-amazon.com/images/I/61qkbE+2UtL._AC_SL1500_.jpg"
         },
         {
           "slot": "Earrings",
           "label": "Chunky Gold Hoop Earrings",
-          "amazon_url": "https://www.amazon.ae/dp/B09QPPLRHP?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B09QPPLRHP?tag=exquisitesila-21",
+          "asin": "B09QPPLRHP",
+          "image_url": "https://m.media-amazon.com/images/I/61oXJg5YpAL._AC_SL1500_.jpg"
         },
         {
           "slot": "Clip",
           "label": "Tortoiseshell Claw Hair Clips (2 pcs)",
-          "amazon_url": "https://www.amazon.ae/dp/B088FFHGTP?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B088FFHGTP?tag=exquisitesila-21",
+          "asin": "B088FFHGTP",
+          "image_url": "https://m.media-amazon.com/images/I/7138eN-kWEL._AC_SL1500_.jpg"
         },
         {
           "slot": "Belt",
           "label": "Tan Leather Belt with Gold Buckle",
-          "amazon_url": "https://www.amazon.ae/dp/B0F4C6DB3Y?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0F4C6DB3Y?tag=exquisitesila-21",
+          "asin": "B0F4C6DB3Y",
+          "image_url": "https://m.media-amazon.com/images/I/61B7GpqIxfL._AC_SL1500_.jpg"
         }
       ],
       "publish": true,
-      "status": "publish"
+      "status": "publish",
+      "published": "2026-10-05",
+      "url_slug": "forest-green-knit-and-denim-weekend",
+      "pin": {
+        "title": "Forest Green Knit & Denim Outfit | Casual Fall Weekend Style",
+        "description": "Easy autumn weekend outfit: forest green cable-knit quarter-zip, light-wash straight leg jeans, tan suede lug loafers, cognac leather shoulder bag, chunky gold hoops and a tortoiseshell claw clip. Tap to shop every piece (affiliate links). #falloutfits #autumnfashion #casualstyle #denimoutfit #outfitinspo"
+      },
+      "collage": {
+        "background": "autumn_leaves",
+        "ink": [
+          150,
+          74,
+          44
+        ],
+        "wordmark": [
+          0.27,
+          0.935
+        ],
+        "stack": {
+          "top": "Sweater",
+          "bottom": "Jeans",
+          "cx": 0.7,
+          "y0": 0.05,
+          "y1": 0.95,
+          "max_w": 0.48,
+          "ratio": 0.58,
+          "overlap": 0.1
+        },
+        "boxes": {
+          "Bag": [
+            0.07,
+            0.07,
+            0.42,
+            0.28
+          ],
+          "Earrings": [
+            0.08,
+            0.33,
+            0.21,
+            0.45
+          ],
+          "Clip": [
+            0.23,
+            0.32,
+            0.43,
+            0.49
+          ],
+          "Belt": [
+            0.07,
+            0.53,
+            0.44,
+            0.66
+          ],
+          "Loafers": [
+            0.07,
+            0.7,
+            0.45,
+            0.9
+          ]
+        }
+      }
     },
     {
       "id": "chocolate-bow-satin-look-01",
@@ -67,41 +144,137 @@
         {
           "slot": "Cardigan",
           "label": "Chocolate Bow Tie-Front Knit Cardigan",
-          "amazon_url": "https://www.amazon.ae/dp/B0DNMVH6HF?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0DNMVH6HF?tag=exquisitesila-21",
+          "asin": "B0DNMVH6HF",
+          "image_url": "https://m.media-amazon.com/images/I/7121QUVGlcL._AC_SL1500_.jpg"
         },
         {
           "slot": "Skirt",
           "label": "Cream Satin High-Waist Maxi Skirt",
-          "amazon_url": "https://www.amazon.ae/dp/B0CQRN8YLF?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0CQRN8YLF?tag=exquisitesila-21",
+          "asin": "B0CQRN8YLF",
+          "image_url": "https://m.media-amazon.com/images/I/51z40nSjNKL._AC_SL1500_.jpg"
         },
         {
           "slot": "Flats",
           "label": "Brown Woven Mary Jane Ballet Flats",
-          "amazon_url": "https://www.amazon.ae/dp/B0GX7T8MXZ?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0GX7T8MXZ?tag=exquisitesila-21",
+          "asin": "B0GX7T8MXZ",
+          "image_url": "https://m.media-amazon.com/images/I/81i5xRVNknL._AC_SL1500_.jpg"
         },
         {
           "slot": "Bag",
           "label": "Glossy Brown Mini Shoulder Bag",
-          "amazon_url": "https://www.amazon.ae/dp/B0D2WDZ6K5?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0D2WDZ6K5?tag=exquisitesila-21",
+          "asin": "B0D2WDZ6K5",
+          "image_url": "https://m.media-amazon.com/images/I/51IQps4xLLL._AC_SL1500_.jpg"
         },
         {
           "slot": "Earrings",
           "label": "Gold Baroque Pearl Drop Earrings",
-          "amazon_url": "https://www.amazon.ae/dp/B0DGSGSXYX?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0DGSGSXYX?tag=exquisitesila-21",
+          "asin": "B0DGSGSXYX",
+          "image_url": "https://m.media-amazon.com/images/I/51eQXXrmezL._AC_SL1500_.jpg"
         },
         {
           "slot": "Bows",
           "label": "Satin Hair Bow Clips (Cream, Black, Brown, Coffee)",
-          "amazon_url": "https://www.amazon.ae/dp/B0H4GRS2CB?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0H4GRS2CB?tag=exquisitesila-21",
+          "asin": "B0H4GRS2CB",
+          "image_url": "https://m.media-amazon.com/images/I/71GTTYjASRL._AC_SL1500_.jpg"
         },
         {
           "slot": "Perfume",
           "label": "Maison Asrar Vanilla Voyage Eau de Parfum",
-          "amazon_url": "https://www.amazon.ae/dp/B0DSLDVF85?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0DSLDVF85?tag=exquisitesila-21",
+          "asin": "B0DSLDVF85",
+          "image_url": "https://m.media-amazon.com/images/I/61-5GcYgwoL._AC_SL1500_.jpg"
         }
       ],
       "publish": true,
-      "status": "publish"
+      "status": "publish",
+      "published": "2026-10-07",
+      "url_slug": "chocolate-bows-and-cream-satin",
+      "pin": {
+        "title": "Chocolate Bows & Cream Satin Outfit | Coquette Autumn Style",
+        "description": "Soft coquette autumn look: chocolate tie-front bow cardigan, cream satin maxi skirt, woven brown Mary Jane flats, a glossy mini shoulder bag, pearl drops, satin hair bows and a vanilla perfume. Tap to shop each piece (affiliate links). #coquette #falloutfits #bowcardigan #satinskirt #outfitinspo"
+      },
+      "collage": {
+        "background": "coquette_lace",
+        "ink": [
+          92,
+          56,
+          42
+        ],
+        "wordmark": [
+          0.28,
+          0.945
+        ],
+        "stack": {
+          "top": "Cardigan",
+          "bottom": "Skirt",
+          "cx": 0.645,
+          "y0": 0.04,
+          "y1": 0.96,
+          "max_w": 0.44,
+          "ratio": 0.8,
+          "overlap": 0.13
+        },
+        "boxes": {
+          "Bows": [
+            0.13,
+            0.05,
+            0.41,
+            0.21
+          ],
+          "Earrings": [
+            0.14,
+            0.25,
+            0.25,
+            0.4
+          ],
+          "Perfume": [
+            0.27,
+            0.24,
+            0.41,
+            0.42
+          ],
+          "Bag": [
+            0.13,
+            0.46,
+            0.41,
+            0.64
+          ],
+          "Flats": [
+            0.13,
+            0.7,
+            0.42,
+            0.91
+          ]
+        },
+        "cutout": {
+          "Skirt": [
+            250,
+            236,
+            false
+          ],
+          "Earrings": [
+            250,
+            236,
+            true
+          ],
+          "Bows": [
+            250,
+            236,
+            false
+          ],
+          "Perfume": [
+            250,
+            236,
+            false
+          ]
+        }
+      }
     },
     {
       "id": "leopard-black-look-01",
@@ -118,41 +291,122 @@
         {
           "slot": "Top",
           "label": "Black Boat-Neck Bell-Sleeve Top",
-          "amazon_url": "https://www.amazon.ae/dp/B0GF1RGDGX?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0GF1RGDGX?tag=exquisitesila-21",
+          "asin": "B0GF1RGDGX",
+          "image_url": "https://m.media-amazon.com/images/I/61EKGhvPiUL._AC_SL1500_.jpg"
         },
         {
           "slot": "Skirt",
           "label": "Leopard Print Satin Midi Skirt",
-          "amazon_url": "https://www.amazon.ae/dp/B0FRSPR49T?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0FRSPR49T?tag=exquisitesila-21",
+          "asin": "B0FRSPR49T",
+          "image_url": "https://m.media-amazon.com/images/I/71uHAdbKGlL._AC_SL1500_.jpg"
         },
         {
           "slot": "Heels",
           "label": "Black Bow Mary Jane Kitten Heels",
-          "amazon_url": "https://www.amazon.ae/dp/B09L4SV6T1?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B09L4SV6T1?tag=exquisitesila-21",
+          "asin": "B09L4SV6T1",
+          "image_url": "https://m.media-amazon.com/images/I/51f2elFTWjL._AC_SL1500_.jpg"
         },
         {
           "slot": "Bag",
           "label": "Black Quilted Chain Shoulder Bag",
-          "amazon_url": "https://www.amazon.ae/dp/B0BNZ9MNKG?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0BNZ9MNKG?tag=exquisitesila-21",
+          "asin": "B0BNZ9MNKG",
+          "image_url": "https://m.media-amazon.com/images/I/61JyY8q93hL._AC_SL1000_.jpg"
         },
         {
           "slot": "Sunglasses",
           "label": "Black Narrow Cat-Eye Sunglasses",
-          "amazon_url": "https://www.amazon.ae/dp/B0GHDKFP69?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0GHDKFP69?tag=exquisitesila-21",
+          "asin": "B0GHDKFP69",
+          "image_url": "https://m.media-amazon.com/images/I/41fdnDZ3TfL._AC_SL1248_.jpg"
         },
         {
           "slot": "Earrings",
           "label": "Chunky Gold Dome Earrings",
-          "amazon_url": "https://www.amazon.ae/dp/B0CGV9ZNLX?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0CGV9ZNLX?tag=exquisitesila-21",
+          "asin": "B0CGV9ZNLX",
+          "image_url": "https://m.media-amazon.com/images/I/61RY1Zv+TjL._AC_SL1500_.jpg"
         },
         {
           "slot": "Watch",
           "label": "Vintage Gold Square Bracelet Watch",
-          "amazon_url": "https://www.amazon.ae/dp/B0DBHG7DBP?tag=exquisitesila-21"
+          "amazon_url": "https://www.amazon.ae/dp/B0DBHG7DBP?tag=exquisitesila-21",
+          "asin": "B0DBHG7DBP",
+          "image_url": "https://m.media-amazon.com/images/I/61EU0vMqbFL._AC_SL1500_.jpg"
         }
       ],
       "publish": true,
-      "status": "publish"
+      "status": "publish",
+      "published": "2026-10-07",
+      "url_slug": "leopard-satin-and-black-bell-sleeves",
+      "pin": {
+        "title": "Leopard Satin Skirt & Black Bell Sleeves Outfit | Chic Fall Style",
+        "description": "Chic autumn outfit: black boat-neck bell-sleeve top with a leopard satin midi skirt, bow Mary Jane kitten heels, a quilted chain bag, cat-eye sunglasses and chunky gold jewellery. Tap to shop every piece (affiliate links). #leopardskirt #falloutfits #chicstyle #datenightoutfit #outfitinspo"
+      },
+      "collage": {
+        "background": "vintage_parchment",
+        "ink": [
+          40,
+          30,
+          24
+        ],
+        "wordmark": [
+          0.76,
+          0.905
+        ],
+        "stack": {
+          "top": "Top",
+          "bottom": "Skirt",
+          "cx": 0.36,
+          "y0": 0.07,
+          "y1": 0.93,
+          "max_w": 0.48,
+          "ratio": 0.7,
+          "overlap": 0.05
+        },
+        "boxes": {
+          "Sunglasses": [
+            0.62,
+            0.08,
+            0.89,
+            0.17
+          ],
+          "Earrings": [
+            0.63,
+            0.21,
+            0.76,
+            0.34
+          ],
+          "Watch": [
+            0.79,
+            0.19,
+            0.89,
+            0.38
+          ],
+          "Bag": [
+            0.62,
+            0.42,
+            0.9,
+            0.62
+          ],
+          "Heels": [
+            0.61,
+            0.67,
+            0.9,
+            0.86
+          ]
+        },
+        "cutout": {
+          "Watch": [
+            242,
+            205,
+            false
+          ]
+        }
+      }
     },
     {
       "id": "teal-elevate-look-01",

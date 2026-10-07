@@ -19,25 +19,64 @@ That reads `links.json` and writes:
 |--------|------------|
 | `index.html` | Home — split hero, category tiles, latest looks |
 | `<category>/index.html` | One page per category (7) |
-| `looks/<slug>/index.html` | One page per outfit (16) |
+| `looks/<slug>/index.html` | One page per outfit |
 | `about.html` | About page |
+| `feeds/all.xml`, `feeds/<category>.xml` | RSS for Pinterest auto-publish |
 | `assets/js/outfits.js` | Data for the legacy `?id=` / `?cat=` redirects |
 | `sitemap.xml`, `robots.txt` | Crawl files |
 | `look.html`, `hub.html` | Redirect shims for old query-string URLs |
 
-Slugs are derived from each outfit's `title`, so **renaming a title changes its
-URL**. The `looks/` folder is wiped and rebuilt each run so renames don't leave
-orphaned pages behind.
+A look's URL is its `url_slug` when set; otherwise it's derived from the `title`
+(older looks), so **renaming such a title changes its URL**. Newer looks pin
+`url_slug` so pins keep working. The `looks/` folder is wiped and rebuilt each
+run so renames don't leave orphaned pages behind.
 
 ## Adding a look
 
-1. Add an entry to the `outfits` array in `links.json` — `id`, `title`,
-   `description`, `categories`, `collage_image`, and the `pieces` list.
-2. Drop the collage into `assets/products/<look-name>/collage.png`.
-3. Run `python scripts/build_site.py`.
-4. Commit and push — GitHub Pages picks it up automatically.
+New looks are made weekly by a scheduled task that follows
+[`docs/weekly-look-playbook.md`](docs/weekly-look-playbook.md). By hand, the
+same pipeline is:
+
+```bash
+python scripts/amazon_research.py search <name> "<query>"   # find products (contact sheets)
+python scripts/amazon_research.py verify <ASIN> ...          # live check + main photo
+# add the outfit (pieces with asin + image_url, collage layout, url_slug, published, pin) to links.json
+python scripts/apply_real_products.py <outfit-id>            # download product photos + thumbnails
+python scripts/build_real_collages.py <outfit-id>            # render the collage
+python scripts/build_site.py
+python scripts/check_links.py <outfit-id>                    # every link buyable?
+```
+
+Then commit and push; GitHub Pages deploys automatically.
 
 Set `"publish": false` on an entry to keep it out of the build.
+
+## Pinterest (RSS auto-publish)
+
+Looks with a `published` date appear in the RSS feeds (`pin.title` /
+`pin.description` become the pin text, the collage the pin image, and the link
+carries `utm_source=pinterest`). One-time setup in a Pinterest **business**
+account with `exquisite.silat.ae` claimed: *Create → Create Pins in bulk →
+Auto-publish → Connect RSS feed*, once per board, e.g.
+
+| Feed | Board |
+|------|-------|
+| `https://exquisite.silat.ae/feeds/autumn.xml` | Autumn Outfits |
+| `https://exquisite.silat.ae/feeds/fancy.xml` | Evening & Dinner Outfits |
+| `https://exquisite.silat.ae/feeds/modest.xml` | Modest Fashion |
+| `https://exquisite.silat.ae/feeds/all.xml` | an "All looks" board |
+
+Pinterest checks feeds daily and pins new items within ~24h.
+
+To see Pinterest sales separately in Amazon Associates, create a second
+tracking ID there and put it in `links.json` → `settings.pinterest_amazon_tag`;
+look pages then swap the tag for visitors arriving from Pinterest.
+
+## Link health
+
+`python scripts/check_links.py` checks every product link and writes
+`content/generated/link-report.md` (OOS/DEAD links exit non-zero). The weekly
+task runs it before adding a new look.
 
 ## Local preview
 
@@ -65,5 +104,8 @@ near the top of `scripts/build_site.py`.
 
 `scripts/generate.py` and `scripts/make_wxr.py` are a separate WordPress export
 pipeline that also reads `links.json`. They're unrelated to the static site.
+
+`scripts/cut_garments.py` lifts a garment off an on-model product photo
+(OpenCV GrabCut) for the rare piece that has no person-free photo.
 
 Colors: light beige + dark ruby red.
