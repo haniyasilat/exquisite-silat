@@ -1,0 +1,58 @@
+# Builds the site from links.json and deploys it to GitHub Pages.
+#
+# Runs on every push to main and every morning at 08:00 UAE time. The daily run is what
+# releases scheduled Pinterest pins: the RSS feeds only list a pin once its date has
+# arrived (see build_feed in scripts/build_site.py), and Pinterest picks new feed items up
+# within ~24h. Requires Settings → Pages → Build and deployment → Source: "GitHub Actions".
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "0 4 * * *" # 04:00 UTC = 08:00 UAE
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build site (standard library only)
+        run: python scripts/build_site.py
+
+      - name: Collect public files
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude '.git' --exclude '.github' --exclude '.claude' --exclude '_site' \
+            --exclude 'scripts' --exclude 'content' --exclude 'docs' \
+            --exclude '*.py' --exclude '*.md' --exclude '*.bat' --exclude '*.csv' \
+            --exclude '.env*' --exclude 'requirements.txt' \
+            ./ _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

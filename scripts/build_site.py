@@ -978,14 +978,32 @@ def build_feed(outfits: list[dict], *, title: str, feed_path: str, page: str) ->
   """RSS 2.0 feed for Pinterest auto-publish.
 
   Pinterest pins each new <item> (image from <enclosure>/<media:content>) to the board the
-  feed is connected to, oldest first. Only looks with a "published" date are included, so
-  connecting a feed doesn't re-pin the older catalogue.
+  feed is connected to, once per <guid>, within ~24h of it appearing. So the feed is the
+  pin schedule: an item only appears once its date (UAE time) has arrived, and the site is
+  rebuilt every morning (.github/workflows/pages.yml) so scheduled pins go out on their day.
+
+  Per look: the first pin on its "published" date, then one pin per "followup_pins" entry
+  ({"date", optional "title"/"description"}) on that date. Looks without a "published"
+  date (the older catalogue) are left out so connecting a feed doesn't re-pin them.
   """
-  dated = sorted((o for o in outfits if o.get("published") and o.get("collage_image")),
-                 key=lambda o: o["published"], reverse=True)
+  today = datetime.now(UAE).date().isoformat()
+  pins = []  # (date, outfit, guid, title, description)
+  for o in outfits:
+    if not (o.get("published") and o.get("collage_image")):
+      continue
+    first = o.get("pin") or {}
+    title0 = first.get("title") or o["title"]
+    desc0 = first.get("description") or o.get("description", "")
+    if o["published"] <= today:
+      pins.append((o["published"], o, o["id"], title0, desc0))
+    for n, extra in enumerate(o.get("followup_pins") or [], start=2):
+      if extra.get("date") and extra["date"] <= today:
+        pins.append((extra["date"], o, f"{o['id']}-pin{n}",
+                     extra.get("title") or title0, extra.get("description") or desc0))
+  pins.sort(key=lambda p: p[0], reverse=True)
+
   items = []
-  for o in dated:
-    pin = o.get("pin") or {}
+  for day, o, guid, pin_title, pin_desc in pins:
     # Pinterest gets the pin.png version (collage + "tap to shop" band) when it exists
     img_rel = o["collage_image"].split("?")[0].lstrip("/")
     pin_rel = f"{asset_folder(o)}/pin.png"
@@ -993,18 +1011,20 @@ def build_feed(outfits: list[dict], *, title: str, feed_path: str, page: str) ->
       img_rel = pin_rel
     img_path = ROOT / img_rel
     length = img_path.stat().st_size if img_path.is_file() else 0
-    published = datetime.fromisoformat(o["published"]).replace(hour=12, tzinfo=UAE)
+    when = datetime.fromisoformat(day).replace(hour=9, tzinfo=UAE)
     link = f"{SITE_URL}/looks/{o['slug']}/?{PIN_UTM}"
+    if guid != o["id"]:  # follow-up pins need their own link (and it tells them apart in analytics)
+      link += f"&utm_content={guid.rsplit('-', 1)[-1]}"
     items.append(f"""    <item>
-      <title>{esc(pin.get('title') or o['title'])}</title>
+      <title>{esc(pin_title)}</title>
       <link>{esc(link)}</link>
-      <guid isPermaLink="false">{esc(o['id'])}</guid>
-      <pubDate>{format_datetime(published)}</pubDate>
-      <description>{esc(pin.get('description') or o.get('description', ''))}</description>
+      <guid isPermaLink="false">{esc(guid)}</guid>
+      <pubDate>{format_datetime(when)}</pubDate>
+      <description>{esc(pin_desc)}</description>
       <enclosure url="{esc(abs_url(img_rel))}" length="{length}" type="image/png" />
       <media:content url="{esc(abs_url(img_rel))}" medium="image" type="image/png" />
     </item>""")
-  last = format_datetime(datetime.fromisoformat(dated[0]["published"]).replace(hour=12, tzinfo=UAE)) if dated else ""
+  last = format_datetime(datetime.fromisoformat(pins[0][0]).replace(hour=9, tzinfo=UAE)) if pins else ""
   return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>

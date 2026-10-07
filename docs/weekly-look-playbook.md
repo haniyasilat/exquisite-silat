@@ -100,6 +100,21 @@ Insert the new outfit at the **top** of `outfits` (home page shows newest first)
 }
 ```
 
+Also schedule one **follow-up pin** for the look (Pinterest favours fresh pins, and this
+spreads pins across the week: new looks go out Thursdays, follow-ups the following-but-one
+Monday):
+
+```json
+"followup_pins": [
+  {"date": "<published + 11 days, a Monday>",
+   "title": "<a different angle: 'Outfit idea: …', 'How to style …', '<colour> + <colour> outfit for …'>",
+   "description": "Tap to shop every piece (affiliate links). <fresh wording, different keywords> <4-5 different hashtags>"}
+]
+```
+
+Before picking the date, check no other look already has a follow-up on that day; if one
+does, use the next free day that week. The daily site build releases each pin on its date.
+
 Rules:
 - Labels and descriptions must match the actual listing (colour name, material, item type).
 - `slot` names are single words (they become file names): Sweater, Jeans, Skirt, Bag, Earrings…
