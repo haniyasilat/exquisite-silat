@@ -986,7 +986,11 @@ def build_feed(outfits: list[dict], *, title: str, feed_path: str, page: str) ->
   items = []
   for o in dated:
     pin = o.get("pin") or {}
+    # Pinterest gets the pin.png version (collage + "tap to shop" band) when it exists
     img_rel = o["collage_image"].split("?")[0].lstrip("/")
+    pin_rel = f"{asset_folder(o)}/pin.png"
+    if (ROOT / pin_rel).is_file():
+      img_rel = pin_rel
     img_path = ROOT / img_rel
     length = img_path.stat().st_size if img_path.is_file() else 0
     published = datetime.fromisoformat(o["published"]).replace(hour=12, tzinfo=UAE)

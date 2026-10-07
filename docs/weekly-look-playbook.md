@@ -87,7 +87,7 @@ Insert the new outfit at the **top** of `outfits` (home page shows newest first)
   "categories": ["Casual|Fancy|Modest", "Spring|Summer|Autumn|Winter"],
   "pin": {
     "title": "<keyword-rich, <=100 chars, e.g. '... Outfit | Casual Fall Style'>",
-    "description": "<what people search for + every key piece + 'Tap to shop every piece (affiliate links).' + 4-5 hashtags, <=500 chars>"
+    "description": "Tap to shop every piece (affiliate links). <what people search for + every key piece> <4-5 hashtags>  (always START with that exact tap-to-shop sentence; <=500 chars)"
   },
   "pieces": [
     {"slot": "<Top slot e.g. Sweater>", "label": "<Colour + material + item, as the listing really is>",
@@ -129,6 +129,10 @@ Then:
 python scripts/apply_real_products.py <outfit-id>
 python scripts/build_real_collages.py <outfit-id>
 ```
+
+This writes `collage.png` (used on the site) and `pin.png` (the Pinterest image: the same
+collage with a "TAP TO SHOP THE LOOK" band underneath in the look's `ink` colour; the RSS
+feeds use it automatically). Check the band text is readable on the chosen `ink`.
 
 Open `assets/products/<folder>/collage.png` and look at it critically:
 - Bottom garment is long and full-size relative to the top (never smaller than the top).

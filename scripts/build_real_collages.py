@@ -45,6 +45,10 @@ def _font(*candidates: str) -> pathlib.Path:
 
 
 SERIF_BOLD = _font("/usr/share/fonts/truetype/liberation/LiberationSerif-Bold.ttf", r"C:\Windows\Fonts\timesbd.ttf")
+SANS = _font("/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf", r"C:\Windows\Fonts\arial.ttf")
+
+PIN_BAND = 150  # height of the call-to-action band under the collage on the Pinterest image
+CREAM = (250, 243, 232)
 
 
 # ---------- shared texture helpers ----------
@@ -366,6 +370,31 @@ def draw_wordmark(canvas: Image.Image, colour, at) -> None:
     draw.text((int(W * at[0]) - (tb[2] - tb[0]) // 2, int(H * at[1])), text, font=font, fill=(*colour, 255))
 
 
+def spaced_text(draw: ImageDraw.ImageDraw, y: int, text: str, font, fill, spacing: int) -> None:
+    """Centred text with extra letter spacing."""
+    widths = [draw.textbbox((0, 0), ch, font=font)[2] for ch in text]
+    x = (W - (sum(widths) + spacing * (len(text) - 1))) / 2
+    for ch, w in zip(text, widths):
+        draw.text((x, y), ch, font=font, fill=fill)
+        x += w + spacing
+
+
+def make_pin(collage: Image.Image, ink) -> Image.Image:
+    """Pinterest version: the collage with a call-to-action band underneath.
+
+    The band sits below the collage (it covers nothing) in the look's ink colour. The
+    site keeps the clean collage, since its Shop buttons sit right beside it.
+    """
+    pin = Image.new("RGB", (W, H + PIN_BAND), tuple(ink))
+    pin.paste(collage.convert("RGB"), (0, 0))
+    draw = ImageDraw.Draw(pin)
+    draw.line((0, H, W, H), fill=CREAM, width=2)
+    spaced_text(draw, H + 36, "TAP TO SHOP THE LOOK", ImageFont.truetype(str(SERIF_BOLD), 40), CREAM, 4)
+    spaced_text(draw, H + 96, "every piece linked  ·  exquisite.silat.ae",
+                ImageFont.truetype(str(SANS), 20), CREAM, 1)
+    return pin
+
+
 # ---------- build ----------
 
 def asset_dir_for(outfit: dict) -> pathlib.Path:
@@ -396,7 +425,8 @@ def build_outfit_collage(outfit: dict) -> None:
     draw_wordmark(canvas, tuple(look["ink"]), look["wordmark"])
     out_path = asset_dir / "collage.png"
     canvas.convert("RGB").save(out_path, "PNG", optimize=True)
-    print(f"[OK] wrote {out_path.relative_to(ROOT)}")
+    make_pin(canvas, look["ink"]).save(asset_dir / "pin.png", "PNG", optimize=True)
+    print(f"[OK] wrote {out_path.relative_to(ROOT)} + pin.png")
 
 
 def main() -> None:
