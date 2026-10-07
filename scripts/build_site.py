@@ -274,7 +274,7 @@ SHELL = Template(
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>$title</title>
   <meta name="description" content="$description" />
-  <link rel="canonical" href="$canonical" />
+  <link rel="canonical" href="$canonical" />$verify_meta
 
   <meta property="og:type" content="$og_type" />
   <meta property="og:site_name" content="$site_name" />
@@ -358,7 +358,10 @@ def render_shell(
   structured_data: str = "",
   extra_scripts: str = "",
 ) -> str:
+  verify = (SETTINGS.get("pinterest_domain_verify") or "").strip()
   return SHELL.substitute(
+    # Pinterest "claim website" check reads this tag from the home page
+    verify_meta=f'\n  <meta name="p:domain_verify" content="{esc(verify)}" />' if verify else "",
     extra_scripts=extra_scripts,
     title=esc(title),
     description=esc(clamp(description)),
