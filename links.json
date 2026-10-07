@@ -452,8 +452,9 @@
         },
         {
           "slot": "Bangle",
-          "label": "Gold Chunky Bangle",
-          "amazon_url": "https://amzn.to/4fAwRbW"
+          "label": "Gold Teardrop Chunky Cuff",
+          "amazon_url": "https://www.amazon.ae/dp/B0D1VGRWZC?tag=exquisitesila-21",
+          "asin": "B0D1VGRWZC"
         },
         {
           "slot": "Bangle",
@@ -667,8 +668,9 @@
         },
         {
           "slot": "Bag",
-          "label": "Structured Brown Handbag",
-          "amazon_url": "https://link.amazon/B0jlQuyKO"
+          "label": "Dark Brown Leather Shoulder Bag",
+          "amazon_url": "https://www.amazon.ae/dp/B0H3MM3PD8?tag=exquisitesila-21",
+          "asin": "B0H3MM3PD8"
         }
       ],
       "publish": true,
@@ -765,8 +767,9 @@
         },
         {
           "slot": "Earrings",
-          "label": "Gold Twisted Pearl Drop Earrings",
-          "amazon_url": "https://link.amazon/B02T3U6iL"
+          "label": "Gold Hook Pearl Drop Earrings",
+          "amazon_url": "https://www.amazon.ae/dp/B0H93SCBHL?tag=exquisitesila-21",
+          "asin": "B0H93SCBHL"
         }
       ],
       "publish": true,
@@ -787,7 +790,8 @@
         {
           "slot": "Top",
           "label": "Denim Tie-Front Babydoll Blouse",
-          "amazon_url": "https://link.amazon/B0ahpzR7z"
+          "amazon_url": "https://www.amazon.ae/dp/B0DSBQRZKC?tag=exquisitesila-21",
+          "asin": "B0DSBQRZKC"
         },
         {
           "slot": "Skirt",
@@ -807,7 +811,8 @@
         {
           "slot": "Earrings",
           "label": "Gold Teardrop Earrings",
-          "amazon_url": "https://link.amazon/B0bWLrfPy"
+          "amazon_url": "https://www.amazon.ae/dp/B0BWXTBK53?tag=exquisitesila-21",
+          "asin": "B0BWXTBK53"
         },
         {
           "slot": "Perfume",
@@ -842,8 +847,9 @@
         },
         {
           "slot": "Shoes",
-          "label": "Steve Madden Hadyn Tortoise Sandals",
-          "amazon_url": "https://link.amazon/B00jfHP4y"
+          "label": "Sam Edelman Bay Tortoise Jelly Slides",
+          "amazon_url": "https://www.amazon.ae/dp/B0DGD8F6Y6?tag=exquisitesila-21",
+          "asin": "B0DGD8F6Y6"
         },
         {
           "slot": "Bag",

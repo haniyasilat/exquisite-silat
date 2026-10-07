@@ -6,7 +6,7 @@
 For each piece it follows the link (including amazon short links) and reads the product
 page: title, availability, Add to Cart, affiliate tag. Statuses:
 
-    OK     buyable
+    OK     buyable (or an add-to-cart link, which works but whose stock can't be read)
     LOW    buyable, but "only N left"
     OOS    no Add to Cart / currently unavailable  -> replace the product
     DEAD   page gone or not a product page          -> replace the product
@@ -62,6 +62,11 @@ def check(url: str) -> dict:
             res.update(status="CHECK", note=str(e)[:80])
             time.sleep(4 * (attempt + 1))
             continue
+
+        if "/cart/" in final or "/gp/aws/cart/" in final:
+            # an add-to-cart link: it drops the item straight into the cart, which is a
+            # working purchase path, but the product page (and stock) can't be read here
+            return {**res, "status": "OK", "note": "add-to-cart link (stock not checked)", "final": final}
 
         title = re.search(r'id="productTitle"[^>]*>\s*(.*?)\s*</span>', page, re.S)
         if not title:
