@@ -1,53 +1,49 @@
-"""Apply verified real Amazon product picks to links.json and download images."""
+"""Download the main Amazon product photo for every piece of the flat-lay looks.
 
-import json
+Each piece's photo is saved as assets/products/<folder>/<slot>.jpg, which is what
+cut_garments.py and build_real_collages.py read. The image URL is the listing's
+main image (the one shoppers see first), so the collage matches the product page.
+links.json holds the product URLs; this only fetches the pictures.
+"""
+
 import pathlib
-import re
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-LINKS_JSON = ROOT / "links.json"
 ASSET_ROOT = ROOT / "assets" / "products"
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
 
-# (outfit slug, piece slot, asin, image_url)
-PICKS = [
-    ("cozy-autumn-coffee-look-01", "Sweater", "B0CNLPV5TP", "https://m.media-amazon.com/images/I/81Mnz9MlHBL._AC_SX385_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Trousers", "B0GCDPC93M", "https://m.media-amazon.com/images/I/71GablDqxHL._AC_SY445_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Bag", "B0FZ7K9G9Y", "https://m.media-amazon.com/images/I/61KeYdGiZBL._AC_SX385_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Shoes", "B08Z7KMD2F", "https://m.media-amazon.com/images/I/71bkxmdcZSL._AC_SY500_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Watch", "B008UVVL9K", "https://m.media-amazon.com/images/I/61VqwetbFcL._AC_SX522_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Earrings", "B0GSZKM9KX", "https://m.media-amazon.com/images/I/41+pwQW9QKL._AC_SX522_.jpg"),
-    ("cozy-autumn-coffee-look-01", "Sunglasses", "B0FZ9M3RN5", "https://m.media-amazon.com/images/I/61xwPQpHIwL._AC_SX385_.jpg"),
-
-    ("quiet-luxury-summer-look-01", "Vest", "B0F5J1Z8DN", "https://m.media-amazon.com/images/I/71+yadXYjnL._AC_SY445_.jpg"),
-    ("quiet-luxury-summer-look-01", "Skirt", "B0CR7G84BS", "https://m.media-amazon.com/images/I/61WjBbd189L._AC_SY445_.jpg"),
-    ("quiet-luxury-summer-look-01", "Heels", "B0CQYK21GJ", "https://m.media-amazon.com/images/I/61+6-J8W-gL._AC_SY500_.jpg"),
-    ("quiet-luxury-summer-look-01", "Clutch", "B0G5JW7M3R", "https://m.media-amazon.com/images/I/81rqWNm26kL._AC_SX679_.jpg"),
-    ("quiet-luxury-summer-look-01", "Earrings", "B0H36NZ8KF", "https://m.media-amazon.com/images/I/511Lbc21ZEL._AC_SX425_.jpg"),
-    ("quiet-luxury-summer-look-01", "Cuff", "B0FPWR65HQ", "https://m.media-amazon.com/images/I/61jtwFMmXkL._AC_SX385_.jpg"),
-    ("quiet-luxury-summer-look-01", "Necklace", "B0G4QYGZWK", "https://m.media-amazon.com/images/I/51WHxSPUsCL._AC_SX385_.jpg"),
-
-    ("modest-pastel-spring-look-01", "Blouse", "B0FD3VRM2W", "https://m.media-amazon.com/images/I/71H22sFxJHL._AC_SY445_.jpg"),
-    ("modest-pastel-spring-look-01", "Skirt", "B0C99DQ9S5", "https://m.media-amazon.com/images/I/71qZHrMcZ8L._AC_SX385_.jpg"),
-    ("modest-pastel-spring-look-01", "Shoes", "B0GJK15XDF", "https://m.media-amazon.com/images/I/61PAaZRvAAL._AC_SY500_.jpg"),
-    ("modest-pastel-spring-look-01", "Handbag", "B0FDG5HNYL", "https://m.media-amazon.com/images/I/81AnLQExYyL._AC_SX385_.jpg"),
-    ("modest-pastel-spring-look-01", "Earrings", "B0FDKNHR84", "https://m.media-amazon.com/images/I/61kepMzRh2L._AC_SX385_.jpg"),
-    ("modest-pastel-spring-look-01", "Bangles", "B0G81TSR63", "https://m.media-amazon.com/images/I/815IhEk5OTL._AC_SX425_.jpg"),
-    ("modest-pastel-spring-look-01", "Scarf", "B0GC5DYJ3V", "https://m.media-amazon.com/images/I/51tFInXYKUL._AC_SX385_.jpg"),
-]
-
-FOLDER_BY_SLUG = {
-    "cozy-autumn-coffee-look-01": "cozy-autumn-coffee-look",
-    "quiet-luxury-summer-look-01": "quiet-luxury-summer-look",
-    "modest-pastel-spring-look-01": "modest-pastel-spring-look",
+# folder -> [(slot, asin, main image url)]
+PICKS = {
+    "forest-knit-denim-look": [
+        ("Sweater", "B0HC2L47KW", "https://m.media-amazon.com/images/I/71iXKjSoTIL._AC_SL1500_.jpg"),
+        ("Jeans", "B0F4N668QT", "https://m.media-amazon.com/images/I/61Uqzn-1OML._AC_SL1500_.jpg"),
+        ("Loafers", "B0CRDQ853T", "https://m.media-amazon.com/images/I/716uWlCsR5L._AC_SL1500_.jpg"),
+        ("Bag", "B0GGH8F9BX", "https://m.media-amazon.com/images/I/61qkbE+2UtL._AC_SL1500_.jpg"),
+        ("Earrings", "B09QPPLRHP", "https://m.media-amazon.com/images/I/61oXJg5YpAL._AC_SL1500_.jpg"),
+        ("Clip", "B088FFHGTP", "https://m.media-amazon.com/images/I/7138eN-kWEL._AC_SL1500_.jpg"),
+        ("Belt", "B0F4C6DB3Y", "https://m.media-amazon.com/images/I/61B7GpqIxfL._AC_SL1500_.jpg"),
+    ],
+    "chocolate-bow-satin-look": [
+        ("Cardigan", "B0DNMVH6HF", "https://m.media-amazon.com/images/I/7121QUVGlcL._AC_SL1500_.jpg"),
+        ("Skirt", "B0CQRN8YLF", "https://m.media-amazon.com/images/I/51z40nSjNKL._AC_SL1500_.jpg"),
+        ("Flats", "B0GX7T8MXZ", "https://m.media-amazon.com/images/I/81i5xRVNknL._AC_SL1500_.jpg"),
+        ("Bag", "B0D2WDZ6K5", "https://m.media-amazon.com/images/I/51IQps4xLLL._AC_SL1500_.jpg"),
+        ("Earrings", "B0DGSGSXYX", "https://m.media-amazon.com/images/I/51eQXXrmezL._AC_SL1500_.jpg"),
+        ("Bows", "B0H4GRS2CB", "https://m.media-amazon.com/images/I/71GTTYjASRL._AC_SL1500_.jpg"),
+        ("Perfume", "B0DSLDVF85", "https://m.media-amazon.com/images/I/61-5GcYgwoL._AC_SL1500_.jpg"),
+    ],
+    "leopard-black-look": [
+        ("Top", "B0GF1RGDGX", "https://m.media-amazon.com/images/I/61EKGhvPiUL._AC_SL1500_.jpg"),
+        ("Skirt", "B0FRSPR49T", "https://m.media-amazon.com/images/I/71uHAdbKGlL._AC_SL1500_.jpg"),
+        ("Heels", "B09L4SV6T1", "https://m.media-amazon.com/images/I/51f2elFTWjL._AC_SL1500_.jpg"),
+        ("Bag", "B0BNZ9MNKG", "https://m.media-amazon.com/images/I/61JyY8q93hL._AC_SL1000_.jpg"),
+        ("Sunglasses", "B0GHDKFP69", "https://m.media-amazon.com/images/I/41fdnDZ3TfL._AC_SL1248_.jpg"),
+        ("Earrings", "B0CGV9ZNLX", "https://m.media-amazon.com/images/I/61RY1Zv+TjL._AC_SL1500_.jpg"),
+        ("Watch", "B0DBHG7DBP", "https://m.media-amazon.com/images/I/61EU0vMqbFL._AC_SL1500_.jpg"),
+    ],
 }
-
-
-def hires(url: str) -> str:
-    """Strip the Amazon size-modifier suffix (e.g. ._AC_SY445_) for a larger image."""
-    return re.sub(r"\._[A-Z0-9_,]+_\.", ".", url)
 
 
 def download(url: str, dest: pathlib.Path) -> None:
@@ -57,27 +53,12 @@ def download(url: str, dest: pathlib.Path) -> None:
 
 
 def main() -> None:
-    data = json.loads(LINKS_JSON.read_text(encoding="utf-8"))
-    by_slug = {o["slug"]: o for o in data["outfits"]}
-
-    for slug, slot, asin, img_url in PICKS:
-        outfit = by_slug[slug]
-        piece = next(p for p in outfit["pieces"] if p["slot"] == slot)
-        piece["amazon_url"] = f"https://www.amazon.ae/dp/{asin}?tag=exquisitesila-21"
-
-        folder = FOLDER_BY_SLUG[slug]
-        dest = ASSET_ROOT / folder / f"{slot.lower()}.jpg"
-        dest.parent.mkdir(parents=True, exist_ok=True)
-        try:
-            download(hires(img_url), dest)
-            print(f"[OK] {slug} {slot} -> {dest} ({dest.stat().st_size} bytes)")
-        except Exception as e:
-            print(f"[WARN] {slug} {slot} hi-res failed ({e}), trying original URL")
-            download(img_url, dest)
-            print(f"[OK-fallback] {slug} {slot} -> {dest} ({dest.stat().st_size} bytes)")
-
-    LINKS_JSON.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
-    print("[INFO] links.json updated.")
+    for folder, pieces in PICKS.items():
+        for slot, asin, url in pieces:
+            dest = ASSET_ROOT / folder / f"{slot.lower()}.jpg"
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            download(url, dest)
+            print(f"[OK] {folder}/{dest.name} <- {asin} ({dest.stat().st_size} bytes)")
 
 
 if __name__ == "__main__":

@@ -31,9 +31,9 @@ PIN_WIDTH = 1000
 PIN_HEIGHT = 1500
 
 TARGET_SLUGS = {
-    "cozy-autumn-coffee-look-01",
-    "quiet-luxury-summer-look-01",
-    "modest-pastel-spring-look-01",
+    "forest-knit-denim-look-01",
+    "chocolate-bow-satin-look-01",
+    "leopard-black-look-01",
 }
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}

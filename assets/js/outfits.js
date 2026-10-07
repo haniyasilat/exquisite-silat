@@ -3,146 +3,146 @@
 
 const OUTFITS = [
   {
-    "id": "cozy-autumn-coffee-look-01",
-    "slug": "cozy-autumn-coffee-run",
-    "title": "Cozy Autumn Coffee Run",
-    "description": "Chunky oatmeal cable-knit sweater paired with tailored cream wide-leg trousers, chocolate suede tote, chestnut platform clogs, and vintage gold accents.",
+    "id": "forest-knit-denim-look-01",
+    "slug": "forest-green-knit-and-denim-weekend",
+    "title": "Forest Green Knit & Denim Weekend",
+    "description": "Forest green cable-knit quarter-zip with light-wash straight jeans, tan suede lug loafers, a cognac leather shoulder bag, and gold and tortoiseshell accents.",
     "categories": [
       "Casual",
       "Autumn"
     ],
-    "collage_image": "assets/products/cozy-autumn-coffee-look/collage.png",
+    "collage_image": "assets/products/forest-knit-denim-look/collage.png",
     "pieces": [
       {
         "slot": "Sweater",
-        "label": "Oversized Cable Knit Crewneck Sweater",
-        "amazon_url": "https://www.amazon.ae/dp/B0CNLPV5TP?tag=exquisitesila-21"
+        "label": "Forest Green Cable Knit Quarter-Zip Sweater",
+        "amazon_url": "https://www.amazon.ae/dp/B0HC2L47KW?tag=exquisitesila-21"
       },
       {
-        "slot": "Trousers",
-        "label": "High-Waisted Pleated Wide-Leg Trousers",
-        "amazon_url": "https://www.amazon.ae/dp/B0GCDPC93M?tag=exquisitesila-21"
+        "slot": "Jeans",
+        "label": "Light Wash High-Waisted Straight Leg Jeans",
+        "amazon_url": "https://www.amazon.ae/dp/B0F4N668QT?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Loafers",
+        "label": "Tan Suede Lug-Sole Penny Loafers",
+        "amazon_url": "https://www.amazon.ae/dp/B0CRDQ853T?tag=exquisitesila-21"
       },
       {
         "slot": "Bag",
-        "label": "Slouchy Suede Shoulder Tote Bag",
-        "amazon_url": "https://www.amazon.ae/dp/B0FZ7K9G9Y?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Shoes",
-        "label": "Chestnut Suede Platform Clogs",
-        "amazon_url": "https://www.amazon.ae/dp/B08Z7KMD2F?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Watch",
-        "label": "Vintage Gold Rectangular Leather Watch",
-        "amazon_url": "https://www.amazon.ae/dp/B008UVVL9K?tag=exquisitesila-21"
+        "label": "Cognac Leather Minimalist Shoulder Bag",
+        "amazon_url": "https://www.amazon.ae/dp/B0GGH8F9BX?tag=exquisitesila-21"
       },
       {
         "slot": "Earrings",
-        "label": "Chunky Twisted Gold Hoop Earrings",
-        "amazon_url": "https://www.amazon.ae/dp/B0GSZKM9KX?tag=exquisitesila-21"
+        "label": "Chunky Gold Hoop Earrings",
+        "amazon_url": "https://www.amazon.ae/dp/B09QPPLRHP?tag=exquisitesila-21"
       },
       {
-        "slot": "Sunglasses",
-        "label": "Retro Tortoiseshell Oval Sunglasses",
-        "amazon_url": "https://www.amazon.ae/dp/B0FZ9M3RN5?tag=exquisitesila-21"
+        "slot": "Clip",
+        "label": "Tortoiseshell Claw Hair Clips (2 pcs)",
+        "amazon_url": "https://www.amazon.ae/dp/B088FFHGTP?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Belt",
+        "label": "Tan Leather Belt with Gold Buckle",
+        "amazon_url": "https://www.amazon.ae/dp/B0F4C6DB3Y?tag=exquisitesila-21"
       }
     ]
   },
   {
-    "id": "quiet-luxury-summer-look-01",
-    "slug": "quiet-luxury-summer-dinner",
-    "title": "Quiet Luxury Summer Dinner",
-    "description": "Tailored black linen vest and fluid champagne satin maxi slip skirt styled with minimalist kitten heels, woven clutch, and sculptural gold jewelry.",
+    "id": "chocolate-bow-satin-look-01",
+    "slug": "chocolate-bows-and-cream-satin",
+    "title": "Chocolate Bows & Cream Satin",
+    "description": "Chocolate tie-front bow cardigan over a cream satin maxi skirt, with woven brown Mary Jane flats, a glossy mini shoulder bag, pearl drops, satin hair bows and a vanilla perfume.",
     "categories": [
       "Fancy",
-      "Summer"
+      "Autumn"
     ],
-    "collage_image": "assets/products/quiet-luxury-summer-look/collage.png",
+    "collage_image": "assets/products/chocolate-bow-satin-look/collage.png",
     "pieces": [
       {
-        "slot": "Vest",
-        "label": "Tailored Button-Down Linen Vest Top",
-        "amazon_url": "https://www.amazon.ae/dp/B0F5J1Z8DN?tag=exquisitesila-21"
+        "slot": "Cardigan",
+        "label": "Chocolate Bow Tie-Front Knit Cardigan",
+        "amazon_url": "https://www.amazon.ae/dp/B0DNMVH6HF?tag=exquisitesila-21"
       },
       {
         "slot": "Skirt",
-        "label": "Bias-Cut Champagne Satin Silk Maxi Skirt",
-        "amazon_url": "https://www.amazon.ae/dp/B0CR7G84BS?tag=exquisitesila-21"
+        "label": "Cream Satin High-Waist Maxi Skirt",
+        "amazon_url": "https://www.amazon.ae/dp/B0CQRN8YLF?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Flats",
+        "label": "Brown Woven Mary Jane Ballet Flats",
+        "amazon_url": "https://www.amazon.ae/dp/B0GX7T8MXZ?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Bag",
+        "label": "Glossy Brown Mini Shoulder Bag",
+        "amazon_url": "https://www.amazon.ae/dp/B0D2WDZ6K5?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Earrings",
+        "label": "Gold Baroque Pearl Drop Earrings",
+        "amazon_url": "https://www.amazon.ae/dp/B0DGSGSXYX?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Bows",
+        "label": "Satin Hair Bow Clips (Cream, Black, Brown, Coffee)",
+        "amazon_url": "https://www.amazon.ae/dp/B0H4GRS2CB?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Perfume",
+        "label": "Maison Asrar Vanilla Voyage Eau de Parfum",
+        "amazon_url": "https://www.amazon.ae/dp/B0DSLDVF85?tag=exquisitesila-21"
+      }
+    ]
+  },
+  {
+    "id": "leopard-black-look-01",
+    "slug": "leopard-satin-and-black-bell-sleeves",
+    "title": "Leopard Satin & Black Bell Sleeves",
+    "description": "Black boat-neck bell-sleeve top with a leopard satin midi skirt, bow Mary Jane kitten heels, a quilted chain bag, cat-eye sunglasses and chunky gold jewellery.",
+    "categories": [
+      "Fancy",
+      "Autumn"
+    ],
+    "collage_image": "assets/products/leopard-black-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Top",
+        "label": "Black Boat-Neck Bell-Sleeve Top",
+        "amazon_url": "https://www.amazon.ae/dp/B0GF1RGDGX?tag=exquisitesila-21"
+      },
+      {
+        "slot": "Skirt",
+        "label": "Leopard Print Satin Midi Skirt",
+        "amazon_url": "https://www.amazon.ae/dp/B0FRSPR49T?tag=exquisitesila-21"
       },
       {
         "slot": "Heels",
-        "label": "Strappy Square-Toe Kitten Heel Sandals",
-        "amazon_url": "https://www.amazon.ae/dp/B0CQYK21GJ?tag=exquisitesila-21"
+        "label": "Black Bow Mary Jane Kitten Heels",
+        "amazon_url": "https://www.amazon.ae/dp/B09L4SV6T1?tag=exquisitesila-21"
       },
       {
-        "slot": "Clutch",
-        "label": "Woven Dumpling Clutch with Gold Chain",
-        "amazon_url": "https://www.amazon.ae/dp/B0G5JW7M3R?tag=exquisitesila-21"
+        "slot": "Bag",
+        "label": "Black Quilted Chain Shoulder Bag",
+        "amazon_url": "https://www.amazon.ae/dp/B0BNZ9MNKG?tag=exquisitesila-21"
       },
       {
-        "slot": "Earrings",
-        "label": "Sculptural Melted Gold Drop Earrings",
-        "amazon_url": "https://www.amazon.ae/dp/B0H36NZ8KF?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Cuff",
-        "label": "Chunky Ribbed Gold Statement Cuff",
-        "amazon_url": "https://www.amazon.ae/dp/B0FPWR65HQ?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Necklace",
-        "label": "Layered Snake Herringbone Gold Necklace",
-        "amazon_url": "https://www.amazon.ae/dp/B0G4QYGZWK?tag=exquisitesila-21"
-      }
-    ]
-  },
-  {
-    "id": "modest-pastel-spring-look-01",
-    "slug": "modest-pastel-spring-elegance",
-    "title": "Modest Pastel Spring Elegance",
-    "description": "Sage green tie-neck chiffon blouse paired with an off-white tiered pleated maxi skirt, trapeze handbag, pearl drop huggies, and matching silk hijab.",
-    "categories": [
-      "Modest",
-      "Spring"
-    ],
-    "collage_image": "assets/products/modest-pastel-spring-look/collage.png",
-    "pieces": [
-      {
-        "slot": "Blouse",
-        "label": "Sage Green Tie-Neck Chiffon Blouse",
-        "amazon_url": "https://www.amazon.ae/dp/B0FD3VRM2W?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Skirt",
-        "label": "Tiered Pleated A-Line Maxi Skirt",
-        "amazon_url": "https://www.amazon.ae/dp/B0C99DQ9S5?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Shoes",
-        "label": "Slingback Pointed Bow Block Heels",
-        "amazon_url": "https://www.amazon.ae/dp/B0GJK15XDF?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Handbag",
-        "label": "Structured Top-Handle Trapeze Handbag",
-        "amazon_url": "https://www.amazon.ae/dp/B0FDG5HNYL?tag=exquisitesila-21"
+        "slot": "Sunglasses",
+        "label": "Black Narrow Cat-Eye Sunglasses",
+        "amazon_url": "https://www.amazon.ae/dp/B0GHDKFP69?tag=exquisitesila-21"
       },
       {
         "slot": "Earrings",
-        "label": "Baroque Pearl Drop Huggie Earrings",
-        "amazon_url": "https://www.amazon.ae/dp/B0FDKNHR84?tag=exquisitesila-21"
+        "label": "Chunky Gold Dome Earrings",
+        "amazon_url": "https://www.amazon.ae/dp/B0CGV9ZNLX?tag=exquisitesila-21"
       },
       {
-        "slot": "Bangles",
-        "label": "Textured Gold Stackable Bangles Set",
-        "amazon_url": "https://www.amazon.ae/dp/B0G81TSR63?tag=exquisitesila-21"
-      },
-      {
-        "slot": "Scarf",
-        "label": "Premium Chiffon Silk Hijab in Sage",
-        "amazon_url": "https://www.amazon.ae/dp/B0GC5DYJ3V?tag=exquisitesila-21"
+        "slot": "Watch",
+        "label": "Vintage Gold Square Bracelet Watch",
+        "amazon_url": "https://www.amazon.ae/dp/B0DBHG7DBP?tag=exquisitesila-21"
       }
     ]
   },
