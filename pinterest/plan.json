@@ -1,0 +1,450 @@
+{
+  "_about": "Extra Pinterest pins made from existing looks, every one angled at people dressing for Dubai/the UAE (visitors planning trips, and locals). scripts/make_pin_variants.py renders each pin to assets/pins/<id>.jpg and writes pinterest/bulk-upload.csv (Pinterest bulk-create format) with one pin per day from 'start' at 'time_utc', in the order listed. Types: headline = the look's collage with a keyword headline band; piece = one product large on the look's backdrop (looks with a 'collage' config only); formula = 4 pieces with plus signs (same). Every description starts with the tap-to-shop line.",
+  "start": "2026-10-09",
+  "time_utc": "18:00:00",
+  "utm_campaign": "bulk",
+  "inks": {
+    "teal-elevate-look-01": [
+      22,
+      96,
+      98
+    ],
+    "navy-gingham-look-01": [
+      30,
+      58,
+      110
+    ],
+    "blush-pearl-look-01": [
+      168,
+      92,
+      106
+    ],
+    "navy-cream-lace-look-01": [
+      32,
+      45,
+      78
+    ],
+    "brown-leather-look-01": [
+      92,
+      62,
+      40
+    ],
+    "plaid-autumn-look-01": [
+      110,
+      30,
+      40
+    ],
+    "polka-dot-look-01": [
+      30,
+      30,
+      30
+    ],
+    "red-floral-coquette-01": [
+      140,
+      22,
+      32
+    ],
+    "blue-yellow-summer-look-01": [
+      28,
+      46,
+      92
+    ],
+    "burgundy-casual-look-01": [
+      110,
+      24,
+      40
+    ]
+  },
+  "pins": [
+    {
+      "id": "cb-headline",
+      "look": "chocolate-bow-satin-look-01",
+      "type": "headline",
+      "headline": "DUBAI WINTER COQUETTE",
+      "subline": "chocolate bows + cream satin",
+      "title": "What to Wear in Dubai in Winter: Coquette Bow Cardigan & Satin Maxi Skirt",
+      "description": "Tap to shop every piece (affiliate links). A soft coquette outfit for Dubai's mild winter days: chocolate cardigan tied with cream ribbon bows, cream satin maxi skirt, woven Mary Jane flats and pearls. Covered-up and pretty for malls, cafes and evenings out in the UAE. #dubaioutfit #whattowearindubai #dubaiwinter #coquetteoutfit #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "what to wear in dubai in winter, dubai winter outfit, coquette outfit, bow cardigan outfit, uae fashion"
+    },
+    {
+      "id": "fk-headline",
+      "look": "forest-knit-denim-look-01",
+      "type": "headline",
+      "headline": "DUBAI WINTER OUTFIT",
+      "subline": "cable knit for cool desert evenings",
+      "title": "Dubai Winter Outfit Idea: Green Cable Knit Sweater & Light Wash Jeans",
+      "description": "Tap to shop every piece (affiliate links). Dubai evenings get cool from December to February, so pack a knit: forest green cable knit quarter-zip, light wash straight jeans, tan suede lug loafers and a cognac bag. Easy for Dubai Mall, Al Seef and winter markets. #dubaiwinter #dubaioutfit #whattowearindubai #falloutfits #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai winter outfit, what to wear in dubai in december, cable knit sweater outfit, dubai travel outfit"
+    },
+    {
+      "id": "lb-headline",
+      "look": "leopard-black-look-01",
+      "type": "headline",
+      "headline": "DUBAI DATE NIGHT OUTFIT",
+      "subline": "leopard satin + black bell sleeves",
+      "title": "Dubai Date Night Outfit: Leopard Satin Skirt & Black Bell Sleeve Top",
+      "description": "Tap to shop every piece (affiliate links). A chic Dubai dinner look for a rooftop or DIFC date night: black bell sleeve top, leopard satin midi skirt, bow Mary Jane kitten heels, quilted chain bag and chunky gold. Elegant with sleeves and a midi length. #dubainights #dubaioutfit #datenightoutfit #leopardskirt #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "dubai date night outfit, dubai dinner outfit, leopard skirt outfit, what to wear in dubai at night"
+    },
+    {
+      "id": "pa-headline-1",
+      "look": "plaid-autumn-look-01",
+      "type": "headline",
+      "headline": "MODEST DUBAI OUTFIT",
+      "subline": "dress like a local this winter",
+      "title": "Modest Dubai Outfit for Winter: Plaid Maxi Skirt, Burgundy Top & Cardigan",
+      "description": "Tap to shop every piece (affiliate links). Dress like a local in Dubai's cooler months: plaid belted maxi skirt, burgundy top, cream chunky cardigan, gold locket and burgundy high-tops. Modest, comfortable and right for souks, malls and old Dubai. #modestfashion #dubaimodestfashion #whattowearindubai #dubaiwinter #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "modest dubai outfit, what to wear in dubai modest, dubai winter outfit, plaid maxi skirt outfit"
+    },
+    {
+      "id": "bl-headline-1",
+      "look": "brown-leather-look-01",
+      "type": "headline",
+      "headline": "DESERT SAFARI OUTFIT",
+      "subline": "leather jacket for chilly desert nights",
+      "title": "What to Wear on a Dubai Desert Safari in Winter: Leather Jacket & Boots",
+      "description": "Tap to shop every piece (affiliate links). Winter desert safari nights in Dubai get chilly: layer a brown faux leather bomber over a white top with dark wide leg jeans, a belt and square-toe ankle boots. Photo-ready at the dunes and warm at the camp. #desertsafari #dubaidesertsafari #dubaioutfit #dubaiwinter #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai desert safari outfit, what to wear desert safari, dubai winter outfit, leather jacket outfit"
+    },
+    {
+      "id": "cb-cardigan",
+      "look": "chocolate-bow-satin-look-01",
+      "type": "piece",
+      "slots": [
+        "Cardigan"
+      ],
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the chocolate bow cardigan",
+      "title": "Top Dubai Shopping Pick: Brown Bow Cardigan | Coquette Style",
+      "description": "Tap to shop every piece (affiliate links). This week's Dubai shopping pick: the chocolate knit cardigan tied with cream ribbon bows, plus the full coquette outfit it's styled in. Ships in the UAE on Amazon.ae. #dubaishopping #dubaifinds #bowcardigan #coquettestyle #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai shopping, dubai finds, bow cardigan, brown cardigan outfit, uae shopping"
+    },
+    {
+      "id": "ng-headline-dubai",
+      "look": "navy-gingham-look-01",
+      "type": "headline",
+      "headline": "WHAT TO WEAR IN DUBAI",
+      "subline": "winter edition: stripes + white denim",
+      "title": "What to Wear in Dubai in Winter: Striped Sweater, White Jeans & New Balance",
+      "description": "Tap to shop every piece (affiliate links). A relaxed Dubai winter outfit for sightseeing: navy and cream striped knit for cool evenings, white wide leg jeans, a light blue bag and New Balance sneakers for all the walking at the Marina and Old Dubai. #whattowearindubai #dubaiwinter #dubaitravel #dubaioutfit #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "what to wear in dubai in winter, dubai travel outfit, dubai sightseeing outfit, striped sweater outfit"
+    },
+    {
+      "id": "fk-sweater",
+      "look": "forest-knit-denim-look-01",
+      "type": "piece",
+      "slots": [
+        "Sweater"
+      ],
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the green cable knit",
+      "title": "Dubai Shopping Picks: Green Cable Knit Sweater for Cool UAE Evenings",
+      "description": "Tap to shop every piece (affiliate links). A Dubai winter shopping pick: the forest green cable knit quarter-zip for cooler evenings, and the easy outfit it's styled in. Available on Amazon.ae. #dubaishopping #dubaifinds #cableknitsweater #dubaiwinter #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "dubai shopping picks, dubai winter clothes, cable knit sweater, uae shopping"
+    },
+    {
+      "id": "lb-skirt",
+      "look": "leopard-black-look-01",
+      "type": "piece",
+      "slots": [
+        "Skirt"
+      ],
+      "headline": "DUBAI LUXE LOOK",
+      "subline": "leopard satin, styled rich",
+      "title": "Dubai Luxe Look for Less: Leopard Print Satin Midi Skirt",
+      "description": "Tap to shop every piece (affiliate links). Get the polished, expensive-looking Dubai style for less: a leopard print satin midi skirt with a black top, bow kitten heels and chunky gold. #dubailuxury #dubaistyle #richlook #leopardskirt #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai luxe look, rich look outfit, dubai style, leopard satin skirt, luxury look for less"
+    },
+    {
+      "id": "bp-headline-dubai",
+      "look": "blush-pearl-look-01",
+      "type": "headline",
+      "headline": "DUBAI BRUNCH OUTFIT",
+      "subline": "blush knit + white tiered maxi",
+      "title": "Dubai Brunch Outfit Idea: Pink Cardigan, White Maxi Skirt & Pearls",
+      "description": "Tap to shop every piece (affiliate links). The famous Dubai Friday brunch calls for something pretty: dusty rose cropped cardigan, white tiered maxi skirt, pearl earrings, an iridescent pearl clutch and silver sandals. #dubaibrunch #dubaioutfit #brunchoutfit #dubailife #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai brunch outfit, what to wear to brunch in dubai, pink cardigan outfit, white maxi skirt outfit"
+    },
+    {
+      "id": "cl-headline-dinner",
+      "look": "navy-cream-lace-look-01",
+      "type": "headline",
+      "headline": "DUBAI DINNER OUTFIT",
+      "subline": "dress up denim with satin + lace",
+      "title": "Dubai Dinner Outfit with Jeans: Satin Lace Blouse & Lace Slingback Heels",
+      "description": "Tap to shop every piece (affiliate links). Dress up jeans for dinner in Dubai: ivory satin blouse with lace trim, high-rise wide leg jeans, lace slingback kitten heels and polished gold. Smart enough for Downtown restaurants, relaxed enough for a waterfront walk. #dubaidinner #dubaioutfit #dubaistyle #jeansoutfit #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "dubai dinner outfit, dressy jeans outfit dubai, lace blouse outfit, what to wear in dubai at night"
+    },
+    {
+      "id": "cb-formula",
+      "look": "chocolate-bow-satin-look-01",
+      "type": "formula",
+      "slots": [
+        "Cardigan",
+        "Skirt",
+        "Flats",
+        "Bag"
+      ],
+      "headline": "DUBAI OUTFIT FORMULA",
+      "subline": "bow cardigan + satin maxi + mary janes",
+      "title": "Dubai Outfit Formula: Bow Cardigan + Satin Maxi Skirt + Mary Janes",
+      "description": "Tap to shop every piece (affiliate links). A modest, pretty outfit formula for Dubai days: chocolate bow cardigan + cream satin maxi skirt + woven Mary Jane flats + a glossy mini bag. #outfitformula #dubaioutfit #modestfashion #coquetteoutfit #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "dubai outfit formula, modest outfit dubai, coquette outfit, mary jane flats outfit"
+    },
+    {
+      "id": "bc-headline-1",
+      "look": "burgundy-casual-look-01",
+      "type": "headline",
+      "headline": "DRESS LIKE A DUBAI LOCAL",
+      "subline": "polished burgundy + black",
+      "title": "How to Dress Like a Dubai Local: Burgundy Top, Black Wide Leg Jeans & Croc Bag",
+      "description": "Tap to shop every piece (affiliate links). Dubai everyday style is polished, never sloppy: an asymmetrical burgundy top, black wide leg jeans, burgundy bow slingbacks, a croc bag and a gold watch. #dubaistyle #dubailocal #dubaioutfit #everydayoutfit #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dress like a dubai local, dubai style, dubai everyday outfit, burgundy outfit"
+    },
+    {
+      "id": "fk-formula",
+      "look": "forest-knit-denim-look-01",
+      "type": "formula",
+      "slots": [
+        "Sweater",
+        "Jeans",
+        "Loafers",
+        "Bag"
+      ],
+      "headline": "DUBAI WINTER FORMULA",
+      "subline": "cable knit + straight jeans + loafers",
+      "title": "Dubai Winter Outfit Formula: Cable Knit + Straight Jeans + Loafers",
+      "description": "Tap to shop every piece (affiliate links). One outfit formula for a whole Dubai winter trip: green cable knit + light wash straight jeans + tan lug loafers + a cognac shoulder bag. #dubaiwinter #outfitformula #dubaitravel #packinglist #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "dubai winter outfit, dubai packing list, outfit formula, what to wear in dubai in january"
+    },
+    {
+      "id": "lb-formula",
+      "look": "leopard-black-look-01",
+      "type": "formula",
+      "slots": [
+        "Top",
+        "Skirt",
+        "Heels",
+        "Bag"
+      ],
+      "headline": "DATE NIGHT IN DUBAI",
+      "subline": "bell sleeves + leopard satin + bow heels",
+      "title": "Date Night in Dubai Outfit Formula: Black Top + Leopard Satin Skirt + Bow Heels",
+      "description": "Tap to shop every piece (affiliate links). A Dubai date night formula: black bell sleeve top + leopard satin midi skirt + bow Mary Jane kitten heels + a quilted chain bag. #dubainights #datenightoutfit #outfitformula #dubaioutfit #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "dubai date night outfit, outfit formula, leopard skirt outfit, dubai nightlife outfit"
+    },
+    {
+      "id": "te-headline-dubai",
+      "look": "teal-elevate-look-01",
+      "type": "headline",
+      "headline": "WHAT TO WEAR IN DUBAI",
+      "subline": "summer edition: white maxi + teal satin",
+      "title": "What to Wear in Dubai in Summer: White Maxi Skirt & Teal Satin Shirt",
+      "description": "Tap to shop every piece (affiliate links). Dubai summers are hot, so go light and covered: white ribbed top and white maxi skirt with an airy teal satin shirt, turquoise tote, gold jewellery and brown kitten heels. #whattowearindubai #dubaisummer #dubaivacation #dubaioutfit #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "what to wear in dubai in summer, dubai summer outfit, dubai vacation outfit, white maxi skirt outfit",
+      "crop_top": 0.135
+    },
+    {
+      "id": "pd-headline-1",
+      "look": "polka-dot-look-01",
+      "type": "headline",
+      "headline": "OLD MONEY DUBAI LOOK",
+      "subline": "polka dots + black wide leg trousers",
+      "title": "Old Money Dubai Look: Polka Dot Blouse & Black Wide Leg Trousers",
+      "description": "Tap to shop every piece (affiliate links). Quiet, rich-looking Dubai style: white polka dot bell sleeve blouse, black wide leg trousers, patent pumps, a marble pearl clutch and pearl drops. #oldmoneystyle #dubaistyle #dubailuxury #richlook #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "old money outfit, dubai luxury style, rich look outfit, polka dot blouse outfit"
+    },
+    {
+      "id": "pa-headline-2",
+      "look": "plaid-autumn-look-01",
+      "type": "headline",
+      "headline": "DUBAI CASUAL WINTER",
+      "subline": "plaid maxi + high-tops",
+      "title": "Casual Dubai Winter Outfit: Plaid Maxi Skirt with Converse",
+      "description": "Tap to shop every piece (affiliate links). A comfy, modest outfit for winter days out in Dubai and Abu Dhabi: plaid maxi skirt, burgundy top, chunky cardigan, gold hoops and burgundy Converse. #dubaiwinter #abudhabi #modestfashion #casualoutfit #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "casual dubai winter outfit, abu dhabi outfit, plaid skirt outfit, modest casual outfit"
+    },
+    {
+      "id": "cb-skirt",
+      "look": "chocolate-bow-satin-look-01",
+      "type": "piece",
+      "slots": [
+        "Skirt"
+      ],
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the cream satin maxi skirt",
+      "title": "Top Dubai Shopping Pick: Cream Satin Maxi Skirt | Modest Style",
+      "description": "Tap to shop every piece (affiliate links). A Dubai shopping pick for modest dressers: the cream satin maxi skirt, styled with a chocolate bow cardigan and Mary Janes. On Amazon.ae for UAE delivery. #dubaishopping #dubaimodestfashion #satinskirt #maxiskirt #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "dubai shopping, modest fashion uae, satin maxi skirt, dubai finds"
+    },
+    {
+      "id": "by-headline-dubai",
+      "look": "blue-yellow-summer-look-01",
+      "type": "headline",
+      "headline": "DUBAI BEACH DAY OUTFIT",
+      "subline": "butter yellow + navy + seashell gold",
+      "title": "Dubai Beach Day Outfit: Yellow Wrap Blouse, Navy Jeans & Tortoise Slides",
+      "description": "Tap to shop every piece (affiliate links). A JBR or Kite Beach day outfit: butter yellow wrap blouse, navy wide leg jeans, tortoise slides and sunglasses, a brown tote and seashell gold jewellery. #dubaibeach #jbr #dubaioutfit #whattowearindubai #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai beach outfit, jbr outfit, dubai vacation outfit, what to wear in dubai"
+    },
+    {
+      "id": "bl-headline-2",
+      "look": "brown-leather-look-01",
+      "type": "headline",
+      "headline": "DRESS LIKE A DUBAI LOCAL",
+      "subline": "winter layers, effortlessly polished",
+      "title": "How to Dress Like a Dubai Local in Winter: Leather Jacket, White Top & Boots",
+      "description": "Tap to shop every piece (affiliate links). How Dubai women layer for winter: brown faux leather bomber, white ribbed top, dark wide leg jeans, a brown belt and square-toe ankle boots. #dubailocal #dubaistyle #dubaiwinter #leatherjacket #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "dress like a dubai local, dubai winter style, leather jacket outfit, dubai fashion"
+    },
+    {
+      "id": "fk-loafers",
+      "look": "forest-knit-denim-look-01",
+      "type": "piece",
+      "slots": [
+        "Loafers"
+      ],
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the lug sole loafers",
+      "title": "Dubai Shopping Picks: Tan Suede Lug Loafers for Sightseeing",
+      "description": "Tap to shop every piece (affiliate links). Comfortable enough for a full day at Dubai Mall and the souks: tan suede lug sole loafers, styled in an easy winter outfit. #dubaishopping #dubaifinds #loafers #dubaitravel #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai shopping picks, comfortable shoes for dubai, lug sole loafers, dubai travel"
+    },
+    {
+      "id": "lb-heels",
+      "look": "leopard-black-look-01",
+      "type": "piece",
+      "slots": [
+        "Heels"
+      ],
+      "headline": "DUBAI LUXE LOOK",
+      "subline": "the bow mary jane heels",
+      "title": "Dubai Luxe Look: Black Bow Mary Jane Kitten Heels for Date Night",
+      "description": "Tap to shop every piece (affiliate links). The polished Dubai date night shoe: black suede bow Mary Jane kitten heels, styled with leopard satin and gold. #dubailuxury #dubaistyle #maryjaneheels #dubainights #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "dubai luxe look, mary jane heels, kitten heels, dubai date night"
+    },
+    {
+      "id": "rf-headline-dubai",
+      "look": "red-floral-coquette-01",
+      "type": "headline",
+      "headline": "DUBAI DAY OUT OUTFIT",
+      "subline": "denim bows + white maxi + cherry red",
+      "title": "What to Wear in Dubai: Denim Bow Blouse, White Maxi Skirt & Red Mary Janes",
+      "description": "Tap to shop every piece (affiliate links). A sweet Dubai day out outfit for Alserkal, La Mer or the Miracle Garden: denim tie-front bow blouse, white tiered maxi skirt, cherry red Mary Janes and a red bow bag. #whattowearindubai #dubaioutfit #coquetteoutfit #dubaitravel #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "what to wear in dubai, dubai day out outfit, dubai miracle garden outfit, coquette outfit"
+    },
+    {
+      "id": "ng-headline-1",
+      "look": "navy-gingham-look-01",
+      "type": "headline",
+      "headline": "DRESS LIKE A DUBAI LOCAL",
+      "subline": "relaxed stripes + white denim",
+      "title": "How to Dress Like a Dubai Local: Striped Sweater & White Wide Leg Jeans",
+      "description": "Tap to shop every piece (affiliate links). Effortless Dubai weekend style: navy and cream striped knit, white wide leg jeans, a light blue crescent bag, turquoise dial watch and New Balance sneakers. #dubailocal #dubaistyle #dubaiweekend #casualoutfit #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "dress like a dubai local, dubai weekend outfit, striped sweater outfit, white jeans outfit"
+    },
+    {
+      "id": "bc-headline-2",
+      "look": "burgundy-casual-look-01",
+      "type": "headline",
+      "headline": "DUBAI MALL OUTFIT",
+      "subline": "burgundy slingbacks + croc bag",
+      "title": "What to Wear to Dubai Mall: Burgundy Top, Black Jeans & Bow Slingbacks",
+      "description": "Tap to shop every piece (affiliate links). A polished Dubai Mall outfit that covers shoulders and still feels chic: burgundy asymmetrical top, black wide leg jeans, burgundy bow slingbacks, a brown croc bag and a gold watch. #dubaimall #dubaioutfit #whattowearindubai #dubaistyle #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "what to wear to dubai mall, dubai mall outfit, dubai outfit ideas, burgundy outfit"
+    },
+    {
+      "id": "cl-headline-1",
+      "look": "navy-cream-lace-look-01",
+      "type": "headline",
+      "headline": "OLD MONEY DUBAI LOOK",
+      "subline": "satin lace + wide leg denim",
+      "title": "Old Money Dubai Look: Satin Lace Blouse & Wide Leg Jeans",
+      "description": "Tap to shop every piece (affiliate links). A rich-looking, understated Dubai outfit: ivory satin blouse with lace trim, high-rise wide leg jeans, lace slingback heels, a monogram crescent bag and gold rings. #oldmoneystyle #dubailuxury #dubaistyle #richlook #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "old money outfit, dubai luxury style, rich look outfit, lace blouse outfit"
+    },
+    {
+      "id": "pd-headline-2",
+      "look": "polka-dot-look-01",
+      "type": "headline",
+      "headline": "DUBAI WORK TO DINNER",
+      "subline": "polka dots + patent pumps",
+      "title": "Dubai Work to Dinner Outfit: Polka Dot Blouse, Black Trousers & Pumps",
+      "description": "Tap to shop every piece (affiliate links). From a DIFC office to dinner in Downtown Dubai: white polka dot bell sleeve blouse, black wide leg trousers, black patent pumps and a pearl clutch. #dubaiworkwear #worktodinner #dubaistyle #officeoutfit #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "dubai work outfit, work to dinner outfit, office outfit uae, polka dot blouse"
+    },
+    {
+      "id": "te-headline-1",
+      "look": "teal-elevate-look-01",
+      "type": "headline",
+      "headline": "DUBAI LUXE ON A BUDGET",
+      "subline": "white basics + teal satin",
+      "title": "Dubai Luxe Look on a Budget: White Basics + Teal Satin Shirt",
+      "description": "Tap to shop every piece (affiliate links). The expensive-looking Dubai trick: start with white basics, then add a teal satin shirt, turquoise tote, braided belt and chunky gold. #dubailuxury #richlook #elevatedbasics #dubaistyle #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "dubai luxe look on a budget, rich look outfit, elevated basics, teal outfit",
+      "crop_top": 0.135
+    },
+    {
+      "id": "bp-headline-1",
+      "look": "blush-pearl-look-01",
+      "type": "headline",
+      "headline": "OLD MONEY DUBAI LOOK",
+      "subline": "blush knit + pearls",
+      "title": "Old Money Dubai Look: Pink Cardigan, White Maxi Skirt & Pearls",
+      "description": "Tap to shop every piece (affiliate links). Soft, rich-looking Dubai style: dusty rose cropped cardigan, white tiered maxi skirt, pearl earrings, an iridescent pearl clutch and silver block heels. #oldmoneystyle #dubailuxury #pearls #dubaistyle #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "old money outfit, dubai luxury style, pink cardigan outfit, pearl outfit"
+    },
+    {
+      "id": "rf-headline-1",
+      "look": "red-floral-coquette-01",
+      "type": "headline",
+      "headline": "DUBAI SUMMER OUTFIT",
+      "subline": "denim bows + cherry red",
+      "title": "What to Wear in Dubai in Summer: Denim Bow Blouse & White Maxi Skirt",
+      "description": "Tap to shop every piece (affiliate links). Breezy but covered for a Dubai summer: denim tie-front bow blouse, white tiered maxi skirt, red Mary Jane flats, a cherry red bow bag and gold teardrops. #dubaisummer #whattowearindubai #dubaioutfit #coquetteoutfit #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "what to wear in dubai in summer, dubai summer outfit, coquette outfit, white maxi skirt outfit"
+    },
+    {
+      "id": "by-headline-1",
+      "look": "blue-yellow-summer-look-01",
+      "type": "headline",
+      "headline": "DUBAI MARINA OUTFIT",
+      "subline": "butter yellow + navy",
+      "title": "Dubai Marina Outfit Idea: Yellow Wrap Blouse & Navy Wide Leg Jeans",
+      "description": "Tap to shop every piece (affiliate links). An easy outfit for a Dubai Marina walk or dhow cruise: butter yellow wrap blouse, navy wide leg jeans, tortoise slides, a brown tote and seashell gold. #dubaimarina #dubaioutfit #whattowearindubai #dubaitravel #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai marina outfit, dhow cruise outfit, what to wear in dubai, yellow outfit"
+    }
+  ]
+}
