@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>Exquisite Silat — Summer looks</title>
-    <link>https://exquisite.silat.ae/summer/</link>
+    <title>Exquisite Silat — Spring looks</title>
+    <link>https://exquisite.silat.ae/spring/</link>
     <description>Outfit collages with every piece linked. As an Amazon Associate we earn from qualifying purchases.</description>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://exquisite.silat.ae/feeds/summer.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://exquisite.silat.ae/rss/spring.xml" rel="self" type="application/rss+xml" />
 
   </channel>
 </rss>

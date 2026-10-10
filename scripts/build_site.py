@@ -5,7 +5,7 @@ links.json is the single source of truth. This script generates:
   index.html                     home page
   <category>/index.html          one page per category (7)
   looks/<slug>/index.html        one page per outfit
-  feeds/all.xml, feeds/<cat>.xml RSS for Pinterest auto-publish (looks with a "published" date)
+  rss/all.xml, rss/<cat>.xml     RSS for Pinterest auto-publish (looks with a "published" date)
   assets/js/outfits.js           data for the legacy ?id= / ?cat= pages
   sitemap.xml, robots.txt
 
@@ -291,7 +291,7 @@ SHELL = Template(
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css?v=5" />
-  <link rel="alternate" type="application/rss+xml" title="$site_name — new looks" href="/feeds/all.xml" />
+  <link rel="alternate" type="application/rss+xml" title="$site_name — new looks" href="/rss/all.xml" />
 
   <link rel="icon" href="/assets/img/favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon32x32.png" />
@@ -1166,12 +1166,12 @@ def main() -> None:
   write("assets/js/outfits.js", build_outfits_js(outfits))
   write("sitemap.xml", build_sitemap(outfits, all_cats))
   # Pinterest auto-publish: connect each feed to a board (one board per feed).
-  write("feeds/all.xml", build_feed(outfits, title=f"{SITE_NAME} — new looks",
-                                    feed_path="feeds/all.xml", page=f"{SITE_URL}/"))
+  write("rss/all.xml", build_feed(outfits, title=f"{SITE_NAME} — new looks",
+                                    feed_path="rss/all.xml", page=f"{SITE_URL}/"))
   for cat in all_cats:
-    write(f"feeds/{slugify(cat)}.xml",
+    write(f"rss/{slugify(cat)}.xml",
           build_feed(by_cat[cat], title=f"{SITE_NAME} — {cat} looks",
-                     feed_path=f"feeds/{slugify(cat)}.xml", page=f"{SITE_URL}/{slugify(cat)}/"))
+                     feed_path=f"rss/{slugify(cat)}.xml", page=f"{SITE_URL}/{slugify(cat)}/"))
   write("robots.txt", build_robots())
   write("look.html", build_redirect("look"))
   write("hub.html", build_redirect("hub"))

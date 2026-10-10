@@ -21,7 +21,7 @@ That reads `links.json` and writes:
 | `<category>/index.html` | One page per category (7) |
 | `looks/<slug>/index.html` | One page per outfit |
 | `about.html` | About page |
-| `feeds/all.xml`, `feeds/<category>.xml` | RSS for Pinterest auto-publish |
+| `rss/all.xml`, `rss/<category>.xml` | RSS for Pinterest auto-publish |
 | `assets/js/outfits.js` | Data for the legacy `?id=` / `?cat=` redirects |
 | `sitemap.xml`, `robots.txt` | Crawl files |
 | `look.html`, `hub.html` | Redirect shims for old query-string URLs |
@@ -61,10 +61,10 @@ Auto-publish → Connect RSS feed*, once per board, e.g.
 
 | Feed | Board |
 |------|-------|
-| `https://exquisite.silat.ae/feeds/autumn.xml` | Autumn Outfits |
-| `https://exquisite.silat.ae/feeds/fancy.xml` | Evening & Dinner Outfits |
-| `https://exquisite.silat.ae/feeds/modest.xml` | Modest Fashion |
-| `https://exquisite.silat.ae/feeds/all.xml` | an "All looks" board |
+| `https://exquisite.silat.ae/rss/autumn.xml` | Autumn Outfits |
+| `https://exquisite.silat.ae/rss/fancy.xml` | Evening & Dinner Outfits |
+| `https://exquisite.silat.ae/rss/modest.xml` | Modest Fashion |
+| `https://exquisite.silat.ae/rss/all.xml` | an "All looks" board |
 
 Pinterest checks feeds daily and pins new items within ~24h.
 

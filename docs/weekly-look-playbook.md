@@ -164,7 +164,7 @@ python scripts/build_site.py
 python scripts/check_links.py <outfit-id>     # must exit 0 (all OK/LOW)
 ```
 
-Check `feeds/all.xml` contains the new look, then:
+Check `rss/all.xml` contains the new look, then:
 
 ```
 git add -A -- . ":!.claude"
