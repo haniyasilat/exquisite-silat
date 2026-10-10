@@ -86,8 +86,8 @@ Insert the new outfit at the **top** of `outfits` (home page shows newest first)
   "collage_image": "assets/products/<folder>/collage.png",
   "categories": ["Casual|Fancy|Modest", "Spring|Summer|Autumn|Winter"],
   "pin": {
-    "title": "<keyword-rich, <=100 chars, e.g. '... Outfit | Casual Fall Style'>",
-    "description": "Tap to shop every piece (affiliate links). <what people search for + every key piece> <4-5 hashtags>  (always START with that exact tap-to-shop sentence; <=500 chars)"
+    "title": "<keyword-rich with a UAE angle, <=100 chars, e.g. 'What to Wear in Dubai in Winter: …', 'Dress Like a Dubai Local: …', 'Dubai Luxe Look: …', 'Dubai Brunch Outfit Idea: …'>",
+    "description": "Tap to shop every piece (affiliate links). <what people search for + every key piece, with a Dubai/UAE angle: occasion, weather (cool Dubai winters, hot summers), real places like Dubai Mall, DIFC, JBR> <4-5 hashtags incl. Dubai/UAE ones: #dubaioutfit #whattowearindubai #dubaifashion #uaefashion #dubaistyle>  (always START with that exact tap-to-shop sentence; <=500 chars)"
   },
   "pieces": [
     {"slot": "<Top slot e.g. Sweater>", "label": "<Colour + material + item, as the listing really is>",
