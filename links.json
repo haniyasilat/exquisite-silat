@@ -86,8 +86,8 @@
           "y0": 0.07,
           "y1": 0.93,
           "max_w": 0.5,
-          "ratio": 0.66,
-          "overlap": 0.1
+          "ratio": 0.8,
+          "overlap": 0.08
         },
         "boxes": {
           "Perfume": [
