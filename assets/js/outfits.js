@@ -5,8 +5,8 @@ const OUTFITS = [
   {
     "id": "burgundy-velvet-dinner-look-01",
     "slug": "burgundy-velvet-and-black-satin-dinner",
-    "title": "Burgundy Velvet & Black Satin Dinner",
-    "description": "Burgundy velvet blazer over black satin wide-leg trousers, with Calvin Klein patent pumps, a gold crystal clutch, chunky gold earrings and Lattafa Khamrah.",
+    "title": "Burgundy Velvet & Black Wide-Leg Dinner",
+    "description": "Burgundy velvet blazer over black high-waisted wide-leg trousers, with Calvin Klein patent pumps, a gold crystal clutch, chunky gold earrings and Lattafa Khamrah.",
     "categories": [
       "Fancy",
       "Winter"
@@ -22,10 +22,10 @@ const OUTFITS = [
       },
       {
         "slot": "Trousers",
-        "label": "Black Satin Wide-Leg Trousers",
-        "amazon_url": "https://www.amazon.ae/dp/B0CG8F2L6Y?tag=exquisitesila-21",
-        "asin": "B0CG8F2L6Y",
-        "image_url": "https://m.media-amazon.com/images/I/51FnvuG6YuL._AC_SL1200_.jpg"
+        "label": "Black High-Waisted Wide-Leg Trousers",
+        "amazon_url": "https://www.amazon.ae/dp/B0FQPFK2G3?tag=exquisitesila-21",
+        "asin": "B0FQPFK2G3",
+        "image_url": "https://m.media-amazon.com/images/I/61ahBiR1O6L._AC_SL1500_.jpg"
       },
       {
         "slot": "Heels",

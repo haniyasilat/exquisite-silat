@@ -7,12 +7,12 @@
   "outfits": [
     {
       "id": "burgundy-velvet-dinner-look-01",
-      "title": "Burgundy Velvet & Black Satin Dinner",
+      "title": "Burgundy Velvet & Black Wide-Leg Dinner",
       "slug": "burgundy-velvet-dinner-look-01",
       "url_slug": "burgundy-velvet-and-black-satin-dinner",
       "published": "2026-10-14",
-      "description": "Burgundy velvet blazer over black satin wide-leg trousers, with Calvin Klein patent pumps, a gold crystal clutch, chunky gold earrings and Lattafa Khamrah.",
-      "styling_note": "Rich burgundy velvet against liquid black satin is the easiest way to look expensive at a winter dinner. Keep the accessories warm and golden, a crystal clutch and chunky dome earrings, and finish with sleek black patent pumps. A spritz of Khamrah, Dubai's favourite amber scent, completes it for a DIFC dinner, a gala or a night at the opera.",
+      "description": "Burgundy velvet blazer over black high-waisted wide-leg trousers, with Calvin Klein patent pumps, a gold crystal clutch, chunky gold earrings and Lattafa Khamrah.",
+      "styling_note": "Rich burgundy velvet over sharp black wide-leg trousers is the easiest way to look expensive at a winter dinner. Keep the accessories warm and golden, a crystal clutch and chunky dome earrings, and finish with sleek black patent pumps. A spritz of Khamrah, Dubai's favourite amber scent, completes it for a DIFC dinner, a gala or a night at the opera.",
       "collage_image": "assets/products/burgundy-velvet-dinner-look/collage.png",
       "categories": [
         "Fancy",
@@ -20,9 +20,9 @@
       ],
       "pin": {
         "headline": "OLD MONEY DUBAI DINNER",
-        "subline": "burgundy velvet + black satin",
-        "title": "Old Money Dubai Dinner Outfit: Burgundy Velvet Blazer & Black Satin Trousers",
-        "description": "Tap to shop every piece (affiliate links). A rich-looking outfit for a Dubai dinner or gala night: burgundy velvet blazer, black satin wide-leg trousers, Calvin Klein patent pumps, a gold crystal clutch and Lattafa Khamrah. #oldmoneystyle #dubaidinner #dubaioutfit #velvetblazer #uaefashion"
+        "subline": "burgundy velvet + black wide-leg",
+        "title": "Old Money Dubai Dinner Outfit: Burgundy Velvet Blazer & Black Wide Leg Trousers",
+        "description": "Tap to shop every piece (affiliate links). A rich-looking outfit for a Dubai dinner or gala night: burgundy velvet blazer, black high-waisted wide-leg trousers, Calvin Klein patent pumps, a gold crystal clutch and Lattafa Khamrah. #oldmoneystyle #dubaidinner #dubaioutfit #velvetblazer #uaefashion"
       },
       "pieces": [
         {
@@ -34,10 +34,10 @@
         },
         {
           "slot": "Trousers",
-          "label": "Black Satin Wide-Leg Trousers",
-          "amazon_url": "https://www.amazon.ae/dp/B0CG8F2L6Y?tag=exquisitesila-21",
-          "asin": "B0CG8F2L6Y",
-          "image_url": "https://m.media-amazon.com/images/I/51FnvuG6YuL._AC_SL1200_.jpg"
+          "label": "Black High-Waisted Wide-Leg Trousers",
+          "amazon_url": "https://www.amazon.ae/dp/B0FQPFK2G3?tag=exquisitesila-21",
+          "asin": "B0FQPFK2G3",
+          "image_url": "https://m.media-amazon.com/images/I/61ahBiR1O6L._AC_SL1500_.jpg"
         },
         {
           "slot": "Heels",
@@ -86,7 +86,7 @@
           "y0": 0.07,
           "y1": 0.93,
           "max_w": 0.5,
-          "ratio": 0.7,
+          "ratio": 0.66,
           "overlap": 0.1
         },
         "boxes": {
@@ -240,16 +240,16 @@
             8
           ],
           "Tumbler": [
-            0.05,
-            0.36,
-            0.22,
+            0.04,
+            0.37,
+            0.21,
             0.62
           ],
           "Bag": [
-            0.23,
-            0.38,
-            0.47,
-            0.62,
+            0.2,
+            0.36,
+            0.5,
+            0.64,
             -8
           ],
           "Trainers": [
