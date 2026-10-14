@@ -128,7 +128,9 @@ Rules:
 ## 5. Design the collage
 
 `collage` keys (see the comment block in `scripts/build_real_collages.py`):
-- `background`: one of `BACKGROUNDS` (`autumn_leaves`, `coquette_lace`, `vintage_parchment`).
+- `background`: one of `BACKGROUNDS` (`autumn_leaves`, `coquette_lace`, `vintage_parchment`,
+  `marble_gold`, `desert_dunes`, `linen_arch`). Garments can also skip `stack` and use
+  `boxes` (e.g. a long coat beside trousers), and any box can take a 5th value to tilt it.
   Don't reuse last week's. Roughly once a month add a **new** backdrop function to
   `BACKGROUNDS` in the same spirit as the site's older collages (decorative, textured: lace,
   florals, gingham, polka dots, marble with gold ornament, parchment with corner flourishes,
