@@ -1,6 +1,6 @@
 {
   "_about": "Extra Pinterest pins made from existing looks, every one angled at people dressing for Dubai/the UAE (visitors planning trips, and locals). scripts/make_pin_variants.py renders each pin to assets/pins/<id>.jpg and writes pinterest/bulk-upload.csv (Pinterest bulk-create format) with one pin per day from 'start' at 'time_utc', in the order listed. Types: headline = the look's collage with a keyword headline band; piece = one product large on the look's backdrop (looks with a 'collage' config only); formula = 4 pieces with plus signs (same). Every description starts with the tap-to-shop line.",
-  "start": "2026-10-09",
+  "start": "2026-10-15",
   "time_utc": "18:00:00",
   "utm_campaign": "bulk",
   "inks": {
