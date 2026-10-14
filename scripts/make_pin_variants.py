@@ -141,7 +141,12 @@ def main() -> None:
         slug = outfit.get("url_slug") or build_site.slugify(outfit["title"])
         link = (f"{build_site.SITE_URL}/looks/{slug}/?utm_source=pinterest&utm_medium=social"
                 f"&utm_campaign={plan['utm_campaign']}&utm_content={pin['id']}")
-        day = pin.get("date") or (start + timedelta(days=n)).isoformat()
+        # "post_first_now": the first pin has no date, so Pinterest publishes it on upload;
+        # the rest follow one a day from "start"
+        first_now = plan.get("post_first_now")
+        day = pin.get("date") or (start + timedelta(days=n - 1 if first_now else n)).isoformat()
+        if first_now and n == 0:
+            day = ""
         assert len(pin["title"]) <= 100, (pin["id"], len(pin["title"]))
         assert len(pin["description"]) <= 500, (pin["id"], len(pin["description"]))
         rows.append({
@@ -151,10 +156,10 @@ def main() -> None:
             "Thumbnail": "",
             "Description": pin["description"],
             "Link": link,
-            "Publish date": f"{day}T{plan['time_utc']}",
+            "Publish date": f"{day}T{plan['time_utc']}" if day else "",
             "Keywords": pin.get("keywords", ""),
         })
-        print(f"[OK] {day} {pin['id']:22} {pin['type']:8} -> {out.relative_to(ROOT)}")
+        print(f"[OK] {day or 'on upload':10} {pin['id']:22} {pin['type']:8} -> {out.relative_to(ROOT)}")
 
     with CSV_PATH.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))

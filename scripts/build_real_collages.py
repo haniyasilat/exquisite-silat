@@ -425,7 +425,14 @@ def build_outfit_collage(outfit: dict) -> None:
     draw_wordmark(canvas, tuple(look["ink"]), look["wordmark"])
     out_path = asset_dir / "collage.png"
     canvas.convert("RGB").save(out_path, "PNG", optimize=True)
-    make_pin(canvas, look["ink"]).save(asset_dir / "pin.png", "PNG", optimize=True)
+    pin_copy = outfit.get("pin") or {}
+    if pin_copy.get("headline"):
+        # same design as the bulk pins: keyword headline banner on top, tap-to-shop below
+        import make_pin_variants  # local import: it imports this module
+        pin_img = make_pin_variants.render_headline(outfit, look["ink"], pin_copy)
+    else:
+        pin_img = make_pin(canvas, look["ink"])
+    pin_img.save(asset_dir / "pin.png", "PNG", optimize=True)
     print(f"[OK] wrote {out_path.relative_to(ROOT)} + pin.png")
 
 

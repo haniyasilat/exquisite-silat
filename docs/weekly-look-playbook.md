@@ -86,6 +86,8 @@ Insert the new outfit at the **top** of `outfits` (home page shows newest first)
   "collage_image": "assets/products/<folder>/collage.png",
   "categories": ["Casual|Fancy|Modest", "Spring|Summer|Autumn|Winter"],
   "pin": {
+    "headline": "<banner text on the pin image: 2-5 words, UPPERCASE, Dubai/UAE keyword, e.g. 'DUBAI WINTER OUTFIT', 'DRESS LIKE A DUBAI LOCAL'>",
+    "subline": "<short lowercase line under it, e.g. 'cable knit for cool desert evenings'>",
     "title": "<keyword-rich with a UAE angle, <=100 chars, e.g. 'What to Wear in Dubai in Winter: …', 'Dress Like a Dubai Local: …', 'Dubai Luxe Look: …', 'Dubai Brunch Outfit Idea: …'>",
     "description": "Tap to shop every piece (affiliate links). <what people search for + every key piece, with a Dubai/UAE angle: occasion, weather (cool Dubai winters, hot summers), real places like Dubai Mall, DIFC, JBR> <4-5 hashtags incl. Dubai/UAE ones: #dubaioutfit #whattowearindubai #dubaifashion #uaefashion #dubaistyle>  (always START with that exact tap-to-shop sentence; <=500 chars)"
   },
@@ -145,9 +147,10 @@ python scripts/apply_real_products.py <outfit-id>
 python scripts/build_real_collages.py <outfit-id>
 ```
 
-This writes `collage.png` (used on the site) and `pin.png` (the Pinterest image: the same
-collage with a "TAP TO SHOP THE LOOK" band underneath in the look's `ink` colour; the RSS
-feeds use it automatically). Check the band text is readable on the chosen `ink`.
+This writes `collage.png` (used on the site) and `pin.png` (the Pinterest image: the
+collage between a banner with `pin.headline` / `pin.subline` on top and a "TAP TO SHOP THE
+LOOK" band below, both in the look's `ink` colour; the RSS feeds use it automatically).
+Check the banner text fits and is readable on the chosen `ink`.
 
 Open `assets/products/<folder>/collage.png` and look at it critically:
 - Bottom garment is long and full-size relative to the top (never smaller than the top).
