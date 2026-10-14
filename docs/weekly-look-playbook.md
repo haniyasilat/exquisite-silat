@@ -25,7 +25,9 @@ Read `content/generated/link-report.md`.
   replacement on amazon.ae (same colour, same kind of item, person-free main photo), update
   that piece's `amazon_url`, `asin`, `image_url` and `label` in `links.json`, then
   `python scripts/apply_real_products.py <outfit-id> --force` and
-  `python scripts/build_real_collages.py <outfit-id>`.
+  `python scripts/build_real_collages.py <outfit-id>`. This refreshes the site collage but
+  deliberately keeps the look's already-published `pin.png`: Pinterest re-posts a feed pin
+  whose image changes, which would duplicate it. Never pass `--repin` in the weekly run.
 - **OOS / DEAD** on an older look (hand-made collage, no `image_url`): don't change the link
   silently. List it in the final report so the owner can decide.
 - **CHECK** (robot check): re-run `python scripts/check_links.py <outfit-id>` once later; if

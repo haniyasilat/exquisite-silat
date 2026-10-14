@@ -57,39 +57,6 @@
   },
   "pins": [
     {
-      "id": "cb-headline",
-      "look": "chocolate-bow-satin-look-01",
-      "type": "headline",
-      "headline": "DUBAI WINTER COQUETTE",
-      "subline": "chocolate bows + cream satin",
-      "title": "What to Wear in Dubai in Winter: Coquette Bow Cardigan & Satin Maxi Skirt",
-      "description": "Tap to shop every piece (affiliate links). A soft coquette outfit for Dubai's mild winter days: chocolate cardigan tied with cream ribbon bows, cream satin maxi skirt, woven Mary Jane flats and pearls. Covered-up and pretty for malls, cafes and evenings out in the UAE. #dubaioutfit #whattowearindubai #dubaiwinter #coquetteoutfit #uaefashion",
-      "board": "Dubai Outfit Ideas",
-      "keywords": "what to wear in dubai in winter, dubai winter outfit, coquette outfit, bow cardigan outfit, uae fashion"
-    },
-    {
-      "id": "fk-headline",
-      "look": "forest-knit-denim-look-01",
-      "type": "headline",
-      "headline": "DUBAI WINTER OUTFIT",
-      "subline": "cable knit for cool desert evenings",
-      "title": "Dubai Winter Outfit Idea: Green Cable Knit Sweater & Light Wash Jeans",
-      "description": "Tap to shop every piece (affiliate links). Dubai evenings get cool from December to February, so pack a knit: forest green cable knit quarter-zip, light wash straight jeans, tan suede lug loafers and a cognac bag. Easy for Dubai Mall, Al Seef and winter markets. #dubaiwinter #dubaioutfit #whattowearindubai #falloutfits #uaefashion",
-      "board": "Dubai Outfit Ideas",
-      "keywords": "dubai winter outfit, what to wear in dubai in december, cable knit sweater outfit, dubai travel outfit"
-    },
-    {
-      "id": "lb-headline",
-      "look": "leopard-black-look-01",
-      "type": "headline",
-      "headline": "DUBAI DATE NIGHT OUTFIT",
-      "subline": "leopard satin + black bell sleeves",
-      "title": "Dubai Date Night Outfit: Leopard Satin Skirt & Black Bell Sleeve Top",
-      "description": "Tap to shop every piece (affiliate links). A chic Dubai dinner look for a rooftop or DIFC date night: black bell sleeve top, leopard satin midi skirt, bow Mary Jane kitten heels, quilted chain bag and chunky gold. Elegant with sleeves and a midi length. #dubainights #dubaioutfit #datenightoutfit #leopardskirt #uaefashion",
-      "board": "Evening & Dinner Outfits",
-      "keywords": "dubai date night outfit, dubai dinner outfit, leopard skirt outfit, what to wear in dubai at night"
-    },
-    {
       "id": "pa-headline-1",
       "look": "plaid-autumn-look-01",
       "type": "headline",
@@ -447,5 +414,6 @@
       "keywords": "dubai marina outfit, dhow cruise outfit, what to wear in dubai, yellow outfit"
     }
   ],
-  "post_first_now": true
+  "post_first_now": true,
+  "_posted_via_feed": "cb-headline, fk-headline and lb-headline were removed: identical Dubai-banner pins of those three looks were already posted from the RSS feed on 14 Oct."
 }

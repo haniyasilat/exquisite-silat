@@ -2,6 +2,8 @@
 
     python scripts/build_real_collages.py                 # every look with a "collage" config
     python scripts/build_real_collages.py <outfit-id> ... # just those looks
+    ... --repin   also regenerate pin.png for looks that already have one (Pinterest will
+                  post the changed image again as a new pin)
 
 Each look gets its own composition and its own hand-made backdrop (layout in
 links.json under "collage", backdrops in BACKGROUNDS),
@@ -425,6 +427,13 @@ def build_outfit_collage(outfit: dict) -> None:
     draw_wordmark(canvas, tuple(look["ink"]), look["wordmark"])
     out_path = asset_dir / "collage.png"
     canvas.convert("RGB").save(out_path, "PNG", optimize=True)
+    pin_path = asset_dir / "pin.png"
+    if is_committed(pin_path) and not REPIN:
+        # Pinterest re-pins a feed item whose image changes, so a published (committed)
+        # look's pin.png is left alone, e.g. after swapping a sold-out product. A new look's
+        # pin.png isn't committed yet, so it is regenerated while the look is being refined.
+        print(f"[OK] wrote {out_path.relative_to(ROOT)} (kept existing pin.png)")
+        return
     pin_copy = outfit.get("pin") or {}
     if pin_copy.get("headline"):
         # same design as the bulk pins: keyword headline banner on top, tap-to-shop below
@@ -432,13 +441,24 @@ def build_outfit_collage(outfit: dict) -> None:
         pin_img = make_pin_variants.render_headline(outfit, look["ink"], pin_copy)
     else:
         pin_img = make_pin(canvas, look["ink"])
-    pin_img.save(asset_dir / "pin.png", "PNG", optimize=True)
+    pin_img.save(pin_path, "PNG", optimize=True)
     print(f"[OK] wrote {out_path.relative_to(ROOT)} + pin.png")
+
+
+REPIN = "--repin" in sys.argv
+
+
+def is_committed(path: pathlib.Path) -> bool:
+    """True if git already tracks this file (i.e. it has been published)."""
+    import subprocess
+    r = subprocess.run(["git", "ls-files", "--error-unmatch", str(path.relative_to(ROOT))],
+                       cwd=ROOT, capture_output=True)
+    return r.returncode == 0
 
 
 def main() -> None:
     """Build collages for every look with a "collage" config, or only the ids given."""
-    only = set(sys.argv[1:])
+    only = {a for a in sys.argv[1:] if not a.startswith("--")}
     data = json.loads(LINKS_JSON.read_text(encoding="utf-8"))
     for outfit in data["outfits"]:
         if "collage" in outfit and (not only or outfit["id"] in only):
