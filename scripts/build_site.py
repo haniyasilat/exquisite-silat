@@ -978,9 +978,8 @@ def build_feed(outfits: list[dict], *, title: str, feed_path: str, page: str) ->
   """RSS 2.0 feed for Pinterest auto-publish.
 
   Pinterest pins each new <item> (image from <enclosure>/<media:content>) to the board the
-  feed is connected to, once per <guid>, within ~24h of it appearing. So the feed is the
-  pin schedule: an item only appears once its date (UAE time) has arrived, and the site is
-  rebuilt every morning (.github/workflows/pages.yml) so scheduled pins go out on their day.
+  feed is connected to, once per <guid>, within ~24h of it appearing. An item only
+  appears once its date (UAE time) has arrived and the site has been rebuilt and pushed.
 
   Per look: the first pin on its "published" date, then one pin per "followup_pins" entry
   ({"date", optional "title"/"description"}) on that date. Looks without a "published"

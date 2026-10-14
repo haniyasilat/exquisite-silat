@@ -68,12 +68,14 @@ Auto-publish → Connect RSS feed*, once per board, e.g.
 
 Pinterest checks feeds daily and pins new items within ~24h.
 
-**Scheduling:** the feeds are the pin schedule. A look's first pin appears on its
-`published` date and each `followup_pins` entry (`date`, optional `title` /
-`description`, uses the look's `pin.png`) on its own date. The site is built and
-deployed by GitHub Actions (`.github/workflows/pages.yml`) on every push and every
-morning at 08:00 UAE, so scheduled pins go out on their day even if no one pushes.
-Pages must be set to *Settings → Pages → Source: GitHub Actions*.
+**Scheduling:** a look appears in the feeds (and so gets pinned) once its
+`published` date has arrived and the site is pushed; the weekly task publishes
+on the day it runs. Extra pins on chosen dates are scheduled through Pinterest
+itself: `python scripts/make_pin_variants.py` renders `pinterest/plan.json` into
+`assets/pins/` and writes `pinterest/bulk-upload.csv` for Pinterest's bulk
+upload (Create → Create Pins in bulk → Upload .csv).
+(`followup_pins` entries on a look are also supported by the feed, but are only
+released when the site is next built and pushed.)
 
 To see Pinterest sales separately in Amazon Associates, create a second
 tracking ID there and put it in `links.json` → `settings.pinterest_amazon_tag`;
