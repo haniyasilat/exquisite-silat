@@ -1,7 +1,10 @@
 {
-  "_about": "Extra Pinterest pins made from existing looks, every one angled at people dressing for Dubai/the UAE (visitors planning trips, and locals). scripts/make_pin_variants.py renders each pin to assets/pins/<id>.jpg and writes pinterest/bulk-upload.csv (Pinterest bulk-create format) with one pin per day from 'start' at 'time_utc', in the order listed. Types: headline = the look's collage with a keyword headline band; piece = one product large on the look's backdrop (looks with a 'collage' config only); formula = 4 pieces with plus signs (same). Every description starts with the tap-to-shop line.",
-  "start": "2026-10-15",
-  "time_utc": "18:00:00",
+  "_about": "Extra Pinterest pins made from existing looks, every one angled at people dressing for Dubai/the UAE (visitors planning trips, and locals). scripts/make_pin_variants.py renders each pin to assets/pins/<id>.jpg and writes pinterest/bulk-upload.csv (Pinterest bulk-create format) filling the daily 'times_utc' slots (UTC) from 'start', in the order listed; a pin with 'when' keeps that publish time ('' = on upload). Types: headline = the look's collage with a keyword headline band; piece = one product large on the look's backdrop (looks with a 'collage' config only); formula = 4 pieces with plus signs (same). Every description starts with the tap-to-shop line.",
+  "start": "2026-10-16",
+  "times_utc": [
+    "01:00:00",
+    "16:00:00"
+  ],
   "utm_campaign": "bulk",
   "inks": {
     "teal-elevate-look-01": [
@@ -65,7 +68,8 @@
       "title": "Modest Dubai Outfit for Winter: Plaid Maxi Skirt, Burgundy Top & Cardigan",
       "description": "Tap to shop every piece (affiliate links). Dress like a local in Dubai's cooler months: plaid belted maxi skirt, burgundy top, cream chunky cardigan, gold locket and burgundy high-tops. Modest, comfortable and right for souks, malls and old Dubai. #modestfashion #dubaimodestfashion #whattowearindubai #dubaiwinter #uaefashion",
       "board": "Modest Fashion",
-      "keywords": "modest dubai outfit, what to wear in dubai modest, dubai winter outfit, plaid maxi skirt outfit"
+      "keywords": "modest dubai outfit, what to wear in dubai modest, dubai winter outfit, plaid maxi skirt outfit",
+      "when": ""
     },
     {
       "id": "bl-headline-1",
@@ -76,7 +80,8 @@
       "title": "What to Wear on a Dubai Desert Safari in Winter: Leather Jacket & Boots",
       "description": "Tap to shop every piece (affiliate links). Winter desert safari nights in Dubai get chilly: layer a brown faux leather bomber over a white top with dark wide leg jeans, a belt and square-toe ankle boots. Photo-ready at the dunes and warm at the camp. #desertsafari #dubaidesertsafari #dubaioutfit #dubaiwinter #uaefashion",
       "board": "Dubai Outfit Ideas",
-      "keywords": "dubai desert safari outfit, what to wear desert safari, dubai winter outfit, leather jacket outfit"
+      "keywords": "dubai desert safari outfit, what to wear desert safari, dubai winter outfit, leather jacket outfit",
+      "when": "2026-10-15T18:00:00"
     },
     {
       "id": "bv-still",
@@ -649,6 +654,5 @@
       "keywords": "dubai marina outfit, dhow cruise outfit, what to wear in dubai, yellow outfit"
     }
   ],
-  "post_first_now": true,
   "_posted_via_feed": "cb-headline, fk-headline and lb-headline were removed: identical Dubai-banner pins of those three looks were already posted from the RSS feed on 14 Oct."
 }

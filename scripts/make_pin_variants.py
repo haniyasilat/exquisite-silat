@@ -4,8 +4,8 @@
 
 Reads pinterest/plan.json (see its "_about") and links.json, renders every pin to
 assets/pins/<id>.jpg (848x1264, roughly Pinterest's 2:3) and writes
-pinterest/bulk-upload.csv in Pinterest's bulk-create format, one pin per day from the
-plan's start date. Commit + push so the images are live on the site before uploading the
+pinterest/bulk-upload.csv in Pinterest's bulk-create format, filling the plan's daily
+"times_utc" slots from its start date. Commit + push so the images are live on the site before uploading the
 CSV in Pinterest (Create -> Create Pins in bulk -> Upload .csv).
 
 Pin types:
@@ -208,6 +208,8 @@ def main() -> None:
     looks = {o["id"]: o for o in json.loads(brc.LINKS_JSON.read_text(encoding="utf-8"))["outfits"]}
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     start = date.fromisoformat(plan["start"])
+    times = plan["times_utc"]
+    slot = 0
     only = set(sys.argv[sys.argv.index("--only") + 1:]) if "--only" in sys.argv else None
     rows = []
     for n, pin in enumerate(plan["pins"]):
@@ -226,12 +228,14 @@ def main() -> None:
         slug = outfit.get("url_slug") or build_site.slugify(outfit["title"])
         link = (f"{build_site.SITE_URL}/looks/{slug}/?utm_source=pinterest&utm_medium=social"
                 f"&utm_campaign={plan['utm_campaign']}&utm_content={pin['id']}")
-        # "post_first_now": the first pin has no date, so Pinterest publishes it on upload;
-        # the rest follow one a day from "start"
-        first_now = plan.get("post_first_now")
-        day = pin.get("date") or (start + timedelta(days=n - 1 if first_now else n)).isoformat()
-        if first_now and n == 0:
-            day = ""
+        # A pin with "when" keeps it ("" = Pinterest publishes it on upload; used for pins
+        # already uploaded). The rest fill the daily "times_utc" slots in order from "start".
+        if "when" in pin:
+            when = pin["when"]
+        else:
+            day = start + timedelta(days=slot // len(times))
+            when = f"{day.isoformat()}T{times[slot % len(times)]}"
+            slot += 1
         assert len(pin["title"]) <= 100, (pin["id"], len(pin["title"]))
         assert len(pin["description"]) <= 500, (pin["id"], len(pin["description"]))
         rows.append({
@@ -241,10 +245,10 @@ def main() -> None:
             "Thumbnail": "",
             "Description": pin["description"],
             "Link": link,
-            "Publish date": f"{day}T{plan['time_utc']}" if day else "",
+            "Publish date": when,
             "Keywords": pin.get("keywords", ""),
         })
-        print(f"[OK] {day or 'on upload':10} {pin['id']:22} {pin['type']:8} -> {out.relative_to(ROOT)}")
+        print(f"[OK] {when or 'on upload':19} {pin['id']:22} {pin['type']:8} -> {out.relative_to(ROOT)}")
 
     if only is not None:
         return
