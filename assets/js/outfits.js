@@ -3,6 +3,185 @@
 
 const OUTFITS = [
   {
+    "id": "burgundy-velvet-dinner-look-01",
+    "slug": "burgundy-velvet-and-black-satin-dinner",
+    "title": "Burgundy Velvet & Black Satin Dinner",
+    "description": "Burgundy velvet blazer over black satin wide-leg trousers, with Calvin Klein patent pumps, a gold crystal clutch, chunky gold earrings and Lattafa Khamrah.",
+    "categories": [
+      "Fancy",
+      "Winter"
+    ],
+    "collage_image": "assets/products/burgundy-velvet-dinner-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Blazer",
+        "label": "Burgundy Velvet One-Button Blazer",
+        "amazon_url": "https://www.amazon.ae/dp/B08X6LSV5G?tag=exquisitesila-21",
+        "asin": "B08X6LSV5G",
+        "image_url": "https://m.media-amazon.com/images/I/71y94j2arLL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Trousers",
+        "label": "Black Satin Wide-Leg Trousers",
+        "amazon_url": "https://www.amazon.ae/dp/B0CG8F2L6Y?tag=exquisitesila-21",
+        "asin": "B0CG8F2L6Y",
+        "image_url": "https://m.media-amazon.com/images/I/51FnvuG6YuL._AC_SL1200_.jpg"
+      },
+      {
+        "slot": "Heels",
+        "label": "Calvin Klein Gayle Black Patent Pumps",
+        "amazon_url": "https://www.amazon.ae/dp/B091DFGGWC?tag=exquisitesila-21",
+        "asin": "B091DFGGWC",
+        "image_url": "https://m.media-amazon.com/images/I/41y31B2dvvL._AC_SL1000_.jpg"
+      },
+      {
+        "slot": "Clutch",
+        "label": "Gold Crystal Evening Clutch",
+        "amazon_url": "https://www.amazon.ae/dp/B0FBGMRCWW?tag=exquisitesila-21",
+        "asin": "B0FBGMRCWW",
+        "image_url": "https://m.media-amazon.com/images/I/61k7XHhkSYL.jpg"
+      },
+      {
+        "slot": "Earrings",
+        "label": "Chunky Gold Dome Earrings",
+        "amazon_url": "https://www.amazon.ae/dp/B0CGV9ZNLX?tag=exquisitesila-21",
+        "asin": "B0CGV9ZNLX",
+        "image_url": "https://m.media-amazon.com/images/I/61RY1Zv+TjL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Perfume",
+        "label": "Lattafa Khamrah Eau de Parfum",
+        "amazon_url": "https://www.amazon.ae/dp/B0B92Y18GT?tag=exquisitesila-21",
+        "asin": "B0B92Y18GT",
+        "image_url": "https://m.media-amazon.com/images/I/61lIaaNDDqL._AC_SL1000_.jpg"
+      }
+    ]
+  },
+  {
+    "id": "cream-knit-dubai-day-look-01",
+    "slug": "cream-cable-knit-dubai-day-out",
+    "title": "Cream Cable Knit Dubai Day Out",
+    "description": "Cream cable-knit quarter-zip with deep blue straight jeans, PUMA Carina trainers, a tan camera crossbody, a beige cap, cat-eye sunglasses and a Stanley Quencher.",
+    "categories": [
+      "Casual",
+      "Winter"
+    ],
+    "collage_image": "assets/products/cream-knit-day-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Sweater",
+        "label": "Cream Cable Knit Quarter-Zip Sweater",
+        "amazon_url": "https://www.amazon.ae/dp/B0H8NC4KCZ?tag=exquisitesila-21",
+        "asin": "B0H8NC4KCZ",
+        "image_url": "https://m.media-amazon.com/images/I/61tmiqwuDgL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Jeans",
+        "label": "Deep Blue High-Waisted Straight Leg Jeans",
+        "amazon_url": "https://www.amazon.ae/dp/B0F4N592JH?tag=exquisitesila-21",
+        "asin": "B0F4N592JH",
+        "image_url": "https://m.media-amazon.com/images/I/71xQvD0WdcL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Trainers",
+        "label": "PUMA Carina White Leather Trainers",
+        "amazon_url": "https://www.amazon.ae/dp/B07HJNY1N5?tag=exquisitesila-21",
+        "asin": "B07HJNY1N5",
+        "image_url": "https://m.media-amazon.com/images/I/71dcsrSJKGL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Bag",
+        "label": "Tan Camera Crossbody with Patterned Strap",
+        "amazon_url": "https://www.amazon.ae/dp/B0F6MNYKYP?tag=exquisitesila-21",
+        "asin": "B0F6MNYKYP",
+        "image_url": "https://m.media-amazon.com/images/I/81TbRr-eZUL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Cap",
+        "label": "Beige Cotton Baseball Cap",
+        "amazon_url": "https://www.amazon.ae/dp/B0DRZWX7LZ?tag=exquisitesila-21",
+        "asin": "B0DRZWX7LZ",
+        "image_url": "https://m.media-amazon.com/images/I/71KGJclfVNL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Sunglasses",
+        "label": "Black Narrow Cat-Eye Sunglasses",
+        "amazon_url": "https://www.amazon.ae/dp/B0GHDKFP69?tag=exquisitesila-21",
+        "asin": "B0GHDKFP69",
+        "image_url": "https://m.media-amazon.com/images/I/41fdnDZ3TfL._AC_SL1248_.jpg"
+      },
+      {
+        "slot": "Tumbler",
+        "label": "Stanley Quencher 1.2L in Pink Quartz",
+        "amazon_url": "https://www.amazon.ae/dp/B0CNTWY3VM?tag=exquisitesila-21",
+        "asin": "B0CNTWY3VM",
+        "image_url": "https://m.media-amazon.com/images/I/51AewhgnKIL._AC_SL1500_.jpg"
+      }
+    ]
+  },
+  {
+    "id": "camel-trench-modest-look-01",
+    "slug": "camel-trench-modest-dubai-winter",
+    "title": "Camel Trench Modest Dubai Winter",
+    "description": "Camel belted trench coat with black wide-leg trousers, a taupe chiffon hijab, black patent chunky loafers, a structured black tote, a gold watch and Lattafa Hayaati.",
+    "categories": [
+      "Modest",
+      "Winter"
+    ],
+    "collage_image": "assets/products/camel-trench-modest-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Coat",
+        "label": "Camel Belted Trench Coat",
+        "amazon_url": "https://www.amazon.ae/dp/B0B71MBHQ5?tag=exquisitesila-21",
+        "asin": "B0B71MBHQ5",
+        "image_url": "https://m.media-amazon.com/images/I/61CiWOTkuzL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Trousers",
+        "label": "Black Wide-Leg Dress Trousers",
+        "amazon_url": "https://www.amazon.ae/dp/B0CWKTHFMS?tag=exquisitesila-21",
+        "asin": "B0CWKTHFMS",
+        "image_url": "https://m.media-amazon.com/images/I/514IX1xsQGL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Hijab",
+        "label": "Taupe Chiffon Hijab Scarf",
+        "amazon_url": "https://www.amazon.ae/dp/B0GDHCFLSV?tag=exquisitesila-21",
+        "asin": "B0GDHCFLSV",
+        "image_url": "https://m.media-amazon.com/images/I/51yVtLh8Y0L._AC_SL1000_.jpg"
+      },
+      {
+        "slot": "Loafers",
+        "label": "Black Patent Chunky Bit Loafers",
+        "amazon_url": "https://www.amazon.ae/dp/B0DPT5QDB2?tag=exquisitesila-21",
+        "asin": "B0DPT5QDB2",
+        "image_url": "https://m.media-amazon.com/images/I/61uKj4sguoL._AC_SL1200_.jpg"
+      },
+      {
+        "slot": "Tote",
+        "label": "Black Structured Saffiano Tote",
+        "amazon_url": "https://www.amazon.ae/dp/B0D3LQTP1S?tag=exquisitesila-21",
+        "asin": "B0D3LQTP1S",
+        "image_url": "https://m.media-amazon.com/images/I/71uB-ScN+UL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Watch",
+        "label": "Vintage Gold Square Bracelet Watch",
+        "amazon_url": "https://www.amazon.ae/dp/B0DBHG7DBP?tag=exquisitesila-21",
+        "asin": "B0DBHG7DBP",
+        "image_url": "https://m.media-amazon.com/images/I/61EU0vMqbFL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Perfume",
+        "label": "Lattafa Hayaati Gold Elixir Eau de Parfum",
+        "amazon_url": "https://www.amazon.ae/dp/B0918411RP?tag=exquisitesila-21",
+        "asin": "B0918411RP",
+        "image_url": "https://m.media-amazon.com/images/I/610KmLNceeL._AC_SL1500_.jpg"
+      }
+    ]
+  },
+  {
     "id": "forest-knit-denim-look-01",
     "slug": "forest-green-knit-and-denim-weekend",
     "title": "Forest Green Knit & Denim Weekend",

@@ -255,6 +255,101 @@ def bg_vintage_parchment(seed=21) -> Image.Image:
     return img
 
 
+def marble(base, vein, seed, strength=0.40) -> np.ndarray:
+    """Soft marble: warped sine veins over a pale base (float RGB array)."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    warp = (smooth_noise((H, W), 160, seed) - 0.5) * 150 + (smooth_noise((H, W), 45, seed + 1) - 0.5) * 30
+    v1 = np.abs(np.sin((x * 0.55 + y * 0.85 + warp) / 95.0)) ** 90
+    v2 = np.abs(np.sin((x * -0.7 + y * 0.6 + warp * 0.8) / 60.0)) ** 140 * 0.55
+    veins = np.clip(v1 + v2, 0, 1) * (0.45 + 0.55 * smooth_noise((H, W), 70, seed + 2))
+    rgb = paper(base, seed + 3)
+    return tint(rgb, vein, ndimage.gaussian_filter(veins, 1.1) * strength)
+
+
+def bg_marble_gold(seed=31) -> Image.Image:
+    """White marble with grey veining and a thin gold art-deco frame (stepped corners)."""
+    img = to_image(marble((246, 244, 241), (150, 146, 142), seed))
+    gold = (182, 146, 82)
+
+    def deco(d, s):
+        m, st = 30 * s, 26 * s
+        for inset, wdt in ((0, 3), (10, 1.5)):
+            a = m + inset * s
+            b = st - inset * s * 0.4
+            pts = [(a + b, a), (W * s - a - b, a), (W * s - a - b, a + b * 0.0), (W * s - a, a + b),
+                   (W * s - a, H * s - a - b), (W * s - a - b, H * s - a), (a + b, H * s - a), (a, H * s - a - b),
+                   (a, a + b), (a + b, a)]
+            d.line(pts, fill=255, width=int(wdt * s), joint="curve")
+        for cx, cy in ((m, m), (W * s - m, m), (m, H * s - m), (W * s - m, H * s - m)):  # corner fans
+            for r in (14, 22):
+                d.arc((cx - r * s, cy - r * s, cx + r * s, cy + r * s), 0, 360, fill=255, width=int(1.5 * s))
+
+    img.alpha_composite(line_layer(deco, gold, alpha=230, seed=seed, unevenness=0.1))
+    return img
+
+
+def bg_desert_dunes(seed=41) -> Image.Image:
+    """Warm Dubai desert: soft peach sky fading into layered sand dunes, with sand ripples."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    t = y / H
+    sky_top, sky_low = np.array((247, 228, 210), np.float32), np.array((251, 240, 226), np.float32)
+    rgb = sky_top * (1 - t[..., None]) + sky_low * t[..., None]
+    layers = [(0.30, (238, 214, 182)), (0.48, (232, 202, 164)), (0.66, (226, 191, 150)), (0.84, (221, 183, 140))]
+    for i, (yy, col) in enumerate(layers):
+        crest = H * yy + 34 * np.sin(x / W * math.pi * (1.3 + i * 0.35) + i * 1.7) \
+            + (smooth_noise((1, W), 90, seed + i)[0] - 0.5) * 40
+        mask = np.clip((y - crest) / 6.0, 0, 1)
+        shade = 0.96 + 0.08 * np.clip((y - crest) / 260.0, 0, 1)  # lighter crest, deeper base
+        rgb = rgb * (1 - mask[..., None]) + (np.array(col, np.float32) * shade[..., None]) * mask[..., None]
+    ripples = (np.sin((y + 18 * np.sin(x / 70.0)) / 5.5) * 0.5 + 0.5) * (t > 0.3)
+    rgb *= (1 - 0.025 * ripples)[..., None]
+    rgb *= (0.985 + 0.03 * smooth_noise((H, W), 6, seed + 9))[..., None]  # sand grain
+    img = to_image(rgb)
+
+    def sun(d, s):
+        cx, cy, r = W * s * 0.82, H * s * 0.12, 46 * s
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=255)
+
+    img.alpha_composite(line_layer(sun, (250, 214, 168), alpha=170, seed=seed, unevenness=0.05))
+    return img
+
+
+def bg_linen_arch(seed=51) -> Image.Image:
+    """Warm linen with a large Arabesque arch window (lighter panel, double gold outline)."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    weave = 0.985 + 0.02 * np.sin(x * 1.9) * np.sin(y * 1.9) + 0.012 * np.sin(y * 0.9)
+    rgb = paper((236, 225, 210), seed) * weave[..., None]
+    img = to_image(rgb)
+    cx, top, half, bot = W / 2, H * 0.06, W * 0.40, H * 0.92
+
+    def arch_path(d, s, inset, fill=None, width=0):
+        hw = (half - inset) * s
+        c, t, b = cx * s, (top + inset) * s, (bot - inset * 0.3) * s
+        shoulder = t + hw * 1.05
+        pts = [(c - hw, b), (c - hw, shoulder)]
+        for i in range(41):  # pointed (ogee-ish) arch: two arcs meeting at the apex
+            u = i / 40
+            ang = math.pi * (1 - u)
+            px = c + hw * math.cos(ang)
+            py = shoulder - hw * 1.05 * math.sin(ang) * (1 + 0.22 * (1 - abs(1 - 2 * u)))
+            pts.append((px, py))
+        pts += [(c + hw, shoulder), (c + hw, b)]
+        if fill is not None:
+            d.polygon(pts, fill=fill)
+        else:
+            d.line(pts, fill=255, width=width, joint="curve")
+
+    panel = Image.new("L", (W * SS, H * SS), 0)
+    arch_path(ImageDraw.Draw(panel), SS, 0, fill=255)
+    panel = panel.resize((W, H), Image.Resampling.LANCZOS).filter(ImageFilter.GaussianBlur(2))
+    light = Image.new("RGBA", (W, H), (250, 244, 234, 0))
+    light.putalpha(panel.point(lambda v: int(v * 0.85)))
+    img.alpha_composite(light)
+    img.alpha_composite(line_layer(lambda d, s: (arch_path(d, s, 0, width=4 * s), arch_path(d, s, 12, width=2 * s)),
+                                   (176, 140, 84), alpha=225, seed=seed, unevenness=0.12))
+    return img
+
+
 # ---------- looks ----------
 # Each look's layout lives in links.json under the outfit's "collage" key:
 #   background  name from BACKGROUNDS below
@@ -267,8 +362,11 @@ def bg_vintage_parchment(seed=21) -> Image.Image:
 #     max_w        widest the top may be
 #     ratio        bottom width relative to top width (top width includes its sleeves)
 #     overlap      how far the top's hem sits over the bottom's waistband (fraction of top height)
-#   boxes       accessory slot -> [x0, y0, x1, y1]; each piece is fitted inside its box and
-#               centred, so non-overlapping boxes mean non-overlapping pieces
+#               (optional: leave it out to place the garments with "boxes" too, e.g. a long
+#               coat and trousers side by side)
+#   boxes       slot -> [x0, y0, x1, y1] or [x0, y0, x1, y1, degrees]; each piece is fitted
+#               inside its box (after the optional tilt) and centred, so non-overlapping boxes
+#               mean non-overlapping pieces
 #   cutout      optional slot -> [white, colored, pockets] args for cutout_white_bg
 #               (pale/pearly products: [250, 236, false]; white watch dials: [242, 205, false])
 # The look's asset folder is the folder of its collage_image.
@@ -276,6 +374,9 @@ BACKGROUNDS = {
     "autumn_leaves": bg_autumn_leaves,
     "coquette_lace": bg_coquette_lace,
     "vintage_parchment": bg_vintage_parchment,
+    "marble_gold": bg_marble_gold,
+    "desert_dunes": bg_desert_dunes,
+    "linen_arch": bg_linen_arch,
 }
 
 
@@ -340,8 +441,11 @@ def paste_at(canvas: Image.Image, img: Image.Image, cx: int, top_y: int) -> None
 
 
 def place(canvas: Image.Image, img: Image.Image, box) -> None:
+    """Fit img inside box [x0, y0, x1, y1(, degrees)] and centre it; optional tilt."""
     x0, y0, x1, y1 = (int(box[0] * W), int(box[1] * H), int(box[2] * W), int(box[3] * H))
     img = img.copy()
+    if len(box) > 4 and box[4]:
+        img = img.rotate(box[4], expand=True, resample=Image.Resampling.BICUBIC)
     img.thumbnail((x1 - x0, y1 - y0), Image.Resampling.LANCZOS)
     paste_at(canvas, img, (x0 + x1) // 2, (y0 + y1) // 2 - img.height // 2)
 
@@ -392,7 +496,7 @@ def make_pin(collage: Image.Image, ink) -> Image.Image:
     draw = ImageDraw.Draw(pin)
     draw.line((0, H, W, H), fill=CREAM, width=2)
     spaced_text(draw, H + 36, "TAP TO SHOP THE LOOK", ImageFont.truetype(str(SERIF_BOLD), 40), CREAM, 4)
-    spaced_text(draw, H + 96, "every piece linked  ·  exquisite.silat.ae",
+    spaced_text(draw, H + 96, "every piece linked  Â·  exquisite.silat.ae",
                 ImageFont.truetype(str(SANS), 20), CREAM, 1)
     return pin
 
@@ -412,11 +516,12 @@ def build_outfit_collage(outfit: dict) -> None:
         return piece_image(asset_dir, slot, tuple(cut.get(slot, ())))
 
     canvas = BACKGROUNDS[look["background"]]()
-    st = look["stack"]
-    place_stack(canvas, image(st["top"]), image(st["bottom"]), st)
+    st = look.get("stack")  # optional: without it, every piece (garments too) uses "boxes"
+    if st:
+        place_stack(canvas, image(st["top"]), image(st["bottom"]), st)
     for piece in outfit["pieces"]:
         slot = piece["slot"]
-        if slot in (st["top"], st["bottom"]):
+        if st and slot in (st["top"], st["bottom"]):
             continue
         box = look["boxes"].get(slot)
         if not box:

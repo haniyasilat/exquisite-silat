@@ -12,6 +12,12 @@ Pin types:
     headline  the look's collage between a keyword headline band and a tap-to-shop band
     piece     one product, large, on the look's backdrop (needs the look's "collage" config)
     formula   four pieces in a 2x2 grid joined by plus signs (same)
+    still     product-only still life: pin["boxes"] {slot: [x0,y0,x1,y1(,deg)]}, optional
+              pin["tray"] [slots] for a soft gold tray, optional pin["background"]
+    palette   hero piece + named colour chips: pin["slots"][0] is the hero, pin["chips"]
+              [[name, slot-or-[r,g,b]], ...] (a slot's colour is measured from its photo)
+
+    python scripts/make_pin_variants.py --only <pin-id> ...   # render just those (no CSV)
 """
 
 import csv
@@ -122,7 +128,79 @@ def render_formula(outfit, ink, pin) -> Image.Image:
     return canvas
 
 
-RENDER = {"headline": render_headline, "piece": render_piece, "formula": render_formula}
+def minimal_text(canvas: Image.Image, ink, headline: str, subline: str) -> None:
+    """Editorial-style text straight on the backdrop (no bands): spaced serif headline with a
+    short rule, and a quiet tap-to-shop line at the foot."""
+    # knock-out: a feathered patch of the backdrop's own colour behind each text block, so
+    # frame lines / arches / veins never run through the words
+    for y0, y1 in ((26, 166), (H - 106, H - 40)):
+        region = canvas.crop((0, y0, W, y1)).resize((1, 1), Image.LANCZOS).getpixel((0, 0))[:3]
+        patch = Image.new("L", canvas.size, 0)
+        ImageDraw.Draw(patch).rounded_rectangle((70, y0, W - 70, y1), radius=40, fill=235)
+        patch = patch.filter(ImageFilter.GaussianBlur(14))
+        canvas.paste(Image.new("RGB", canvas.size, region), (0, 0), patch)
+    d = ImageDraw.Draw(canvas)
+    ink = tuple(ink)
+    hf = fit(d, headline, brc.SERIF_BOLD, 50, W - 120)
+    brc.spaced_text(d, 46, headline, hf, ink, 4)
+    centred(d, 112, subline, fit(d, subline, brc.SANS, 24, W - 140), ink)
+    d.line((W / 2 - 70, 152, W / 2 + 70, 152), fill=ink, width=2)
+    d.line((W / 2 - 70, H - 92, W / 2 + 70, H - 92), fill=ink, width=2)
+    brc.spaced_text(d, H - 76, "TAP TO SHOP  ·  EXQUISITE.SILAT.AE", ImageFont.truetype(str(brc.SANS), 20), ink, 2)
+
+
+def backdrop(outfit, pin) -> Image.Image:
+    return brc.BACKGROUNDS[pin.get("background") or outfit["collage"]["background"]]()
+
+
+def render_still(outfit, ink, pin) -> Image.Image:
+    """Product-only still life: the pieces in pin["boxes"] (optionally tilted) on the backdrop,
+    with soft trays under the slots in pin["tray"]."""
+    canvas = backdrop(outfit, pin)
+    trays = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    td = ImageDraw.Draw(trays)
+    for slot in pin.get("tray", []):
+        x0, y0, x1, y1 = pin["boxes"][slot][:4]
+        cx, cy, rx, ry = (x0 + x1) / 2 * W, y1 * H - 18, (x1 - x0) * W * 0.62, 34
+        td.ellipse((cx - rx, cy - ry, cx + rx, cy + ry), fill=(214, 182, 120, 120), outline=(176, 140, 84, 230), width=3)
+    canvas.alpha_composite(trays.filter(ImageFilter.GaussianBlur(1)))
+    for slot, box in pin["boxes"].items():
+        brc.place(canvas, piece(outfit, slot), box)
+    canvas = canvas.convert("RGB")
+    minimal_text(canvas, ink, pin["headline"], pin["subline"])
+    return canvas
+
+
+def dominant(img: Image.Image):
+    """Median colour of a cutout's opaque pixels (for palette chips)."""
+    import numpy as np
+    a = np.asarray(img.convert("RGBA"))
+    px = a[a[..., 3] > 200][:, :3]
+    return tuple(int(v) for v in np.median(px, axis=0)) if len(px) else (128, 128, 128)
+
+
+def render_palette(outfit, ink, pin) -> Image.Image:
+    """Hero piece large, with a column of named colour chips taken from the products."""
+    canvas = backdrop(outfit, pin)
+    brc.place(canvas, piece(outfit, pin["slots"][0]), pin.get("hero_box", (0.07, 0.17, 0.64, 0.86)))
+    d = ImageDraw.Draw(canvas)
+    chips = pin["chips"]
+    lab = ImageFont.truetype(str(brc.SANS), 19)
+    top, bot = 0.22 * H, 0.80 * H
+    for i, (name, src) in enumerate(chips):
+        colour = tuple(src) if isinstance(src, list) else dominant(piece(outfit, src))
+        cx, cy = 0.82 * W, top + (bot - top) * i / max(len(chips) - 1, 1)
+        r = 50
+        d.ellipse((cx - r + 3, cy - r + 6, cx + r + 3, cy + r + 6), fill=(60, 40, 35, 40))
+        d.ellipse((cx - r, cy - r, cx + r, cy + r), fill=colour, outline=(255, 255, 255), width=4)
+        d.text((cx - d.textlength(name, font=lab) / 2, cy + r + 8), name, font=lab, fill=tuple(ink))
+    canvas = canvas.convert("RGB")
+    minimal_text(canvas, ink, pin["headline"], pin["subline"])
+    return canvas
+
+
+RENDER = {"headline": render_headline, "piece": render_piece, "formula": render_formula,
+          "still": render_still, "palette": render_palette}
 
 
 def main() -> None:
@@ -130,13 +208,20 @@ def main() -> None:
     looks = {o["id"]: o for o in json.loads(brc.LINKS_JSON.read_text(encoding="utf-8"))["outfits"]}
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     start = date.fromisoformat(plan["start"])
+    only = set(sys.argv[sys.argv.index("--only") + 1:]) if "--only" in sys.argv else None
     rows = []
     for n, pin in enumerate(plan["pins"]):
         outfit = looks[pin["look"]]
         ink = (outfit.get("collage") or {}).get("ink") or plan["inks"][pin["look"]]
-        img = RENDER[pin["type"]](outfit, ink, pin)
         out = OUT_DIR / f"{pin['id']}.jpg"
-        img.save(out, "JPEG", quality=88, optimize=True, progressive=True)
+        if only is None or pin["id"] in only:
+            img = RENDER[pin["type"]](outfit, ink, pin)
+            img.save(out, "JPEG", quality=88, optimize=True, progressive=True)
+            if only is not None:
+                print(f"[OK] {pin['id']} -> {out.relative_to(ROOT)}")
+                continue
+        elif only is not None:
+            continue
 
         slug = outfit.get("url_slug") or build_site.slugify(outfit["title"])
         link = (f"{build_site.SITE_URL}/looks/{slug}/?utm_source=pinterest&utm_medium=social"
@@ -161,6 +246,8 @@ def main() -> None:
         })
         print(f"[OK] {day or 'on upload':10} {pin['id']:22} {pin['type']:8} -> {out.relative_to(ROOT)}")
 
+    if only is not None:
+        return
     with CSV_PATH.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
         w.writeheader()
