@@ -212,7 +212,9 @@ def main() -> None:
     slot = 0
     only = set(sys.argv[sys.argv.index("--only") + 1:]) if "--only" in sys.argv else None
     rows = []
-    for n, pin in enumerate(plan["pins"]):
+    for pin in plan["pins"]:
+        if pin.get("uploaded") and (only is None or pin["id"] not in only):
+            continue  # already scheduled on Pinterest with its image; keep both as they are
         outfit = looks[pin["look"]]
         ink = (outfit.get("collage") or {}).get("ink") or plan["inks"][pin["look"]]
         out = OUT_DIR / f"{pin['id']}.jpg"
@@ -228,8 +230,8 @@ def main() -> None:
         slug = outfit.get("url_slug") or build_site.slugify(outfit["title"])
         link = (f"{build_site.SITE_URL}/looks/{slug}/?utm_source=pinterest&utm_medium=social"
                 f"&utm_campaign={plan['utm_campaign']}&utm_content={pin['id']}")
-        # A pin with "when" keeps it ("" = Pinterest publishes it on upload; used for pins
-        # already uploaded). The rest fill the daily "times_utc" slots in order from "start".
+        # A pin with "when" keeps it ("" = Pinterest publishes it on upload). The rest fill
+        # the daily "times_utc" slots in order from "start".
         if "when" in pin:
             when = pin["when"]
         else:
