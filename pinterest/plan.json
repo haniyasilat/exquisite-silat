@@ -1,8 +1,9 @@
 {
   "_about": "Extra Pinterest pins made from existing looks, every one angled at people dressing for Dubai/the UAE. scripts/make_pin_variants.py renders each pin to assets/pins/<id>.jpg and writes pinterest/bulk-upload.csv (Pinterest bulk-create format) with the pins not yet uploaded, filling the daily 'times_utc' slots (UTC) from 'start', in the order listed. Pins marked 'uploaded' are already scheduled on Pinterest at their 'when' ('' = posted on upload) and are left out. Types: headline = the look's collage with a keyword headline band; piece = one product large on the look's backdrop; formula = 4 pieces with plus signs; still = product-only still life; palette = hero piece + colour chips. Every description starts with the tap-to-shop line.",
-  "start": "2026-10-16",
+  "start": "2026-11-13",
   "times_utc": [
-    "01:00:00"
+    "01:00:00",
+    "18:00:00"
   ],
   "utm_campaign": "bulk",
   "inks": {
@@ -489,7 +490,9 @@
       "description": "Tap to shop every piece (affiliate links). An easy modest formula for Dubai's cooler months: camel belted trench + black wide-leg trousers + taupe chiffon hijab + chunky patent loafers. Polished for the mall, the office or old Dubai. #modestfashion #hijaboutfit #outfitformula #dubaimodestfashion #uaefashion",
       "board": "Modest Fashion",
       "keywords": "modest outfit formula, hijab outfit, camel trench outfit, modest winter outfit, dubai modest fashion",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-16T01:00:00",
+      "uploaded": true
     },
     {
       "id": "bv-still",
@@ -533,7 +536,9 @@
       "description": "Tap to shop every piece (affiliate links). The finishing touches for a Dubai dinner: Lattafa Khamrah, the city's favourite amber perfume, a gold crystal clutch, chunky gold dome earrings and Calvin Klein black patent pumps. #dubaidinner #lattafakhamrah #eveningbag #dubaifashion #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "dubai dinner accessories, lattafa khamrah, gold clutch, patent pumps, evening accessories",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-17T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ck-formula",
@@ -551,7 +556,9 @@
       "description": "Tap to shop every piece (affiliate links). The comfy outfit formula for a winter day of sightseeing in Dubai: cream cable knit quarter-zip + deep blue straight jeans + PUMA white trainers + a tan camera crossbody. #outfitformula #dubaioutfit #whattowearindubai #casualoutfit #uaefashion",
       "board": "Casual Outfits",
       "keywords": "outfit formula, dubai outfit, cable knit outfit, jeans and trainers outfit, sightseeing outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-18T01:00:00",
+      "uploaded": true
     },
     {
       "id": "bv-blazer",
@@ -566,7 +573,9 @@
       "description": "Tap to shop every piece (affiliate links). The piece that makes any Dubai winter dinner outfit look expensive: a burgundy velvet one-button blazer. Wear it over black wide-leg trousers with patent pumps and gold. Ships in the UAE on Amazon.ae. #velvetblazer #dubaishopping #oldmoneystyle #dubaidinner #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "velvet blazer, burgundy blazer outfit, dubai shopping, old money outfit, dubai dinner outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-19T01:00:00",
+      "uploaded": true
     },
     {
       "id": "fk-still",
@@ -613,7 +622,9 @@
       "description": "Tap to shop every piece (affiliate links). Warm accessories for a Dubai weekend in the cooler months: a cognac leather shoulder bag, tan suede penny loafers, a gold-buckle belt, chunky gold hoops and tortoiseshell claw clips. #dubaiweekend #fallaccessories #pennyloafers #dubaistyle #uaefashion",
       "board": "Casual Outfits",
       "keywords": "weekend accessories, cognac bag, suede loafers, gold hoops, claw clips, dubai style",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-20T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ck-still",
@@ -657,7 +668,9 @@
       "description": "Tap to shop every piece (affiliate links). What to pack for a day of sightseeing in Dubai: a Stanley Quencher for the heat, a hands-free tan camera crossbody, a beige cap, cat-eye sunglasses and comfy PUMA Carina trainers. #dubaitravel #whattopackfordubai #dubaiessentials #dubaitrip #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "dubai essentials, what to pack for dubai, dubai travel essentials, stanley quencher, sightseeing outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-21T01:00:00",
+      "uploaded": true
     },
     {
       "id": "bv-formula",
@@ -675,7 +688,9 @@
       "description": "Tap to shop every piece (affiliate links). The old money formula for a Dubai dinner or gala night: burgundy velvet blazer + black high-waisted wide-leg trousers + black patent pumps + a gold crystal clutch. #oldmoneystyle #outfitformula #dubaidinner #velvetblazer #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "old money outfit, outfit formula, velvet blazer outfit, wide leg trousers outfit, dubai dinner",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-22T01:00:00",
+      "uploaded": true
     },
     {
       "id": "lb-still",
@@ -724,7 +739,9 @@
       "description": "Tap to shop every piece (affiliate links). Date night accessories for a Dubai rooftop or dinner: a black quilted chain shoulder bag, bow Mary Jane kitten heels, a vintage gold square watch, chunky gold dome earrings and cat-eye sunglasses. #datenightoutfit #dubaidatenight #chainbag #kittenheels #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "date night accessories, quilted chain bag, kitten heels, gold watch, dubai date night",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-23T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ct-still",
@@ -774,7 +791,9 @@
       "description": "Tap to shop every piece (affiliate links). The modest edit for Dubai days: a soft taupe chiffon hijab, Lattafa Hayaati Gold Elixir, a vintage gold square watch, chunky patent loafers and a structured black tote. #modestfashion #hijabstyle #dubaimodestfashion #lattafa #uaefashion",
       "board": "Modest Fashion",
       "keywords": "modest essentials, chiffon hijab, lattafa hayaati, modest accessories, dubai modest fashion",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-24T01:00:00",
+      "uploaded": true
     },
     {
       "id": "cb-still",
@@ -823,7 +842,9 @@
       "description": "Tap to shop every piece (affiliate links). The coquette edit for Dubai days: Maison Asrar Vanilla Voyage perfume, gold baroque pearl drop earrings, satin hair bows, a glossy brown mini bag and woven Mary Jane flats. #coquetteaesthetic #coquettestyle #pearlearrings #dubaistyle #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "coquette accessories, satin hair bows, pearl earrings, vanilla perfume, mary jane flats",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-25T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ct-coat",
@@ -838,7 +859,9 @@
       "description": "Tap to shop every piece (affiliate links). Dubai's cooler months call for one elegant layer: a camel belted trench coat. Wear it long and modest over wide-leg trousers with a chiffon hijab and gold. Ships in the UAE on Amazon.ae. #trenchcoat #camelcoat #modestfashion #dubaimodestfashion #uaefashion",
       "board": "Modest Fashion",
       "keywords": "camel trench coat, trench coat outfit, modest winter outfit, dress like a dubai local",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-26T01:00:00",
+      "uploaded": true
     },
     {
       "id": "fk-headline",
@@ -850,7 +873,9 @@
       "description": "Tap to shop every piece (affiliate links). A relaxed weekend outfit for cool Dubai evenings: forest green cable knit quarter-zip, light wash straight jeans, tan suede loafers, a cognac shoulder bag and gold hoops. Easy for brunch, the souk or a walk at JBR. #dubaiweekend #casualoutfit #whattowearindubai #cableknit #uaefashion",
       "board": "Casual Outfits",
       "keywords": "dubai weekend outfit, green sweater outfit, casual winter outfit, jeans and loafers outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-27T01:00:00",
+      "uploaded": true
     },
     {
       "id": "bv-palette",
@@ -887,7 +912,9 @@
       "description": "Tap to shop every piece (affiliate links). A rich colour palette for evenings in Dubai: burgundy velvet, sharp black, warm gold and amber. Built around a burgundy velvet blazer with black wide-leg trousers. #colorpalette #burgundyoutfit #dubaidinner #oldmoneystyle #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "burgundy outfit, outfit colour palette, burgundy and black outfit, dubai dinner outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-28T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ck-sweater",
@@ -902,7 +929,9 @@
       "description": "Tap to shop every piece (affiliate links). Dubai winter days are sunny but the evenings get cool, so pack one cosy knit: this cream cable knit quarter-zip goes with jeans and white trainers for sightseeing. Ships in the UAE on Amazon.ae. #whattowearindubai #dubaiwinter #cableknit #cozyoutfit #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "what to wear in dubai in winter, cream sweater, cable knit sweater, dubai winter outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-29T01:00:00",
+      "uploaded": true
     },
     {
       "id": "lb-palette",
@@ -939,7 +968,9 @@
       "description": "Tap to shop every piece (affiliate links). A bold date night palette for Dubai: leopard print satin, sleek black and warm gold. Built around a leopard satin midi skirt with a black bell-sleeve top, bow kitten heels and gold jewellery. #leopardprint #colorpalette #datenightoutfit #dubaidatenight #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "leopard print outfit, outfit colour palette, date night outfit, leopard skirt outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-30T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ck-palette",
@@ -972,7 +1003,9 @@
       "description": "Tap to shop every piece (affiliate links). Desert neutrals for a Dubai winter trip: a cream cable knit, deep blue denim, a desert tan crossbody and a pink quartz Stanley. Easy to mix and pack. #neutraloutfit #colorpalette #dubaiwinter #whattowearindubai #uaefashion",
       "board": "Casual Outfits",
       "keywords": "neutral outfit palette, cream knit outfit, dubai winter outfit, desert neutrals",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-10-31T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ct-perfume",
@@ -987,7 +1020,9 @@
       "description": "Tap to shop every piece (affiliate links). An Arabian perfume pick for a Dubai wardrobe: Lattafa Hayaati Gold Elixir, shown with the modest camel trench outfit it finishes. Ships in the UAE on Amazon.ae. #lattafa #arabianperfume #dubaiperfume #perfumecollection #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "lattafa hayaati, arabian perfume, dubai perfume, lattafa perfume, perfume pick",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-01T01:00:00",
+      "uploaded": true
     },
     {
       "id": "cb-palette",
@@ -1024,7 +1059,9 @@
       "description": "Tap to shop every piece (affiliate links). A soft coquette palette for Dubai winter: chocolate brown, cream satin, pearl and coffee. Built around a chocolate bow cardigan with a cream satin maxi skirt. #coquetteoutfit #colorpalette #brownoutfit #dubaiwinter #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "coquette outfit, chocolate and cream outfit, outfit colour palette, brown cardigan outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-02T01:00:00",
+      "uploaded": true
     },
     {
       "id": "fk-palette",
@@ -1061,7 +1098,9 @@
       "description": "Tap to shop every piece (affiliate links). A warm casual palette for Dubai's cooler months: forest green, light denim, cognac leather and gold. Built around a green cable knit with light wash jeans and suede loafers. #colorpalette #greensweater #casualoutfit #dubaiwinter #uaefashion",
       "board": "Casual Outfits",
       "keywords": "outfit colour palette, green sweater outfit, forest green outfit, casual winter outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-03T01:00:00",
+      "uploaded": true
     },
     {
       "id": "bv-perfume",
@@ -1076,7 +1115,9 @@
       "description": "Tap to shop every piece (affiliate links). Lattafa Khamrah, a warm amber Arabian perfume and a Dubai favourite, shown with the burgundy velvet dinner outfit it finishes. Ships in the UAE on Amazon.ae. #lattafakhamrah #arabianperfume #dubaiperfume #perfumecollection #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "lattafa khamrah, arabian perfume, dubai perfume, amber perfume, evening perfume",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-04T01:00:00",
+      "uploaded": true
     },
     {
       "id": "lb-headline",
@@ -1088,7 +1129,9 @@
       "description": "Tap to shop every piece (affiliate links). What to wear to a Dubai rooftop dinner: a leopard print satin midi skirt, black boat-neck bell-sleeve top, bow kitten heels, a quilted chain bag and gold. #dubaioutfit #datenightoutfit #leopardskirt #dubairooftop #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "dubai rooftop outfit, date night outfit, leopard skirt outfit, dinner outfit dubai",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-05T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ck-bag",
@@ -1103,7 +1146,9 @@
       "description": "Tap to shop every piece (affiliate links). A hands-free bag for Dubai sightseeing days: a tan camera crossbody with a patterned strap, shown with the full cable knit and denim day-out outfit. Ships in the UAE on Amazon.ae. #crossbodybag #dubaishopping #travelbag #dubaitravel #uaefashion",
       "board": "Casual Outfits",
       "keywords": "crossbody bag, camera bag, travel bag, dubai shopping, sightseeing bag",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-06T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ct-palette",
@@ -1136,7 +1181,9 @@
       "description": "Tap to shop every piece (affiliate links). A timeless modest winter palette: camel trench, black wide-leg trousers, a taupe chiffon hijab and gold accents. Elegant for Dubai's cooler months. #modestfashion #camelcoat #colorpalette #dubaimodestfashion #uaefashion",
       "board": "Modest Fashion",
       "keywords": "modest winter outfit, camel coat outfit, outfit colour palette, hijab outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-07T01:00:00",
+      "uploaded": true
     },
     {
       "id": "cb-headline",
@@ -1148,7 +1195,9 @@
       "description": "Tap to shop every piece (affiliate links). A pretty, modest outfit for a Dubai brunch: chocolate bow tie-front cardigan, cream satin maxi skirt, woven Mary Jane flats, pearl drop earrings and a glossy mini bag. #dubaibrunch #brunchoutfit #coquetteoutfit #modestfashion #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "dubai brunch outfit, brunch outfit, satin maxi skirt outfit, bow cardigan outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-08T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ct-headline",
@@ -1160,7 +1209,9 @@
       "description": "Tap to shop every piece (affiliate links). A modest outfit for a day at Dubai Mall in winter: camel belted trench coat, black wide-leg trousers, taupe chiffon hijab, chunky patent loafers, a structured tote and a gold watch. #modestfashion #dubaimall #hijabstyle #dubaimodestfashion #uaefashion",
       "board": "Modest Fashion",
       "keywords": "modest outfit dubai, dubai mall outfit, hijab outfit, camel trench outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-09T01:00:00",
+      "uploaded": true
     },
     {
       "id": "bv-headline",
@@ -1172,7 +1223,9 @@
       "description": "Tap to shop every piece (affiliate links). Dressing for a gala, an opera night or a DIFC dinner in Dubai: burgundy velvet blazer, black high-waisted wide-leg trousers, patent pumps, a gold crystal clutch and Lattafa Khamrah. #galaoutfit #oldmoneystyle #dubaidinner #velvetblazer #uaefashion",
       "board": "Evening & Dinner Outfits",
       "keywords": "gala outfit, dubai dinner outfit, velvet blazer outfit, old money outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-10T01:00:00",
+      "uploaded": true
     },
     {
       "id": "ck-headline",
@@ -1184,7 +1237,584 @@
       "description": "Tap to shop every piece (affiliate links). What to wear in Dubai in winter, when days are warm and evenings cool: a cream cable knit, straight jeans, PUMA white trainers, a tan crossbody, cap and sunglasses. Comfy for the Creek, Al Fahidi and Dubai Mall. #whattowearindubai #dubaiwinter #dubaitravel #dubaioutfit #uaefashion",
       "board": "Dubai Outfit Ideas",
       "keywords": "what to wear in dubai in winter, dubai travel outfit, dubai winter outfit, sightseeing outfit",
-      "batch": 2
+      "batch": 2,
+      "when": "2026-11-11T01:00:00",
+      "uploaded": true
+    },
+    {
+      "id": "em-skirt",
+      "look": "emerald-satin-opera-look-01",
+      "type": "piece",
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the emerald satin midi skirt",
+      "title": "Dubai Shopping Pick: Emerald Green Satin Midi Skirt for Winter Evenings",
+      "description": "Tap to shop every piece (affiliate links). The jewel-toned piece for Dubai's winter evenings: a dark green satin midi skirt, styled with a black roll-neck, slingback heels and emerald drop earrings. Ships in the UAE on Amazon.ae. #satinskirt #emeraldgreen #dubaishopping #dubaioutfit #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "emerald satin skirt, green satin midi skirt, satin skirt outfit, dubai shopping",
+      "slots": [
+        "Skirt"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "gv-cardigan",
+      "look": "global-village-denim-look-01",
+      "type": "piece",
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the strawberry knit cardigan",
+      "title": "Dubai Shopping Pick: Strawberry Knit Cardigan | Cute Winter Style",
+      "description": "Tap to shop every piece (affiliate links). The cutest knit for cool Dubai evenings: a beige cropped cardigan with red strawberries, styled with a tiered denim maxi skirt and white trainers. Ships in the UAE on Amazon.ae. #strawberrycardigan #cuteoutfit #dubaishopping #dubaiwinter #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "strawberry cardigan, cute cardigan, knit cardigan outfit, dubai shopping",
+      "slots": [
+        "Cardigan"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "sw-formula",
+      "look": "sage-blush-modest-look-01",
+      "type": "formula",
+      "headline": "MODEST OUTFIT FORMULA",
+      "subline": "white knit + sage wide-leg + hijab",
+      "title": "Modest Outfit Formula: White Knit + Sage Wide Leg Trousers + Chiffon Hijab",
+      "description": "Tap to shop every piece (affiliate links). An easy modest formula for Dubai's mild winter days: snow white knit sweater + sage green tie-waist wide-leg trousers + rosy brown chiffon hijab + quilted two-tone ballet flats. #modestfashion #outfitformula #hijaboutfit #dubaimodestfashion #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "modest outfit formula, hijab outfit, wide leg trousers outfit, white sweater outfit",
+      "slots": [
+        "Sweater",
+        "Trousers",
+        "Hijab",
+        "Flats"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "em-formula",
+      "look": "emerald-satin-opera-look-01",
+      "type": "formula",
+      "headline": "DUBAI OPERA FORMULA",
+      "subline": "roll-neck + satin midi + slingbacks",
+      "title": "Dubai Opera Night Outfit Formula: Black Roll-Neck + Emerald Satin Skirt + Slingbacks",
+      "description": "Tap to shop every piece (affiliate links). The elegant formula for the Dubai Opera or a Downtown dinner: black roll-neck knit + dark green satin midi skirt + black slingback kitten heels + a velvet clutch. #outfitformula #dubaiopera #satinskirt #eveningoutfit #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "outfit formula, dubai opera outfit, satin skirt outfit, evening outfit",
+      "slots": [
+        "Sweater",
+        "Skirt",
+        "Heels",
+        "Clutch"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "gv-still",
+      "look": "global-village-denim-look-01",
+      "type": "still",
+      "headline": "GLOBAL VILLAGE ESSENTIALS",
+      "subline": "beanie, berry lip mask + comfy trainers",
+      "title": "Global Village Essentials: Cream Beanie, Laneige Lip Mask, Crossbody & Trainers",
+      "description": "Tap to shop every piece (affiliate links). What to take for an evening at Global Village Dubai: a cream knit beanie for the breeze, the Laneige Berry Lip Sleeping Mask duo, a hands-free crescent crossbody and adidas VL Court trainers for all that walking. #globalvillage #dubaiessentials #laneige #dubaiwinter #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "global village dubai, dubai essentials, laneige lip mask, crossbody bag, winter beanie",
+      "boxes": {
+        "Beanie": [
+          0.1,
+          0.18,
+          0.48,
+          0.42,
+          -6
+        ],
+        "Lip": [
+          0.54,
+          0.2,
+          0.92,
+          0.4
+        ],
+        "Bag": [
+          0.1,
+          0.48,
+          0.46,
+          0.84,
+          -4
+        ],
+        "Trainers": [
+          0.48,
+          0.56,
+          0.94,
+          0.82,
+          -8
+        ]
+      },
+      "tray": [
+        "Lip"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "bv-clutch",
+      "look": "burgundy-velvet-dinner-look-01",
+      "type": "piece",
+      "headline": "DUBAI EVENING BAG",
+      "subline": "the gold crystal clutch",
+      "title": "Dubai Evening Bag: Gold Crystal Clutch for Dinners & Galas",
+      "description": "Tap to shop every piece (affiliate links). The evening bag that makes a simple outfit feel dressed up: a gold crystal clutch, styled with a burgundy velvet blazer and black wide-leg trousers. Ships in the UAE on Amazon.ae. #eveningbag #goldclutch #dubaidinner #oldmoneystyle #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "gold clutch, evening bag, crystal clutch, dubai dinner outfit",
+      "slots": [
+        "Clutch"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "sw-still",
+      "look": "sage-blush-modest-look-01",
+      "type": "still",
+      "headline": "SOFT MODEST EDIT",
+      "subline": "rosy chiffon, yara + quilted flats",
+      "title": "Soft Modest Essentials: Rosy Chiffon Hijab, Lattafa Yara, Tote & Ballet Flats",
+      "description": "Tap to shop every piece (affiliate links). The soft modest edit for Dubai days: a rosy brown chiffon hijab, Lattafa Yara, a white slouchy tote and ALDO quilted two-tone ballet flats. #modestfashion #hijabstyle #lattafayara #balletflats #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "modest accessories, chiffon hijab, lattafa yara, ballet flats, white tote",
+      "boxes": {
+        "Hijab": [
+          0.1,
+          0.18,
+          0.5,
+          0.48,
+          -6
+        ],
+        "Perfume": [
+          0.58,
+          0.18,
+          0.82,
+          0.48
+        ],
+        "Tote": [
+          0.48,
+          0.52,
+          0.92,
+          0.86
+        ],
+        "Flats": [
+          0.08,
+          0.6,
+          0.46,
+          0.8,
+          -8
+        ]
+      },
+      "tray": [
+        "Perfume"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "em-still",
+      "look": "emerald-satin-opera-look-01",
+      "type": "still",
+      "headline": "THE OPERA NIGHT EDIT",
+      "subline": "emerald drops, gold + velvet",
+      "title": "Dubai Opera Night Accessories: Emerald Earrings, Gold Cuff & Velvet Clutch",
+      "description": "Tap to shop every piece (affiliate links). The finishing touches for a Dubai Opera night: emerald teardrop earrings, a gold cuff, a black velvet clutch with a gold leaf clasp, slingback kitten heels and Armaf Club de Nuit Woman. #eveningaccessories #emeraldearrings #dubaiopera #clubdenuit #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "evening accessories, emerald earrings, velvet clutch, gold cuff, club de nuit woman",
+      "boxes": {
+        "Perfume": [
+          0.1,
+          0.18,
+          0.46,
+          0.52
+        ],
+        "Earrings": [
+          0.56,
+          0.19,
+          0.88,
+          0.4
+        ],
+        "Cuff": [
+          0.58,
+          0.42,
+          0.86,
+          0.54,
+          -8
+        ],
+        "Clutch": [
+          0.08,
+          0.58,
+          0.5,
+          0.8,
+          -6
+        ],
+        "Heels": [
+          0.5,
+          0.6,
+          0.93,
+          0.86,
+          8
+        ]
+      },
+      "tray": [
+        "Perfume"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "ck-stanley",
+      "look": "cream-knit-dubai-day-look-01",
+      "type": "piece",
+      "headline": "DUBAI DAY-OUT ESSENTIAL",
+      "subline": "the pink quartz stanley",
+      "title": "Dubai Day Out Essential: Stanley Quencher in Pink Quartz",
+      "description": "Tap to shop every piece (affiliate links). The one thing to carry on a sunny Dubai day out: a Stanley Quencher in Pink Quartz, shown with the cream cable knit sightseeing outfit. Ships in the UAE on Amazon.ae. #stanleycup #dubaiessentials #dubaitravel #pinkaesthetic #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "stanley quencher, stanley cup pink, dubai essentials, dubai travel",
+      "slots": [
+        "Tumbler"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "gv-palette",
+      "look": "global-village-denim-look-01",
+      "type": "palette",
+      "headline": "GLOBAL VILLAGE PALETTE",
+      "subline": "cream · strawberry · denim · sand",
+      "title": "Cream, Strawberry Red & Denim: A Cute Outfit Palette for Dubai Winter",
+      "description": "Tap to shop every piece (affiliate links). A playful palette for evenings out in Dubai: cream knit, strawberry red, mid blue denim and sand. Built around a strawberry knit cardigan with a tiered denim maxi skirt. #colorpalette #cuteoutfit #denimskirt #dubaiwinter #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "outfit colour palette, cute outfit, denim maxi skirt outfit, strawberry cardigan",
+      "slots": [
+        "Cardigan"
+      ],
+      "chips": [
+        [
+          "Cream knit",
+          "Cardigan"
+        ],
+        [
+          "Strawberry",
+          [
+            196,
+            40,
+            48
+          ]
+        ],
+        [
+          "Denim",
+          "Skirt"
+        ],
+        [
+          "Sand",
+          "Bag"
+        ]
+      ],
+      "batch": 3
+    },
+    {
+      "id": "sw-palette",
+      "look": "sage-blush-modest-look-01",
+      "type": "palette",
+      "headline": "SAGE & BLUSH PALETTE",
+      "subline": "white · sage · rose · blush",
+      "title": "White, Sage & Rose: A Soft Modest Outfit Palette for Dubai",
+      "description": "Tap to shop every piece (affiliate links). A soft modest palette for Dubai's mild winter: snow white, sage green, rose and blush. Built around sage tie-waist wide-leg trousers with a white knit and a rosy chiffon hijab. #colorpalette #sagegreen #modestfashion #dubaimodestfashion #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "sage green outfit, outfit colour palette, modest outfit, wide leg trousers outfit",
+      "slots": [
+        "Trousers"
+      ],
+      "chips": [
+        [
+          "Snow white",
+          [
+            244,
+            242,
+            236
+          ]
+        ],
+        [
+          "Sage",
+          "Trousers"
+        ],
+        [
+          "Rose",
+          "Hijab"
+        ],
+        [
+          "Blush",
+          [
+            234,
+            196,
+            204
+          ]
+        ]
+      ],
+      "batch": 3
+    },
+    {
+      "id": "em-palette",
+      "look": "emerald-satin-opera-look-01",
+      "type": "palette",
+      "headline": "EMERALD NIGHT PALETTE",
+      "subline": "emerald · black · gold",
+      "title": "Emerald, Black & Gold: An Elegant Evening Outfit Palette for Dubai",
+      "description": "Tap to shop every piece (affiliate links). An elegant evening palette for Dubai winter: deep emerald satin, sleek black and warm gold. Built around a dark green satin midi skirt with a black roll-neck and emerald drop earrings. #colorpalette #emeraldgreen #eveningoutfit #dubaiopera #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "emerald green outfit, outfit colour palette, evening outfit, satin skirt outfit",
+      "slots": [
+        "Skirt"
+      ],
+      "chips": [
+        [
+          "Emerald",
+          "Skirt"
+        ],
+        [
+          "Black",
+          "Sweater"
+        ],
+        [
+          "Gold",
+          [
+            201,
+            162,
+            90
+          ]
+        ]
+      ],
+      "batch": 3
+    },
+    {
+      "id": "ct-tote",
+      "look": "camel-trench-modest-look-01",
+      "type": "piece",
+      "headline": "MODEST DUBAI PICK",
+      "subline": "the structured black tote",
+      "title": "Modest Dubai Pick: Structured Black Saffiano Tote",
+      "description": "Tap to shop every piece (affiliate links). A polished everyday bag for modest outfits in Dubai: a structured black saffiano tote, shown with the camel trench and wide-leg trousers look. Ships in the UAE on Amazon.ae. #totebag #modestfashion #workbag #dubaimodestfashion #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "black tote bag, structured tote, work bag, modest outfit dubai",
+      "slots": [
+        "Tote"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "gv-skirt",
+      "look": "global-village-denim-look-01",
+      "type": "piece",
+      "headline": "HOW TO STYLE A DENIM MAXI",
+      "subline": "the tiered denim maxi skirt",
+      "title": "How to Style a Denim Maxi Skirt in Dubai Winter",
+      "description": "Tap to shop every piece (affiliate links). The modest-friendly skirt everyone is wearing: a tiered mid blue denim maxi. Style it with a cosy knit cardigan, white trainers and a crescent crossbody for a casual Dubai evening. Ships in the UAE on Amazon.ae. #denimmaxiskirt #modestfashion #howtostyle #dubaiwinter #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "denim maxi skirt, how to style denim maxi skirt, tiered denim skirt, modest outfit",
+      "slots": [
+        "Skirt"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "em-headline",
+      "look": "emerald-satin-opera-look-01",
+      "type": "headline",
+      "headline": "DUBAI WINTER GALA OUTFIT",
+      "subline": "emerald satin + black roll-neck",
+      "title": "Dubai Winter Gala Outfit: Emerald Satin Midi Skirt, Black Roll-Neck & Velvet Clutch",
+      "description": "Tap to shop every piece (affiliate links). What to wear to a winter gala or a Downtown dinner in Dubai: a dark green satin midi skirt, black roll-neck knit, slingback kitten heels, a velvet clutch, emerald drop earrings and a gold cuff. #galaoutfit #dubaidinner #emeraldgreen #satinskirt #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "gala outfit, dubai dinner outfit, emerald satin skirt outfit, winter evening outfit",
+      "batch": 3
+    },
+    {
+      "id": "lb-bag",
+      "look": "leopard-black-look-01",
+      "type": "piece",
+      "headline": "DATE NIGHT BAG",
+      "subline": "the quilted chain bag",
+      "title": "Date Night in Dubai: Black Quilted Chain Shoulder Bag",
+      "description": "Tap to shop every piece (affiliate links). The classic date night bag: a black quilted chain shoulder bag, styled with a leopard satin midi skirt and black bell-sleeve top. Ships in the UAE on Amazon.ae. #quiltedbag #chainbag #datenightoutfit #dubaidatenight #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "quilted chain bag, black shoulder bag, date night bag, dubai date night",
+      "slots": [
+        "Bag"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "sw-trousers",
+      "look": "sage-blush-modest-look-01",
+      "type": "piece",
+      "headline": "MODEST SHOPPING PICK",
+      "subline": "the sage tie-waist trousers",
+      "title": "Modest Shopping Pick: Sage Green Tie-Waist Wide Leg Trousers",
+      "description": "Tap to shop every piece (affiliate links). Flowy, comfortable and modest: sage green tie-waist wide-leg trousers, styled with a white knit and a rosy chiffon hijab. Ships in the UAE on Amazon.ae. #widelegtrousers #modestfashion #sagegreen #dubaimodestfashion #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "wide leg trousers, sage green trousers, modest trousers, palazzo pants",
+      "slots": [
+        "Trousers"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "gv-headline",
+      "look": "global-village-denim-look-01",
+      "type": "headline",
+      "headline": "DUBAI MIRACLE GARDEN OUTFIT",
+      "subline": "strawberry knit + denim maxi",
+      "title": "What to Wear to Dubai Miracle Garden: Strawberry Knit Cardigan & Denim Maxi Skirt",
+      "description": "Tap to shop every piece (affiliate links). A cute, comfy outfit for Dubai Miracle Garden or Global Village: a strawberry knit cardigan, tiered denim maxi skirt, white adidas trainers, a crescent crossbody and a cream beanie. #dubaimiraclegarden #globalvillage #whattowearindubai #cuteoutfit #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "dubai miracle garden outfit, global village outfit, what to wear in dubai, denim maxi skirt",
+      "batch": 3
+    },
+    {
+      "id": "cb-perfume",
+      "look": "chocolate-bow-satin-look-01",
+      "type": "piece",
+      "headline": "VANILLA PERFUME PICK",
+      "subline": "maison asrar vanilla voyage",
+      "title": "Vanilla Perfume Pick: Maison Asrar Vanilla Voyage",
+      "description": "Tap to shop every piece (affiliate links). A cosy vanilla scent for Dubai's winter evenings: Maison Asrar Vanilla Voyage, shown with the chocolate bow coquette outfit it finishes. Ships in the UAE on Amazon.ae. #vanillaperfume #arabianperfume #dubaiperfume #perfumecollection #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "vanilla perfume, maison asrar, arabian perfume, dubai perfume",
+      "slots": [
+        "Perfume"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "sw-headline",
+      "look": "sage-blush-modest-look-01",
+      "type": "headline",
+      "headline": "MODEST DUBAI BRUNCH",
+      "subline": "white knit + sage wide-leg",
+      "title": "Modest Dubai Brunch Outfit: White Knit, Sage Wide Leg Trousers & Rosy Hijab",
+      "description": "Tap to shop every piece (affiliate links). A fresh modest outfit for a Dubai brunch: snow white knit sweater, sage green tie-waist wide-leg trousers, a rosy brown chiffon hijab, quilted ballet flats, a white tote and Lattafa Yara. #dubaibrunch #modestfashion #hijabstyle #dubaimodestfashion #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "modest brunch outfit, dubai brunch outfit, hijab outfit, modest winter outfit",
+      "batch": 3
+    },
+    {
+      "id": "ck-trainers",
+      "look": "cream-knit-dubai-day-look-01",
+      "type": "piece",
+      "headline": "DUBAI WALKING SHOES",
+      "subline": "PUMA carina white trainers",
+      "title": "Best Shoes for Walking in Dubai: PUMA Carina White Trainers",
+      "description": "Tap to shop every piece (affiliate links). Dubai sightseeing means a lot of walking: PUMA Carina white leather trainers go with jeans, maxi skirts and knits. Shown with the cream cable knit day-out outfit. Ships in the UAE on Amazon.ae. #whitetrainers #puma #dubaitravel #comfyshoes #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "white trainers, puma carina, walking shoes dubai, comfy sneakers",
+      "slots": [
+        "Trainers"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "em-earrings",
+      "look": "emerald-satin-opera-look-01",
+      "type": "piece",
+      "headline": "EMERALD DROP EARRINGS",
+      "subline": "the statement teardrops",
+      "title": "Statement Emerald Teardrop Earrings for Evenings in Dubai",
+      "description": "Tap to shop every piece (affiliate links). One statement piece that makes a black outfit glow: emerald green teardrop drop earrings, styled with emerald satin and a black roll-neck. Ships in the UAE on Amazon.ae. #emeraldearrings #statementearrings #eveningjewelry #dubaiopera #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "emerald earrings, statement earrings, green drop earrings, evening jewellery",
+      "slots": [
+        "Earrings"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "ct-loafers",
+      "look": "camel-trench-modest-look-01",
+      "type": "piece",
+      "headline": "MODEST SHOE PICK",
+      "subline": "chunky patent loafers",
+      "title": "Modest Shoe Pick: Black Patent Chunky Bit Loafers",
+      "description": "Tap to shop every piece (affiliate links). Polished and comfortable for modest outfits: black patent chunky bit loafers, shown with a camel trench and wide-leg trousers. Ships in the UAE on Amazon.ae. #chunkyloafers #modestfashion #loafersoutfit #dubaimodestfashion #uaefashion",
+      "board": "Modest Fashion",
+      "keywords": "chunky loafers, patent loafers, modest shoes, loafers outfit",
+      "slots": [
+        "Loafers"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "fk-bag",
+      "look": "forest-knit-denim-look-01",
+      "type": "piece",
+      "headline": "DUBAI SHOPPING PICK",
+      "subline": "the cognac shoulder bag",
+      "title": "Dubai Shopping Pick: Cognac Leather Minimalist Shoulder Bag",
+      "description": "Tap to shop every piece (affiliate links). A warm everyday bag for Dubai winter: a cognac leather minimalist shoulder bag, styled with a forest green knit and light denim. Ships in the UAE on Amazon.ae. #cognacbag #shoulderbag #dubaishopping #fallbag #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "cognac bag, leather shoulder bag, minimalist bag, dubai shopping",
+      "slots": [
+        "Bag"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "gv-trainers",
+      "look": "global-village-denim-look-01",
+      "type": "piece",
+      "headline": "COMFY DUBAI TRAINERS",
+      "subline": "adidas VL court",
+      "title": "Comfy Trainers for Global Village: adidas VL Court 3.0",
+      "description": "Tap to shop every piece (affiliate links). Classic white adidas VL Court trainers with a gum sole: comfy for a night of walking at Global Village and cute with a denim maxi skirt. Ships in the UAE on Amazon.ae. #adidas #whitesneakers #globalvillage #comfyshoes #uaefashion",
+      "board": "Casual Outfits",
+      "keywords": "adidas vl court, white sneakers, comfy trainers, global village outfit",
+      "slots": [
+        "Trainers"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "bv-heels",
+      "look": "burgundy-velvet-dinner-look-01",
+      "type": "piece",
+      "headline": "DUBAI DINNER HEELS",
+      "subline": "calvin klein patent pumps",
+      "title": "Dubai Dinner Heels: Calvin Klein Gayle Black Patent Pumps",
+      "description": "Tap to shop every piece (affiliate links). Sleek black patent pumps that finish any dinner outfit: Calvin Klein Gayle, styled with a burgundy velvet blazer and black wide-leg trousers. Ships in the UAE on Amazon.ae. #blackpumps #calvinklein #dubaidinner #oldmoneystyle #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "black patent pumps, calvin klein heels, dinner heels, old money shoes",
+      "slots": [
+        "Heels"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "cb-flats",
+      "look": "chocolate-bow-satin-look-01",
+      "type": "piece",
+      "headline": "MARY JANE FLATS",
+      "subline": "woven brown mary janes",
+      "title": "Woven Brown Mary Jane Ballet Flats for Dubai Days",
+      "description": "Tap to shop every piece (affiliate links). Pretty, comfy flats for Dubai days out: brown woven Mary Jane ballet flats, styled with a chocolate bow cardigan and cream satin maxi skirt. Ships in the UAE on Amazon.ae. #maryjanes #balletflats #coquettestyle #dubaistyle #uaefashion",
+      "board": "Dubai Outfit Ideas",
+      "keywords": "mary jane flats, ballet flats, woven flats, coquette shoes",
+      "slots": [
+        "Flats"
+      ],
+      "batch": 3
+    },
+    {
+      "id": "lb-top",
+      "look": "leopard-black-look-01",
+      "type": "piece",
+      "headline": "DATE NIGHT TOP",
+      "subline": "black bell-sleeve top",
+      "title": "Date Night Top: Black Boat-Neck Bell-Sleeve Top",
+      "description": "Tap to shop every piece (affiliate links). The easy date night top: a black boat-neck top with dramatic bell sleeves, styled with a leopard satin midi skirt and bow kitten heels. Ships in the UAE on Amazon.ae. #bellsleeves #blacktop #datenightoutfit #dubaidatenight #uaefashion",
+      "board": "Evening & Dinner Outfits",
+      "keywords": "black bell sleeve top, date night top, boat neck top, dubai date night",
+      "slots": [
+        "Top"
+      ],
+      "batch": 3
     }
   ],
   "_posted_via_feed": "cb-headline, fk-headline and lb-headline were removed: identical Dubai-banner pins of those three looks were already posted from the RSS feed on 14 Oct."
