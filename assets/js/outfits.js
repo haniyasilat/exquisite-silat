@@ -3,6 +3,178 @@
 
 const OUTFITS = [
   {
+    "id": "emerald-satin-opera-look-01",
+    "slug": "emerald-satin-dubai-opera-night",
+    "title": "Emerald Satin Dubai Opera Night",
+    "description": "Dark green satin midi skirt with a black roll-neck knit, black slingback kitten heels, a black velvet clutch, emerald teardrop earrings, a gold cuff and Armaf Club de Nuit Woman.",
+    "categories": [
+      "Fancy",
+      "Winter"
+    ],
+    "collage_image": "assets/products/emerald-satin-opera-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Sweater",
+        "label": "Black Roll-Neck Fine Knit Sweater",
+        "amazon_url": "https://www.amazon.ae/dp/B07T6NMGWT?tag=exquisitesila-21",
+        "asin": "B07T6NMGWT",
+        "image_url": "https://m.media-amazon.com/images/I/61hiJb7SLRL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Skirt",
+        "label": "Dark Green Satin Midi Skirt",
+        "amazon_url": "https://www.amazon.ae/dp/B0CB36GF2K?tag=exquisitesila-21",
+        "asin": "B0CB36GF2K",
+        "image_url": "https://m.media-amazon.com/images/I/51KPyNi+8dL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Heels",
+        "label": "Black Slingback Kitten Heels",
+        "amazon_url": "https://www.amazon.ae/dp/B0G6ZC99FG?tag=exquisitesila-21",
+        "asin": "B0G6ZC99FG",
+        "image_url": "https://m.media-amazon.com/images/I/61T5OSsSjwL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Clutch",
+        "label": "Black Velvet Clutch with Gold Leaf Clasp",
+        "amazon_url": "https://www.amazon.ae/dp/B0HHNNCTMV?tag=exquisitesila-21",
+        "asin": "B0HHNNCTMV",
+        "image_url": "https://m.media-amazon.com/images/I/41rZGFLrkgL._AC_SL1024_.jpg"
+      },
+      {
+        "slot": "Earrings",
+        "label": "Emerald Green Teardrop Drop Earrings",
+        "amazon_url": "https://www.amazon.ae/dp/B0BKY7N5QM?tag=exquisitesila-21",
+        "asin": "B0BKY7N5QM",
+        "image_url": "https://m.media-amazon.com/images/I/61ZXxnH6L-L._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Cuff",
+        "label": "Gold Wide Polished Cuff Bracelet",
+        "amazon_url": "https://www.amazon.ae/dp/B0D8FGLF4B?tag=exquisitesila-21",
+        "asin": "B0D8FGLF4B",
+        "image_url": "https://m.media-amazon.com/images/I/51a08Od5kRL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Perfume",
+        "label": "Armaf Club de Nuit Woman Eau de Parfum",
+        "amazon_url": "https://www.amazon.ae/dp/B08PVRGLMF?tag=exquisitesila-21",
+        "asin": "B08PVRGLMF",
+        "image_url": "https://m.media-amazon.com/images/I/51HFRrWLaIL._AC_SL1200_.jpg"
+      }
+    ]
+  },
+  {
+    "id": "global-village-denim-look-01",
+    "slug": "global-village-night-out",
+    "title": "Global Village Night Out",
+    "description": "Beige strawberry knit cropped cardigan with a tiered denim maxi skirt, adidas VL Court trainers, a beige crescent crossbody, a cream knit beanie and the Laneige Berry Lip Sleeping Mask duo.",
+    "categories": [
+      "Casual",
+      "Winter"
+    ],
+    "collage_image": "assets/products/global-village-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Cardigan",
+        "label": "Beige Strawberry Knit Cropped Cardigan",
+        "amazon_url": "https://www.amazon.ae/dp/B0BK28ZGW4?tag=exquisitesila-21",
+        "asin": "B0BK28ZGW4",
+        "image_url": "https://m.media-amazon.com/images/I/51MQYKYEjaL._AC_SL1000_.jpg"
+      },
+      {
+        "slot": "Skirt",
+        "label": "Mid Blue Tiered Denim Maxi Skirt",
+        "amazon_url": "https://www.amazon.ae/dp/B0DBYQFF91?tag=exquisitesila-21",
+        "asin": "B0DBYQFF91",
+        "image_url": "https://m.media-amazon.com/images/I/81Wn530JrZL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Trainers",
+        "label": "adidas VL Court 3.0 White Trainers",
+        "amazon_url": "https://www.amazon.ae/dp/B0C598PYWT?tag=exquisitesila-21",
+        "asin": "B0C598PYWT",
+        "image_url": "https://m.media-amazon.com/images/I/715DFJx0+qL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Bag",
+        "label": "Beige Crescent Crossbody Bag",
+        "amazon_url": "https://www.amazon.ae/dp/B0BV24HJ5K?tag=exquisitesila-21",
+        "asin": "B0BV24HJ5K",
+        "image_url": "https://m.media-amazon.com/images/I/51dimhKTBIL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Beanie",
+        "label": "Cream White Knit Beanie",
+        "amazon_url": "https://www.amazon.ae/dp/B0G6D93ZWN?tag=exquisitesila-21",
+        "asin": "B0G6D93ZWN",
+        "image_url": "https://m.media-amazon.com/images/I/71Rlw36OTcL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Lip",
+        "label": "Laneige Berry Lip Sleeping Mask Duo",
+        "amazon_url": "https://www.amazon.ae/dp/B0G4XXCP1D?tag=exquisitesila-21",
+        "asin": "B0G4XXCP1D",
+        "image_url": "https://m.media-amazon.com/images/I/81RfB-Cf+zL._AC_SL1500_.jpg"
+      }
+    ]
+  },
+  {
+    "id": "sage-blush-modest-look-01",
+    "slug": "sage-and-white-modest-knit",
+    "title": "Sage & White Modest Knit",
+    "description": "Snow white Vero Moda knit sweater with sage green tie-waist wide-leg trousers, a rosy brown chiffon hijab, ALDO two-tone ballet flats, a white slouchy tote and Lattafa Yara.",
+    "categories": [
+      "Modest",
+      "Winter"
+    ],
+    "collage_image": "assets/products/sage-blush-modest-look/collage.png",
+    "pieces": [
+      {
+        "slot": "Sweater",
+        "label": "Vero Moda Snow White Knit Crew-Neck Sweater",
+        "amazon_url": "https://www.amazon.ae/dp/B0B1VTSSRN?tag=exquisitesila-21",
+        "asin": "B0B1VTSSRN",
+        "image_url": "https://m.media-amazon.com/images/I/61fUGr5sDZL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Trousers",
+        "label": "Sage Green Tie-Waist Wide-Leg Trousers",
+        "amazon_url": "https://www.amazon.ae/dp/B0GCDRVJ6S?tag=exquisitesila-21",
+        "asin": "B0GCDRVJ6S",
+        "image_url": "https://m.media-amazon.com/images/I/71cfQEqXY-L._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Hijab",
+        "label": "Rosy Brown Chiffon Hijab Scarf",
+        "amazon_url": "https://www.amazon.ae/dp/B0GDHC9KLT?tag=exquisitesila-21",
+        "asin": "B0GDHC9KLT",
+        "image_url": "https://m.media-amazon.com/images/I/61BsR2nMxwL._AC_SL1000_.jpg"
+      },
+      {
+        "slot": "Flats",
+        "label": "ALDO Leanne Beige Two-Tone Ballet Flats",
+        "amazon_url": "https://www.amazon.ae/dp/B0C34N9WLC?tag=exquisitesila-21",
+        "asin": "B0C34N9WLC",
+        "image_url": "https://m.media-amazon.com/images/I/61i+ll2tIkL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Tote",
+        "label": "White Slouchy Tote Bag",
+        "amazon_url": "https://www.amazon.ae/dp/B07PWWMJH5?tag=exquisitesila-21",
+        "asin": "B07PWWMJH5",
+        "image_url": "https://m.media-amazon.com/images/I/61-NE6Y5XgL._AC_SL1500_.jpg"
+      },
+      {
+        "slot": "Perfume",
+        "label": "Lattafa Yara Eau de Parfum",
+        "amazon_url": "https://www.amazon.ae/dp/B09C8VNWBP?tag=exquisitesila-21",
+        "asin": "B09C8VNWBP",
+        "image_url": "https://m.media-amazon.com/images/I/61QFvUF8ylL._AC_SL1500_.jpg"
+      }
+    ]
+  },
+  {
     "id": "burgundy-velvet-dinner-look-01",
     "slug": "burgundy-velvet-and-black-satin-dinner",
     "title": "Burgundy Velvet & Black Wide-Leg Dinner",

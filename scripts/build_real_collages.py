@@ -350,6 +350,167 @@ def bg_linen_arch(seed=51) -> Image.Image:
     return img
 
 
+def bg_champagne_deco(seed=61) -> Image.Image:
+    """Champagne silk (soft satin stripes and sheen) with gold art-deco sunburst fans in the
+    corners, joined by a thin double rule."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    rgb = paper((244, 236, 222), seed)
+    stripes = 0.988 + 0.012 * (np.sin(x / 9.0) > 0)  # tone-on-tone satin stripes
+    sheen = 1.0 + 0.035 * np.exp(-((x - y * 0.35 - W * 0.25) / (W * 0.35)) ** 2)  # diagonal light
+    rgb *= (stripes * sheen)[..., None]
+    img = to_image(rgb)
+    gold = (178, 142, 80)
+
+    def deco(d, s):
+        m = 28 * s
+        for inset, wdt in ((0, 2.5), (9, 1.2)):
+            a = m + inset * s
+            d.rectangle((a, a, W * s - a, H * s - a), outline=255, width=int(wdt * s))
+        for cx, cy, a0 in ((m, m, 0), (W * s - m, m, 90), (W * s - m, H * s - m, 180), (m, H * s - m, 270)):
+            for r in (38, 62, 86):  # concentric quarter arcs
+                d.arc((cx - r * s, cy - r * s, cx + r * s, cy + r * s), a0, a0 + 90, fill=255, width=int(1.6 * s))
+            for k in range(1, 9):  # sunburst rays between the arcs
+                ang = math.radians(a0 + k * 10)
+                d.line([(cx + 38 * s * math.cos(ang), cy + 38 * s * math.sin(ang)),
+                        (cx + 86 * s * math.cos(ang), cy + 86 * s * math.sin(ang))], fill=255, width=int(1.2 * s))
+            d.pieslice((cx - 22 * s, cy - 22 * s, cx + 22 * s, cy + 22 * s), a0, a0 + 90, fill=255)
+        for cx in (W * s / 2,):  # small stepped deco motif centred on the top and bottom rules
+            for cy, sgn in ((m, 1), (H * s - m, -1)):
+                for w, h in ((40, 7), (26, 14), (12, 21)):
+                    d.rectangle((cx - w * s, min(cy, cy + sgn * h * s), cx + w * s, max(cy, cy + sgn * h * s)),
+                                outline=255, width=int(1.3 * s))
+
+    img.alpha_composite(line_layer(deco, gold, alpha=230, seed=seed, unevenness=0.1))
+    return img
+
+
+def bg_string_lights(seed=71) -> Image.Image:
+    """Warm cream paper with tiny gold stars and a sagging string of glowing fairground bulbs
+    across the top (evenings out at Global Village)."""
+    rgb = paper((248, 241, 230), seed)
+    rgb = tint(rgb, (206, 170, 110), dot_grid(46, 1.6, seed, jitter=9) * 0.35)
+    img = to_image(rgb)
+    rng = np.random.default_rng(seed)
+
+    def stars(d, s):
+        for _ in range(26):
+            cx, cy, r = rng.uniform(40, W - 40) * s, rng.uniform(150, H - 40) * s, rng.uniform(5, 9) * s
+            pts = []
+            for k in range(8):  # four-point sparkle
+                rr = r if k % 2 == 0 else r * 0.28
+                ang = math.pi / 2 * (k / 2)
+                pts.append((cx + rr * math.cos(ang), cy + rr * math.sin(ang)))
+            d.polygon(pts, fill=255)
+
+    img.alpha_composite(line_layer(stars, (196, 158, 92), alpha=150, seed=seed, unevenness=0.3))
+
+    def wire_points(s, x0, x1, y_end, sag):
+        pts = []
+        for i in range(61):
+            u = i / 60
+            pts.append(((x0 + (x1 - x0) * u) * s, (y_end + sag * 4 * u * (1 - u)) * s))
+        return pts
+
+    strands = [(-20, W * 0.5, 22, 70), (W * 0.5, W + 20, 22, 64)]  # two swags from a centre peg
+    bulbs = []
+    for x0, x1, y_end, sag in strands:
+        pts = wire_points(1, x0, x1, y_end, sag)
+        bulbs += [pts[i] for i in range(4, 60, 7)]
+
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    gd = ImageDraw.Draw(glow)
+    for bx, by in bulbs:
+        gd.ellipse((bx - 22, by - 4, bx + 22, by + 40), fill=(255, 214, 140, 120))
+    img.alpha_composite(glow.filter(ImageFilter.GaussianBlur(12)))
+
+    def wire(d, s):
+        for x0, x1, y_end, sag in strands:
+            d.line(wire_points(s, x0, x1, y_end, sag), fill=255, width=int(2 * s), joint="curve")
+        for bx, by in bulbs:
+            d.rectangle(((bx - 3) * s, (by - 1) * s, (bx + 3) * s, (by + 6) * s), fill=255)  # socket
+
+    img.alpha_composite(line_layer(wire, (92, 66, 50), alpha=235, seed=seed, unevenness=0.05))
+
+    def bulb(d, s):
+        for bx, by in bulbs:
+            d.ellipse(((bx - 7) * s, (by + 5) * s, (bx + 7) * s, (by + 24) * s), fill=255)
+
+    img.alpha_composite(line_layer(bulb, (250, 200, 112), alpha=245, seed=seed, unevenness=0.05))
+    return img
+
+
+def bg_beige_gingham(seed=81) -> Image.Image:
+    """Soft camel-and-cream gingham with a cream inset panel edged in a scalloped ribbon."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    sq = 30.0
+    bx = ((x // sq) % 2 == 0).astype(np.float32)
+    by = ((y // sq) % 2 == 0).astype(np.float32)
+    check = ndimage.gaussian_filter(bx * 0.5 + by * 0.5, 0.7)  # 0 / 0.5 / 1: the three gingham tones
+    rgb = tint(paper((247, 240, 228), seed), (196, 160, 118), check * 0.42)
+    img = to_image(rgb)
+
+    m = 44
+    panel = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(panel).rounded_rectangle((m, m, W - m, H - m), radius=26, fill=235)
+    img.paste(Image.new("RGB", (W, H), (250, 245, 236)), (0, 0), panel.filter(ImageFilter.GaussianBlur(1.5)))
+
+    def edge(d, s):
+        a = (m - 2) * s
+        d.rounded_rectangle((a, a, W * s - a, H * s - a), radius=28 * s, outline=255, width=3 * s)
+        r, step = 6 * s, 22 * s
+        for xx in range(int(a + 30 * s), int(W * s - a - 20 * s), step):  # scallops along top and bottom
+            d.arc((xx - r, a - r, xx + r, a + r), 180, 360, fill=255, width=2 * s)
+            d.arc((xx - r, H * s - a - r, xx + r, H * s - a + r), 0, 180, fill=255, width=2 * s)
+        for yy in range(int(a + 30 * s), int(H * s - a - 20 * s), step):  # and down both sides
+            d.arc((a - r, yy - r, a + r, yy + r), 90, 270, fill=255, width=2 * s)
+            d.arc((W * s - a - r, yy - r, W * s - a + r, yy + r), 270, 450, fill=255, width=2 * s)
+
+    img.alpha_composite(line_layer(edge, (176, 132, 90), alpha=220, seed=seed, unevenness=0.08))
+    return img
+
+
+def bg_polka_ribbon(seed=91) -> Image.Image:
+    """Cream paper with soft navy polka dots and a navy satin bow tied at the top, its ribbon
+    tails running down a thin double frame."""
+    rgb = tint(paper((248, 243, 234), seed), (44, 58, 92), dot_grid(40, 4.2, seed, jitter=0.4) * 0.30)
+    img = to_image(rgb)
+    navy = (40, 54, 88)
+    cx, cy = W / 2, 40
+
+    def frame(d, s):
+        for inset, wdt in ((26, 2.5), (35, 1.2)):
+            d.rectangle((inset * s, inset * s, W * s - inset * s, H * s - inset * s), outline=255, width=int(wdt * s))
+
+    img.alpha_composite(line_layer(frame, navy, alpha=210, seed=seed, unevenness=0.08))
+
+    def bow(d, s):
+        X, Y = cx * s, cy * s
+        for side in (-1, 1):  # loops: rounded triangles out to each side
+            pts = []
+            for i in range(41):
+                t = i / 40 * 2 * math.pi
+                rx, ry = 46 * s, 22 * s
+                px = X + side * (rx + rx * math.cos(t)) * 0.95
+                py = Y + ry * math.sin(t) * (0.55 + 0.45 * (1 + math.cos(t)) / 2)
+                pts.append((px, py))
+            d.polygon(pts, fill=255)
+            tail = [(X + side * 6 * s, Y + 6 * s), (X + side * 34 * s, Y + 70 * s),  # ribbon tails, forked ends
+                    (X + side * 26 * s, Y + 62 * s), (X + side * 22 * s, Y + 76 * s), (X + side * -2 * s, Y + 10 * s)]
+            d.polygon(tail, fill=255)
+        d.ellipse((X - 11 * s, Y - 11 * s, X + 11 * s, Y + 11 * s), fill=255)  # knot
+
+    img.alpha_composite(line_layer(bow, navy, alpha=245, seed=seed, unevenness=0.06))
+
+    def sheen(d, s):  # lighter folds on the loops
+        X, Y = cx * s, cy * s
+        for side in (-1, 1):
+            d.arc((X + side * 52 * s - 26 * s, Y - 12 * s, X + side * 52 * s + 26 * s, Y + 12 * s),
+                  200 if side < 0 else -20, 340 if side < 0 else 160, fill=255, width=int(2 * s))
+
+    img.alpha_composite(line_layer(sheen, (120, 136, 176), alpha=150, seed=seed, unevenness=0.1))
+    return img
+
+
 # ---------- looks ----------
 # Each look's layout lives in links.json under the outfit's "collage" key:
 #   background  name from BACKGROUNDS below
@@ -367,9 +528,93 @@ def bg_linen_arch(seed=51) -> Image.Image:
 #   boxes       slot -> [x0, y0, x1, y1] or [x0, y0, x1, y1, degrees]; each piece is fitted
 #               inside its box (after the optional tilt) and centred, so non-overlapping boxes
 #               mean non-overlapping pieces
-#   cutout      optional slot -> [white, colored, pockets] args for cutout_white_bg
-#               (pale/pearly products: [250, 236, false]; white watch dials: [242, 205, false])
+#   cutout      optional slot -> [white, colored, pockets(, soften)] args for cutout_white_bg
+#               (pale/pearly products: [250, 236, false]; white watch dials: [242, 205, false];
+#               white/ivory garments on white: [254, 250, false, 1.2])
 # The look's asset folder is the folder of its collage_image.
+def bg_blush_stripes(seed=101) -> Image.Image:
+    """Blush-and-cream candy stripes with a cream inset panel trimmed in white scallops."""
+    y, x = np.mgrid[0:H, 0:W].astype(np.float32)
+    stripe = ndimage.gaussian_filter((((x + 6) // 26) % 2 == 0).astype(np.float32), 0.8)
+    rgb = tint(paper((250, 242, 236), seed), (230, 176, 172), stripe * 0.55)
+    img = to_image(rgb)
+    m = 52
+    panel = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(panel).rounded_rectangle((m, m, W - m, H - m), radius=34, fill=242)
+    img.paste(Image.new("RGB", (W, H), (252, 247, 242)), (0, 0), panel.filter(ImageFilter.GaussianBlur(1.2)))
+
+    def scallops(d, s):
+        a, r, step = (m - 4) * s, 9 * s, 24 * s
+        d.rounded_rectangle((a + 10 * s, a + 10 * s, W * s - a - 10 * s, H * s - a - 10 * s), radius=26 * s,
+                            outline=255, width=int(1.5 * s))
+        for xx in range(int(a + 34 * s), int(W * s - a - 24 * s), step):
+            d.pieslice((xx - r, a - r, xx + r, a + r), 180, 360, fill=255)
+            d.pieslice((xx - r, H * s - a - r, xx + r, H * s - a + r), 0, 180, fill=255)
+        for yy in range(int(a + 34 * s), int(H * s - a - 24 * s), step):
+            d.pieslice((a - r, yy - r, a + r, yy + r), 90, 270, fill=255)
+            d.pieslice((W * s - a - r, yy - r, W * s - a + r, yy + r), 270, 450, fill=255)
+
+    img.alpha_composite(line_layer(scallops, (252, 247, 242), alpha=255, seed=seed, unevenness=0.0))
+    img.alpha_composite(line_layer(lambda d, s: d.rounded_rectangle(
+        ((m + 6) * s, (m + 6) * s, W * s - (m + 6) * s, H * s - (m + 6) * s), radius=28 * s, outline=255,
+        width=int(1.5 * s)), (214, 150, 148), alpha=200, seed=seed, unevenness=0.05))
+    return img
+
+
+def bg_sage_botanical(seed=111) -> Image.Image:
+    """Warm cream paper with fine sage-green botanical sprigs (olive-leaf branches) curling in
+    from the corners and along the edges, inside a thin sage rule."""
+    img = to_image(paper((249, 246, 238), seed))
+    rng = np.random.default_rng(seed)
+    sage, sage_l = (122, 140, 108), (168, 184, 150)
+
+    def branch(x0, y0, ang, length, curve, s, leaves, d, leaf_fill):
+        pts = []
+        for i in range(31):
+            u = i / 30
+            a = ang + curve * u
+            if not pts:
+                px, py = x0, y0
+            else:
+                px, py = pts[-1][0] + math.cos(a) * length / 30, pts[-1][1] + math.sin(a) * length / 30
+            pts.append((px, py))
+        d.line([(p[0] * s, p[1] * s) for p in pts], fill=255, width=int(1.6 * s), joint="curve")
+        for i in range(3, 31, 4):  # paired leaves along the stem
+            px, py = pts[i]
+            a = ang + curve * i / 30
+            for side in (-1, 1):
+                la = a + side * 0.75
+                L, Wd = rng.uniform(15, 22), rng.uniform(4.5, 6.5)
+                cx, cy = px + math.cos(la) * L / 2, py + math.sin(la) * L / 2
+                leaf = []
+                for k in range(17):
+                    t = k / 16 * 2 * math.pi
+                    ox, oy = math.cos(t) * L / 2, math.sin(t) * Wd / 2
+                    leaf.append(((cx + ox * math.cos(la) - oy * math.sin(la)) * s,
+                                 (cy + ox * math.sin(la) + oy * math.cos(la)) * s))
+                if leaf_fill:
+                    d.polygon(leaf, fill=255)
+                else:
+                    d.line(leaf + [leaf[0]], fill=255, width=int(1.2 * s))
+
+    sprigs = [(30, 40, 0.55, 200, 0.6), (40, 30, 1.1, 170, -0.5), (W - 30, 40, math.pi - 0.55, 200, -0.6),
+              (W - 40, 30, math.pi - 1.1, 170, 0.5), (30, H - 40, -0.55, 200, -0.6), (40, H - 30, -1.1, 170, 0.5),
+              (W - 30, H - 40, math.pi + 0.55, 200, 0.6), (W - 40, H - 30, math.pi + 1.1, 170, -0.5)]
+    for k, yy in enumerate(np.arange(230, H - 200, 175)):  # smaller sprigs climbing both sides
+        tilt = -0.9 if k % 2 else -1.25
+        sprigs += [(22, yy, tilt, 130, 0.45), (W - 22, yy, math.pi - tilt, 130, -0.45)]
+    for xx in (W * 0.33, W * 0.67):  # and a pair along the top and bottom edges
+        sprigs += [(xx, 18, 0.35, 110, 0.4), (xx, H - 18, -0.35, 110, -0.4)]
+    img.alpha_composite(line_layer(lambda d, s: [branch(*sp, s, 0, d, True) for sp in sprigs[::2]],
+                                   sage_l, alpha=170, seed=seed, unevenness=0.2))
+    img.alpha_composite(line_layer(lambda d, s: [branch(*sp, s, 0, d, False) for sp in sprigs[1::2]],
+                                   sage, alpha=210, seed=seed + 1, unevenness=0.15))
+    img.alpha_composite(line_layer(lambda d, s: d.rectangle((40 * s, 40 * s, W * s - 40 * s, H * s - 40 * s),
+                                                            outline=255, width=int(1.4 * s)),
+                                   sage, alpha=190, seed=seed, unevenness=0.1))
+    return img
+
+
 BACKGROUNDS = {
     "autumn_leaves": bg_autumn_leaves,
     "coquette_lace": bg_coquette_lace,
@@ -377,12 +622,19 @@ BACKGROUNDS = {
     "marble_gold": bg_marble_gold,
     "desert_dunes": bg_desert_dunes,
     "linen_arch": bg_linen_arch,
+    "champagne_deco": bg_champagne_deco,
+    "string_lights": bg_string_lights,
+    "beige_gingham": bg_beige_gingham,
+    "polka_ribbon": bg_polka_ribbon,
+    "blush_stripes": bg_blush_stripes,
+    "sage_botanical": bg_sage_botanical,
 }
 
 
 # ---------- product cutouts ----------
 
-def cutout_white_bg(img: Image.Image, white: int = 242, colored: int = 205, pockets: bool = True) -> Image.Image:
+def cutout_white_bg(img: Image.Image, white: int = 242, colored: int = 205, pockets: bool = True,
+                    soften: float = 0.0) -> Image.Image:
     """Remove a near-white studio backdrop (and its soft drop shadow).
 
     Only light pixels *connected to the photo border* are treated as backdrop,
@@ -407,6 +659,8 @@ def cutout_white_bg(img: Image.Image, white: int = 242, colored: int = 205, pock
 
     fade = np.clip((white - min_c) / max(white - colored, 1), 0.0, 1.0)
     alpha = np.where(backdrop, fade, 1.0)
+    if soften:  # white garments: pull the edge in a pixel and feather it, hiding a jagged JPEG fringe
+        alpha = ndimage.gaussian_filter(ndimage.grey_erosion(alpha, size=3), soften)
     alpha = ndimage.gaussian_filter(alpha, 0.6)
     arr[..., 3] = np.minimum(arr[..., 3], alpha * 255.0)
     return Image.fromarray(arr.astype(np.uint8), "RGBA")
